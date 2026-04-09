@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KI-Automatisierungslösungen für den Mittelstand | Cittasana AI</title>
+<meta name="description" content="Sechs fertige KI-Automatisierungslösungen für Unternehmen mit 10–50 Mitarbeitern: AutoFlow Portal, InvoiceBot, DataSync Hub und mehr. In Wochen live, nicht in Monaten." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://cittasana.de/loesungen" />
+
+<meta property="og:type"        content="website" />
+<meta property="og:title"       content="KI-Automatisierungslösungen für den Mittelstand | Cittasana AI" />
+<meta property="og:description" content="Sechs fertige Systeme. In Wochen live. Inkl. 12 Monate Hosting und Betrieb." />
+<meta property="og:url"         content="https://cittasana.de/loesungen" />
+<meta property="og:locale"      content="de_DE" />
+<meta name="twitter:card"       content="summary_large_image" />
+
+<!-- Schema: ItemList of Services -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Cittasana AI Lösungen",
+  "description": "KI-Automatisierungslösungen für mittelständische Unternehmen",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "AutoFlow Portal", "url": "https://cittasana.de/loesungen" },
+    { "@type": "ListItem", "position": 2, "name": "FormFlow Engine", "url": "https://cittasana.de/loesungen" },
+    { "@type": "ListItem", "position": 3, "name": "TaskPilot", "url": "https://cittasana.de/loesungen" },
+    { "@type": "ListItem", "position": 4, "name": "DataSync Hub", "url": "https://cittasana.de/loesungen" },
+    { "@type": "ListItem", "position": 5, "name": "InvoiceBot", "url": "https://cittasana.de/loesungen" },
+    { "@type": "ListItem", "position": 6, "name": "Custom CRM", "url": "https://cittasana.de/loesungen" }
+  ]
+}
+</script>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "background":       "#0d0d12",
+          "surface":          "#111117",
+          "surface-low":      "#16161e",
+          "surface-mid":      "#1d1d26",
+          "surface-high":     "#24242f",
+          "on-surface":       "#e8e6f0",
+          "on-surface-dim":   "rgba(232,230,240,0.55)",
+          "on-surface-faint": "rgba(232,230,240,0.28)",
+          "primary":          "#f59e0b",
+          "primary-dim":      "#d97706",
+          "primary-subtle":   "rgba(245,158,11,0.08)",
+          "primary-border":   "rgba(245,158,11,0.2)",
+          "outline":          "rgba(255,255,255,0.07)",
+          "outline-med":      "rgba(255,255,255,0.12)",
+        },
+        fontFamily: {
+          headline: ["Newsreader", "serif"],
+          body:     ["Manrope", "sans-serif"],
+        },
+      },
+    },
+  }
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Manrope', sans-serif; background-color: #0d0d12; color: #e8e6f0; -webkit-font-smoothing: antialiased; }
+  .serif { font-family: 'Newsreader', serif; }
+  .serif-italic { font-family: 'Newsreader', serif; font-style: italic; }
+  .glass-nav { background: rgba(13,13,18,0.88); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+  .amber-glow { box-shadow: 0 0 80px rgba(245,158,11,0.08), inset 0 0 80px rgba(245,158,11,0.03); }
+  .hover-amber { transition: color .2s, border-color .2s, background .2s; }
+  .btn { border-radius: 9999px; display: inline-block; }
+</style>
+</head>
+<body class="bg-background">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline">
+  <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+    <a href="/" class="serif-italic text-xl font-bold tracking-tight text-on-surface">Cittasana AI</a>
+    <div class="hidden md:flex items-center gap-10">
+      <a href="/loesungen" class="text-on-surface text-xs uppercase tracking-[0.08em] font-semibold">Lösungen</a>
+      <a href="/hivemind"  class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">HiveMind</a>
+      <a href="/ueber-uns" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Über uns</a>
+      <a href="/ai-ready-check" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">AI-Check</a>
+    </div>
+    <a href="/ai-ready-check" class="btn bg-primary text-black px-6 py-2.5 text-xs uppercase tracking-[0.12em] font-extrabold hover-amber hover:bg-amber-400">
+      AI-Check →
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="pt-40 pb-24 px-8 md:px-24 border-b border-outline">
+  <div class="max-w-7xl mx-auto">
+    <p class="text-primary text-[10px] uppercase tracking-[0.25em] font-bold mb-6">Was wir bauen</p>
+    <h1 class="serif font-light text-6xl md:text-7xl leading-[0.9] tracking-tight mb-8">
+      Fertige Systeme.<br/><span class="serif-italic">In Wochen live,<br/>nicht in Monaten.</span>
+    </h1>
+    <p class="text-on-surface-dim text-xl max-w-2xl leading-relaxed">
+      Sechs bewährte Automatisierungslösungen — gebaut für Unternehmen mit 10–50 Mitarbeitern. Alle inkl. Hosting und Betrieb für 12 Monate.
+    </p>
+  </div>
+</section>
+
+<!-- PRODUCTS GRID -->
+<section class="py-32 px-8 md:px-24">
+  <div class="max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline border border-outline">
+
+      <!-- AutoFlow Portal -->
+      <div class="bg-surface p-10 md:p-12 hover:bg-surface-mid transition-colors group">
+        <div class="flex justify-between items-start mb-6">
+          <h2 class="serif text-2xl font-semibold group-hover:text-primary transition-colors">AutoFlow Portal</h2>
+          <span class="text-[9px] uppercase tracking-widest text-on-surface-faint border border-outline-med px-2 py-1 shrink-0">Kundenportal</span>
+        </div>
+        <p class="text-on-surface-dim text-sm leading-relaxed mb-6">
+          Alle Kundenanfragen laufen strukturiert ein, werden automatisch getrackt, zugewiesen und bearbeitet. E-Mail-Chaos gehört der Vergangenheit an.
+        </p>
+        <ul class="text-sm space-y-2 mb-8 text-on-surface-dim">
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Strukturierte Erfassung aller Anfragen</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Automatisches Routing und Statustracking</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Benachrichtigungen und Eskalationsregeln</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Kundenseitiges Statusportal</li>
+        </ul>
+        <!-- Case Study -->
+        <div class="bg-surface-low border-l-2 border-primary p-4 mb-8">
+          <p class="text-on-surface-dim text-xs leading-relaxed">
+            <span class="text-on-surface font-semibold">Ergebnis:</span> Steuerberatungskanzlei, 14 MA — Bearbeitungsaufwand von 3h/Tag auf 25 Min./Tag reduziert.
+          </p>
+        </div>
+        <div class="flex items-center justify-between pt-6 border-t border-outline">
+          <p class="text-on-surface-faint text-xs">60% weniger E-Mail-Volumen</p>
+          <a href="/ai-ready-check" class="text-[10px] uppercase tracking-widest text-on-surface-faint hover-amber hover:text-primary transition-colors">Anfragen →</a>
+        </div>
+      </div>
+
+      <!-- FormFlow Engine -->
+      <div class="bg-surface p-10 md:p-12 hover:bg-surface-mid transition-colors group">
+        <div class="flex justify-between items-start mb-6">
+          <h2 class="serif text-2xl font-semibold group-hover:text-primary transition-colors">FormFlow Engine</h2>
+          <span class="text-[9px] uppercase tracking-widest text-on-surface-faint border border-outline-med px-2 py-1 shrink-0">Formulare</span>
+        </div>
+        <p class="text-on-surface-dim text-sm leading-relaxed mb-6">
+          Digitale Formulare mit mehrstufigen Genehmigungsprozessen, automatischer PDF-Generierung und revisionssicherem Archiv. Compliance-ready von Anfang an.
+        </p>
+        <ul class="text-sm space-y-2 mb-8 text-on-surface-dim">
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Mehrstufige Genehmigungsworkflows</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Automatische PDF-Generierung</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Revisionssicheres digitales Archiv</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Digitale Unterschrift integriert</li>
+        </ul>
+        <div class="flex items-center justify-between pt-6 border-t border-outline mt-auto">
+          <p class="text-on-surface-faint text-xs">Papierlos in 4 Wochen</p>
+          <a href="/ai-ready-check" class="text-[10px] uppercase tracking-widest text-on-surface-faint hover-amber hover:text-primary transition-colors">Anfragen →</a>
+        </div>
+      </div>
+
+      <!-- TaskPilot -->
+      <div class="bg-surface p-10 md:p-12 hover:bg-surface-mid transition-colors group">
+        <div class="flex justify-between items-start mb-6">
+          <h2 class="serif text-2xl font-semibold group-hover:text-primary transition-colors">TaskPilot</h2>
+          <span class="text-[9px] uppercase tracking-widest text-on-surface-faint border border-outline-med px-2 py-1 shrink-0">Operations</span>
+        </div>
+        <p class="text-on-surface-dim text-sm leading-relaxed mb-6">
+          Zentrales Operations-Board das Excel-Listen und E-Mail-Ketten ersetzt. Aufgaben, Deadlines, Rollen, Reporting — in einem System, das Ihr Team tatsächlich nutzt.
+        </p>
+        <ul class="text-sm space-y-2 mb-8 text-on-surface-dim">
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Kanban, Listen- und Kalenderansicht</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Rollenbasierte Zugriffsrechte</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Automatische Deadline-Erinnerungen</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Wöchentlicher Status-Report per E-Mail</li>
+        </ul>
+        <div class="flex items-center justify-between pt-6 border-t border-outline">
+          <p class="text-on-surface-faint text-xs">Ersetzt Excel + E-Mail-Ping-Pong</p>
+          <a href="/ai-ready-check" class="text-[10px] uppercase tracking-widest text-on-surface-faint hover-amber hover:text-primary transition-colors">Anfragen →</a>
+        </div>
+      </div>
+
+      <!-- DataSync Hub -->
+      <div class="bg-surface p-10 md:p-12 hover:bg-surface-mid transition-colors group">
+        <div class="flex justify-between items-start mb-6">
+          <h2 class="serif text-2xl font-semibold group-hover:text-primary transition-colors">DataSync Hub</h2>
+          <span class="text-[9px] uppercase tracking-widest text-on-surface-faint border border-outline-med px-2 py-1 shrink-0">Integration</span>
+        </div>
+        <p class="text-on-surface-dim text-sm leading-relaxed mb-6">
+          Verbindet bis zu 5 bestehende Systeme automatisch. Daten fließen in Echtzeit zwischen CRM, ERP, Buchhaltung und Kommunikationstools — kein manueller Export mehr.
+        </p>
+        <ul class="text-sm space-y-2 mb-8 text-on-surface-dim">
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Echtzeit-Synchronisation</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Fehler-Monitoring und Alerts</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Historische Daten-Nachsynchronisation</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Bis zu 5 Systemverbindungen</li>
+        </ul>
+        <div class="flex items-center justify-between pt-6 border-t border-outline">
+          <p class="text-on-surface-faint text-xs">Kein Datenverlust, kein manueller Export</p>
+          <a href="/ai-ready-check" class="text-[10px] uppercase tracking-widest text-on-surface-faint hover-amber hover:text-primary transition-colors">Anfragen →</a>
+        </div>
+      </div>
+
+      <!-- InvoiceBot -->
+      <div class="bg-surface p-10 md:p-12 hover:bg-surface-mid transition-colors group">
+        <div class="flex justify-between items-start mb-6">
+          <h2 class="serif text-2xl font-semibold group-hover:text-primary transition-colors">InvoiceBot</h2>
+          <span class="text-[9px] uppercase tracking-widest text-on-surface-faint border border-outline-med px-2 py-1 shrink-0">Buchhaltung</span>
+        </div>
+        <p class="text-on-surface-dim text-sm leading-relaxed mb-6">
+          Vollautomatische Rechnungsstellung vom Angebot bis zur Mahnung. 3-stufiger Mahnlauf, automatischer Zahlungsabgleich, DATEV-kompatibler Export.
+        </p>
+        <ul class="text-sm space-y-2 mb-8 text-on-surface-dim">
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Angebots- bis Rechnungsautomatik</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> 3-stufiger Mahnlauf automatisch</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Zahlungsabgleich per Bankverbindung</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> DATEV-Export für Steuerberater</li>
+        </ul>
+        <div class="bg-surface-low border-l-2 border-primary p-4 mb-8">
+          <p class="text-on-surface-dim text-xs leading-relaxed">
+            <span class="text-on-surface font-semibold">Ergebnis:</span> Handwerksunternehmen, 22 MA — Rechnungserstellung von 45 Min. auf 8 Min. reduziert.
+          </p>
+        </div>
+        <div class="flex items-center justify-between pt-6 border-t border-outline">
+          <p class="text-on-surface-faint text-xs">Vollautomatisch vom Angebot bis zur Mahnung</p>
+          <a href="/ai-ready-check" class="text-[10px] uppercase tracking-widest text-on-surface-faint hover-amber hover:text-primary transition-colors">Anfragen →</a>
+        </div>
+      </div>
+
+      <!-- Custom CRM -->
+      <div class="bg-surface p-10 md:p-12 hover:bg-surface-mid transition-colors group">
+        <div class="flex justify-between items-start mb-6">
+          <h2 class="serif text-2xl font-semibold group-hover:text-primary transition-colors">Custom CRM</h2>
+          <span class="text-[9px] uppercase tracking-widest text-on-surface-faint border border-outline-med px-2 py-1 shrink-0">12 Wochen</span>
+        </div>
+        <p class="text-on-surface-dim text-sm leading-relaxed mb-6">
+          Maßgeschneidertes CRM nach Ihren Prozessen — keine Kompromisse mit Off-the-Shelf-Software. Kontakte, Pipelines, Angebote, Reporting, API-Integrationen.
+        </p>
+        <ul class="text-sm space-y-2 mb-8 text-on-surface-dim">
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Vollständig auf Ihre Prozesse zugeschnitten</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Pipeline-Management und Forecasting</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> API-Integrationen zu Bestandssystemen</li>
+          <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> 12-Wochen-Projekt, 4 Phasen</li>
+        </ul>
+        <div class="flex items-center justify-between pt-6 border-t border-outline">
+          <p class="text-on-surface-faint text-xs">Kein Off-the-Shelf-Kompromiss</p>
+          <a href="/ai-ready-check" class="text-[10px] uppercase tracking-widest text-on-surface-faint hover-amber hover:text-primary transition-colors">Anfragen →</a>
+        </div>
+      </div>
+
+    </div>
+    <p class="text-on-surface-faint text-xs mt-8">Alle Einmallösungen inkl. Hosting &amp; Betrieb für 12 Monate.</p>
+  </div>
+</section>
+
+<!-- RETAINER -->
+<section class="py-32 px-8 md:px-24 bg-surface-low border-y border-outline">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-16">
+      <p class="text-primary text-[10px] uppercase tracking-[0.25em] font-bold mb-4">Laufende Betreuung</p>
+      <h2 class="serif text-5xl font-light mb-4">Ihr System läuft.<br/><span class="serif-italic">Wir sorgen dafür, dass es das bleibt.</span></h2>
+      <p class="text-on-surface-faint text-sm">Monatlich kündbar. Kein Jahresvertrag.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline">
+      <div class="bg-surface p-10 hover:bg-surface-mid transition-colors">
+        <div class="flex justify-between items-start mb-6">
+          <h4 class="serif text-xl font-semibold">Automation Care</h4>
+          <span class="text-[9px] uppercase tracking-widest text-on-surface-faint border border-outline-med px-2 py-1">10h / Mo.</span>
+        </div>
+        <p class="text-on-surface-dim text-sm leading-relaxed mb-8">Garantierte 24h Reaktionszeit, monatliche Updates, priorisierter Support. Ihr System läuft zuverlässig weiter.</p>
+        <a href="/ai-ready-check" class="text-[10px] uppercase tracking-widest text-on-surface-faint hover-amber hover:text-primary transition-colors pt-8 border-t border-outline block">Anfragen →</a>
+      </div>
+      <div class="bg-surface p-10 hover:bg-surface-mid transition-colors">
+        <div class="flex justify-between items-start mb-6">
+          <h4 class="serif text-xl font-semibold">Integration Pilot</h4>
+          <span class="text-[9px] uppercase tracking-widest text-on-surface-faint border border-outline-med px-2 py-1">8h / Mo.</span>
+        </div>
+        <p class="text-on-surface-dim text-sm leading-relaxed mb-8">24/7-Monitoring aller Datenflüsse, 4h Response bei Sync-Fehlern, eine neue Integration pro Quartal inklusive.</p>
+        <a href="/ai-ready-check" class="text-[10px] uppercase tracking-widest text-on-surface-faint hover-amber hover:text-primary transition-colors pt-8 border-t border-outline block">Anfragen →</a>
+      </div>
+      <div class="bg-surface p-10 hover:bg-surface-mid transition-colors">
+        <div class="flex justify-between items-start mb-6">
+          <h4 class="serif text-xl font-semibold">Growth Automation</h4>
+          <span class="text-[9px] uppercase tracking-widest text-on-surface-faint border border-outline-med px-2 py-1">20h / Mo.</span>
+        </div>
+        <p class="text-on-surface-dim text-sm leading-relaxed mb-8">Strategische Begleitung: neue Automatisierungen entwickeln, ROI tracken, monatlicher Strategie-Call. Ihr Automatisierungsgrad steigt jeden Monat.</p>
+        <a href="/ai-ready-check" class="text-[10px] uppercase tracking-widest text-on-surface-faint hover-amber hover:text-primary transition-colors pt-8 border-t border-outline block">Anfragen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="py-32 px-8 md:px-24">
+  <div class="max-w-7xl mx-auto">
+    <div class="mb-20">
+      <p class="text-primary text-[10px] uppercase tracking-[0.25em] font-bold mb-4">Ablauf</p>
+      <h2 class="serif text-5xl font-light mb-4">Wie ein Projekt<br/><span class="serif-italic">wirklich läuft.</span></h2>
+      <p class="text-on-surface-dim text-sm max-w-lg leading-relaxed">Kein Wasserfall, keine Überraschungen. Vier Phasen — und danach sind wir nicht weg.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-px bg-outline">
+      <div class="bg-surface p-10 flex flex-col">
+        <span class="text-primary text-[9px] uppercase tracking-[0.2em] mb-6">01</span>
+        <h4 class="serif text-xl font-semibold mb-4">Kick-off</h4>
+        <p class="text-on-surface-dim text-sm leading-relaxed">Gegenseitige Ausrichtung. Was genau gebaut wird, warum, für wen — und was nicht. Kein Code bevor das stimmt.</p>
+      </div>
+      <div class="bg-surface p-10 flex flex-col">
+        <span class="text-primary text-[9px] uppercase tracking-[0.2em] mb-6">02</span>
+        <h4 class="serif text-xl font-semibold mb-4">Entwicklung</h4>
+        <p class="text-on-surface-dim text-sm leading-relaxed">Iterative Sprints. Wöchentliche Updates, echte Demos — kein Code der monatelang im Dunkeln entsteht.</p>
+      </div>
+      <div class="bg-surface p-10 flex flex-col">
+        <span class="text-primary text-[9px] uppercase tracking-[0.2em] mb-6">03</span>
+        <h4 class="serif text-xl font-semibold mb-4">Launch</h4>
+        <p class="text-on-surface-dim text-sm leading-relaxed">Deployment, Onboarding, Übergabe. Ihr Team versteht das System und kann es selbst bedienen.</p>
+      </div>
+      <div class="bg-surface-high p-10 flex flex-col border-t-2 border-primary relative">
+        <div class="absolute top-0 left-6 -translate-y-1/2 bg-primary text-black text-[8px] uppercase tracking-widest font-black px-3 py-0.5">Inklusive</div>
+        <span class="text-primary text-[9px] uppercase tracking-[0.2em] mb-6">04</span>
+        <h4 class="serif text-xl font-semibold mb-4">6 Monate danach</h4>
+        <p class="text-on-surface-dim text-sm leading-relaxed">Monatliche Follow-up-Calls für sechs Monate nach Launch. Was funktioniert, was angepasst werden muss — und was als nächstes sinnvoll ist.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 FEHLER -->
+<section class="py-32 px-8 md:px-24 bg-surface-low border-y border-outline">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
+    <div>
+      <p class="text-primary text-[10px] uppercase tracking-[0.25em] font-bold mb-4">Orientierung</p>
+      <h2 class="serif text-5xl font-light leading-tight mb-6">5 Fehler, die<br/><span class="serif-italic">KI-Projekte scheitern</span><br/>lassen.</h2>
+      <p class="text-on-surface-dim text-sm leading-relaxed max-w-sm">Nicht weil die Technologie versagt. Sondern weil diese Fehler fast jedes Unternehmen macht — bevor es mit uns arbeitet.</p>
+    </div>
+    <div class="space-y-0 border border-outline">
+      <div class="flex gap-6 p-8 border-b border-outline hover:bg-surface-mid transition-colors">
+        <span class="text-primary text-[9px] uppercase tracking-[0.2em] font-bold mt-0.5 shrink-0">01</span>
+        <div>
+          <h5 class="text-sm font-semibold mb-2">Unrealistische Erwartungen</h5>
+          <p class="text-on-surface-dim text-xs leading-relaxed">KI ist kein Allheilmittel. Transformation entsteht durch Prozessdenken — KI ist das Werkzeug, nicht die Lösung.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 p-8 border-b border-outline hover:bg-surface-mid transition-colors">
+        <span class="text-primary text-[9px] uppercase tracking-[0.2em] font-bold mt-0.5 shrink-0">02</span>
+        <div>
+          <h5 class="text-sm font-semibold mb-2">Kein klares Ziel</h5>
+          <p class="text-on-surface-dim text-xs leading-relaxed">„Wir wollen KI einsetzen" ist kein Ziel. Ein Ziel ist: „40% weniger Zeit für Angebotserstellung." Ohne das baut man das Falsche — schnell und teuer.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 p-8 border-b border-outline hover:bg-surface-mid transition-colors">
+        <span class="text-primary text-[9px] uppercase tracking-[0.2em] font-bold mt-0.5 shrink-0">03</span>
+        <div>
+          <h5 class="text-sm font-semibold mb-2">Fehlender interner Buy-in</h5>
+          <p class="text-on-surface-dim text-xs leading-relaxed">Das beste System nutzt nichts, wenn das Team es nicht annimmt. Change Management ist kein Extra — es ist ein Kernbestandteil.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 p-8 border-b border-outline hover:bg-surface-mid transition-colors">
+        <span class="text-primary text-[9px] uppercase tracking-[0.2em] font-bold mt-0.5 shrink-0">04</span>
+        <div>
+          <h5 class="text-sm font-semibold mb-2">Datenchaos als Fundament</h5>
+          <p class="text-on-surface-dim text-xs leading-relaxed">KI verstärkt was da ist — sie erzeugt keine Ordnung aus Chaos. Saubere, zugängliche Daten sind Voraussetzung. Das klären wir im Kick-off.</p>
+        </div>
+      </div>
+      <div class="flex gap-6 p-8 hover:bg-surface-mid transition-colors">
+        <span class="text-primary text-[9px] uppercase tracking-[0.2em] font-bold mt-0.5 shrink-0">05</span>
+        <div>
+          <h5 class="text-sm font-semibold mb-2">Zu groß anfangen</h5>
+          <p class="text-on-surface-dim text-xs leading-relaxed">Enterprise-Lösung, bevor der erste Prozess automatisiert ist. Wir beginnen immer mit dem höchsten Hebel — dem einen Prozess, der sofort etwas verändert.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-40 px-8 text-center relative overflow-hidden">
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/5 blur-[100px] pointer-events-none rounded-full"></div>
+  <div class="max-w-3xl mx-auto relative">
+    <h2 class="serif text-5xl font-light leading-tight mb-8">Welche Lösung<br/><span class="serif-italic">passt zu Ihnen?</span></h2>
+    <p class="text-on-surface-dim mb-10">Im kostenlosen AI-Ready-Check finden wir es gemeinsam heraus — mit konkreter ROI-Kalkulation.</p>
+    <a href="/ai-ready-check" class="btn bg-primary text-black px-12 py-6 text-sm uppercase tracking-[0.2em] font-extrabold hover-amber hover:bg-amber-400">
+      Kostenlosen Check sichern
+    </a>
+    <p class="text-on-surface-faint text-xs mt-6">20 Min. Gespräch &nbsp;·&nbsp; Antwort in 48h &nbsp;·&nbsp; Kein Pitch</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-outline px-8 md:px-12 py-12 bg-surface-low">
+  <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <a href="/" class="serif-italic text-lg text-on-surface">Cittasana AI</a>
+    <div class="flex flex-wrap justify-center gap-8 text-[10px] uppercase tracking-[0.1em] text-on-surface-faint">
+      <a href="/loesungen" class="hover-amber hover:text-primary">Lösungen</a>
+      <a href="/hivemind" class="hover-amber hover:text-primary">HiveMind</a>
+      <a href="/ueber-uns" class="hover-amber hover:text-primary">Über uns</a>
+      <a href="/ai-ready-check" class="hover-amber hover:text-primary">AI-Check</a>
+      <a href="mailto:cosmo@cittasana.de" class="hover-amber hover:text-primary">cosmo@cittasana.de</a>
+      <a href="/impressum" class="hover-amber hover:text-primary">Impressum</a>
+      <a href="/datenschutz" class="hover-amber hover:text-primary">Datenschutz</a>
+      <a href="/eu-ai-act" class="hover-amber hover:text-primary">EU AI Act</a>
+    </div>
+    <span class="text-[10px] uppercase tracking-[0.1em] text-on-surface-faint">© 2026 Cittasana AI</span>
+  </div>
+</footer>
+
+</body>
+</html>
