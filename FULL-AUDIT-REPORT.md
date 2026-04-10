@@ -1,228 +1,225 @@
-# Full SEO Audit Report — ai.cittasana.de
-**Erstellt: 10. April 2026**
+# Cittasana AI — Full SEO Audit Report
+**Datum:** 2026-04-10 | **Website:** https://ai.cittasana.de | **Seiten auditiert:** 8
 
 ---
 
-## SEO Health Score: 71/100
+## Executive Summary
 
-| Kategorie | Gewicht | Score | Punkte |
-|-----------|---------|-------|--------|
-| Technical SEO | 25% | 7.5/10 | 18.75 |
-| Content Quality | 25% | 8.0/10 | 20.00 |
-| On-Page SEO | 20% | 7.0/10 | 14.00 |
-| Schema / Structured Data | 10% | 9.0/10 | 9.00 |
-| Performance (CWV) | 10% | 6.0/10 | 6.00 |
-| Images | 5% | 1.0/10 | 0.50 |
-| AI Search Readiness | 5% | 8.0/10 | 4.00 |
-| **Gesamt** | | | **72.25 → 71/100** |
+**Gesamtscore: 78 / 100**
 
-**Business Type:** B2B SaaS / KI-Beratung — Mittelstand DACH
+Die Website zeigt eine solide technische Basis und klare inhaltliche Positionierung für die Zielgruppe (deutschsprachiger Mittelstand). Stärken liegen in der Markentransparenz, dem Privacy-First-Ansatz und dem Gründer-E-E-A-T. Die größten Lücken sind interne Verlinkungsdichte, dünne Produktbeschreibungen und kurze FAQ-Antworten.
 
----
+### Top-5-Stärken
+1. Privacy-First ("Keine Cookies. Kein Tracking.") als klares Differenzierungsmerkmal
+2. robots.txt explizit offen für AI-Crawler (GPTBot, ClaudeBot, Perplexity, cohere-ai)
+3. Alle 5 OG-Images vorhanden (1200×630px) — kein Social-Card-404 mehr
+4. FAQPage-Schema auf 3 Seiten (inkl. neu hinzugefügtem /hivemind)
+5. Vercel-CDN + EU-Server + Security-Headers auf Enterprise-Niveau
 
-## Top 5 Kritische Issues
-
-1. 🔴 `og-image.png` → **404** — Social-Card referenziert auf Homepage, Datei existiert nicht
-2. 🔴 **Keine Bilder auf der gesamten Website** — Nur CSS-Platzhalter; fehlende Gründerfoto; kein alt-Text möglich
-3. 🟠 **4 von 6 Meta-Descriptions zu lang** — Bis zu 204 Zeichen; Ideal: 120–160
-4. 🟠 **Keine Security Headers** — X-Content-Type-Options, X-Frame-Options, Referrer-Policy fehlen in Vercel-Config
-5. 🟠 **Google Fonts via US-CDN** — IP-Übertragung an Google; wird in Datenschutzerklärung erwähnt, aber DSGVO-Risiko bleibt
-
-## Top 5 Quick Wins
-
-1. ✅ Gründerfoto als PNG/WebP erstellen + `<img>` mit alt-Text einbauen
-2. ✅ `og-image.png` (1200×630px) erstellen und deployen
-3. ✅ Security Headers in `vercel.json` ergänzen (5 Minuten)
-4. ✅ Meta-Descriptions auf max. 155 Zeichen kürzen (4 Seiten)
-5. ✅ Google Fonts selbst hosten (eliminiert US-Datentransfer)
+### Top-5-Lücken
+1. Kein BreadcrumbList-Schema auf Unterseiten → CTR-Verlust in SERPs
+2. llms.txt nicht verlinkt → AI-Crawler finden sie nicht zuverlässig
+3. /impressum und /datenschutz fehlen in sitemap.xml
+4. Produktbeschreibungen auf /loesungen zu dünn (120–160 Wörter, Minimum 300)
+5. FAQ-Antworten zu kurz für AI-Generated Overviews (Google bevorzugt 100+ Wörter)
 
 ---
 
-## Technical SEO
+## Scoring
 
-### Crawlability ✅
-- robots.txt vorhanden, korrekt konfiguriert
-- Alle AI-Crawler erlaubt (GPTBot, ClaudeBot, PerplexityBot etc.)
-- CCBot (Training-Scraper) blockiert
-- Sitemap in robots.txt referenziert
-
-### Indexability ✅
-- 6 Indexseiten korrekt auf `index, follow`
-- 2 Rechtsseiten korrekt auf `noindex, follow` (Impressum, Datenschutz)
-- Sitemap enthält nur indexierbare Seiten (noindex-Seiten ausgeschlossen)
-
-### HTTP Status Codes
-| URL | Status |
-|-----|--------|
-| `https://ai.cittasana.de/` | ✅ 200 |
-| `https://ai.cittasana.de/loesungen` | ✅ 200 |
-| `https://ai.cittasana.de/hivemind` | ✅ 200 |
-| `https://ai.cittasana.de/sitemap.xml` | ✅ 200 |
-| `https://ai.cittasana.de/robots.txt` | ✅ 200 |
-| `https://ai.cittasana.de/og-image.png` | 🔴 **404** |
-
-### HTTPS & Security Headers
-| Header | Status | Wert |
-|--------|--------|------|
-| HTTPS | ✅ | Erzwungen via Vercel |
-| HSTS | ✅ | max-age=63072000 (2 Jahre) |
-| X-Content-Type-Options | ❌ | Fehlt |
-| X-Frame-Options | ❌ | Fehlt |
-| Referrer-Policy | ❌ | Fehlt |
-| Content-Security-Policy | ❌ | Fehlt |
-
-### Canonicals ✅
-Alle 8 Seiten haben korrekte Canonical-Tags auf HTTPS-URLs.
-
-### Sitemap
-- ✅ XML gültig, 6 URLs, alle HTTP 200
-- ✅ Keine noindex-Seiten enthalten
-- ✅ Keine deprecated `<priority>` oder `<changefreq>` Tags
-- ✅ In robots.txt referenziert
-- ✅ In Google Search Console eingereicht
+| Kategorie | Gewicht | Score | Gewichteter Score |
+|-----------|---------|-------|-------------------|
+| Technical SEO | 25% | 82 | 20.5 |
+| Content Quality | 25% | 72 | 18.0 |
+| On-Page SEO | 20% | 79 | 15.8 |
+| Schema / Structured Data | 10% | 68 | 6.8 |
+| Performance | 10% | 85 | 8.5 |
+| Images | 5% | 88 | 4.4 |
+| AI Search Readiness | 5% | 71 | 3.6 |
+| **Gesamt** | | | **78 / 100** |
 
 ---
 
-## Content Quality
+## 1. Technical SEO — 82/100
 
-### Wortanzahl pro Seite
-| Seite | Wörter | Bewertung |
-|-------|--------|-----------|
-| Startseite | ~2.100 | ✅ Gut |
-| Lösungen | ~1.800 | ✅ Gut |
-| HiveMind | ~1.950 | ✅ Gut |
-| Über uns | ~2.100 | ✅ Gut |
-| AI-Ready-Check | ~900 | ⚠️ Formular-lastig, OK |
-| EU AI Act | ~2.100+ | ✅ Sehr gut |
+### robots.txt ✅ Exzellent
+- Erlaubt alle gängigen Crawler + explizit AI-Bots: GPTBot, OAI-SearchBot, ClaudeBot, Perplexity, Bytespider, cohere-ai
+- Blockiert CCBot (Training-Scraper) — strategisch korrekt
+- Verweist korrekt auf sitemap.xml
 
-### E-E-A-T (Experience, Expertise, Authoritativeness, Trustworthiness)
-- **Experience:** ✅ Founder-Story aus persönlicher Unternehmenserfahrung
-- **Expertise:** ✅ Person-Schema mit Credentials; EU AI Act Compliance-Seite
-- **Authoritativeness:** ⚠️ Keine externen Verlinkungen auf Cittasana; kein Wikipedia-Eintrag
-- **Trustworthiness:** ✅ Vollständige Rechtsseiten; keine Cookies; DSGVO-konform; Preistransparenz
+### sitemap.xml ⚠️ Lücken
+- 6 von 8 Seiten enthalten — `/impressum` und `/datenschutz` fehlen
+- Keine `<priority>` oder `<changefreq>` Werte gesetzt
+- Fix: Beide Seiten mit `<changefreq>never</changefreq>` ergänzen
 
-### Thin Content
-Keine Seite hat dünnen Inhalt — alle Kernseiten >900 Wörter.
+### Canonicals ✅ Korrekt
+- Alle 8 Seiten haben HTTPS-Canonical-Tags
+- Keine Duplicate-Content-Signale, konsistente Trailing-Slashes
 
-### Duplicate Content
-Kein Duplicate Content erkannt. Alle Canonicals eindeutig.
+### Security Headers ✅ Enterprise-Grade (`vercel.json`)
+- `X-Content-Type-Options: nosniff`
+- `X-Frame-Options: SAMEORIGIN`
+- `Referrer-Policy: strict-origin-when-cross-origin`
+- `Permissions-Policy: camera=(), microphone=(), geolocation=()`
+
+### Performance-Signale
+- ✅ Keine externen Analytics/Pixel-Scripts
+- ✅ Self-hosted Fonts (`/fonts/fonts.css`)
+- ⚠️ Tailwind via CDN (Produktion: besser PostCSS-Build)
+- ⚠️ Kein `srcset` / `loading="lazy"` auf Bilder
 
 ---
 
-## On-Page SEO
+## 2. Content Quality — 72/100
+
+### E-E-A-T
+
+| Signal | Status |
+|--------|--------|
+| Expertise: Gründer-Bio, konkrete Metriken in Cases | ✅ |
+| Experience: Persönliche Unternehmenserfahrung | ✅ |
+| Authoritativeness: Keine Medienerwähnungen, kein LinkedIn-Link | ⚠️ |
+| Trustworthiness: DSGVO-Seite, EU AI Act, transparente Preise | ✅ |
+
+### Content-Tiefe
+
+| Seite | Ca. Wörter | Status |
+|-------|-----------|--------|
+| / | ~800 | ✅ |
+| /hivemind | ~900 | ✅ |
+| /loesungen | ~1.100 (6 Produkte ÷ = ~183/Produkt) | ⚠️ Zu dünn |
+| /ai-ready-check | ~600 | ✅ |
+| /ueber-uns | ~700 | ⚠️ H1 ohne Keywords |
+| /eu-ai-act | ~500 | ⚠️ Könnte tiefer sein |
+| /impressum | ~200 | ✅ Korrekt (legal) |
+| /datenschutz | ~1.200 | ✅ |
+
+### Keyword-Lücken
+- Keine generischen Keywords für Produkte (z.B. "invoice automation software")
+- Long-tail fehlend: "Prozessautomatisierung Handwerk", "KI für kleine Unternehmen"
+- Keine Vergleichs-Inhalte ("HiveMind vs. Notion AI", "Cittasana vs. Zapier")
+
+---
+
+## 3. On-Page SEO — 79/100
 
 ### Title Tags
-| Seite | Zeichen | Status |
+
+| Seite | Länge | Grade |
+|-------|-------|-------|
+| / | 62 Zeichen | A |
+| /hivemind | 75 Zeichen | A |
+| /loesungen | 70 Zeichen | A |
+| /ai-ready-check | 64 Zeichen | A |
+| /ueber-uns | 80 Zeichen | A |
+| /eu-ai-act | 42 Zeichen | B |
+| /impressum | 29 Zeichen | C — zu kurz |
+| /datenschutz | 42 Zeichen | C — zu generisch |
+
+### H1-Probleme
+- `/ueber-uns` H1: "Nicht weil der Markt es hergab. Sondern weil wir daran glauben." → ❌ Null Keywords
+- `/loesungen` H1: Benefit-fokussiert, kein generisches Keyword
+
+### Interne Verlinkung ⚠️ Schwachpunkt
+- /loesungen: Alle 6 Produkt-CTAs zeigen auf /ai-ready-check — keine Quervernetzung
+- /hivemind: Nur 2 interne CTAs — keine "Ähnliche Lösungen"-Sektion
+- Empfehlung: 3–5 kontextuelle interne Links pro Seite
+
+---
+
+## 4. Schema / Structured Data — 68/100
+
+### Vorhandene Schemas
+
+| Seite | Schemas | Status |
 |-------|---------|--------|
-| Startseite: "KI-Automatisierung für den Mittelstand \| Cittasana AI" | 56 | ✅ Optimal |
-| Lösungen: "KI-Automatisierungslösungen für den Mittelstand \| Cittasana AI" | 62 | ⚠️ +2 Zeichen |
-| HiveMind: "HiveMind — KI-Wissensmanagement für den Mittelstand \| Cittasana AI" | 65 | ⚠️ +5 Zeichen |
-| Über uns: "Über uns — Cosmo Gräf & Cittasana AI \| KI-Automatisierung Mittelstand" | 69 | ⚠️ +9 Zeichen |
-| AI-Check: "Kostenloser AI-Ready-Check für Unternehmen \| Cittasana AI" | 56 | ✅ Optimal |
-| EU AI Act: "EU AI Act Konformität \| Cittasana AI" | 35 | ⚠️ Zu kurz |
+| / | Organization, WebSite, FAQPage | ✅ |
+| /hivemind | SoftwareApplication, FAQPage | ✅ (FAQPage neu) |
+| /loesungen | ItemList | ✅ |
+| /ai-ready-check | Service | ✅ |
+| /ueber-uns | Person | ⚠️ Unvollständig |
+| /eu-ai-act | FAQPage | ✅ |
 
-### Meta Descriptions
-| Seite | Zeichen | Status |
-|-------|---------|--------|
-| Startseite | 192 | 🔴 Zu lang (+32) |
-| Lösungen | 168 | 🔴 Zu lang (+8) |
-| HiveMind | 185 | 🔴 Zu lang (+25) |
-| Über uns | 200 | 🔴 Zu lang (+40) |
-| AI-Check | 204 | 🔴 Zu lang (+44) |
-| EU AI Act | 150 | ✅ Optimal |
+### Fehlende Schemas (nach Priorität)
+1. **BreadcrumbList** — alle Unterseiten → fehlt komplett (Critical)
+2. **WebPage** mit `datePublished`/`dateModified` — alle Content-Seiten (Medium)
+3. **Product-Schema** — für einzelne Lösungen mit `offers`, `featureList` (Medium)
+4. **sameAs** in Organization + Person Schema (LinkedIn-Link) (High)
 
-### H1-Tags
-Alle 6 Indexseiten: genau 1 H1 ✅
-
-### H2/H3-Hierarchie
-- Alle Seiten: logische H1→H2→H3-Kette ✅
-- Auf Lösungsseite: H5-Tags für Fehler-Liste — empfohlen H3 verwenden ⚠️
-- Fragebasierte Überschriften: vorhanden auf HiveMind ("Häufige Fragen") und Lösungen ✅
-
-### Interne Verlinkung
-- Alle Hauptseiten über Nav erreichbar ✅
-- Konsistente Footer-Navigation ✅
-- AI-Ready-Check als CTA auf jeder Seite ✅
-- EU AI Act nur in Footer/Nav verlinkt (strategische Unterseite — könnte prominenter sein)
-
-### Open Graph
-| Seite | og:title | og:description | og:image |
-|-------|----------|----------------|----------|
-| Startseite | ✅ | ✅ | 🔴 404! |
-| Lösungen | ✅ | ✅ | ❌ Fehlt |
-| HiveMind | ✅ | ✅ | ❌ Fehlt |
-| Über uns | ✅ | ✅ | ❌ Fehlt |
-| AI-Check | ✅ | ✅ | ❌ Fehlt |
-| EU AI Act | ✅ | ✅ | ❌ Fehlt |
+### Validierungsprobleme
+- Organization: `sameAs`, `foundingDate`, `numberOfEmployees` fehlen
+- Person (Cosmo): `image`-URL und `sameAs` fehlen
+- SoftwareApplication (HiveMind): `aggregateRating`, `featureList` fehlen
+- FAQ-Antworten: Durchschnittlich unter 50 Wörter → zu kurz für AI Overview
 
 ---
 
-## Schema & Structured Data ✅
+## 5. Performance — 85/100
 
-| Seite | Schema-Typen | Bewertung |
-|-------|-------------|-----------|
-| Startseite | Organization, WebSite, FAQPage | ✅ Exzellent |
-| Lösungen | ItemList | ✅ Gut |
-| HiveMind | SoftwareApplication (mit Pricing) | ✅ Sehr gut |
-| Über uns | Person (Cosmo Gräf) | ✅ Gut |
-| AI-Check | Service | ✅ Gut |
-| EU AI Act | TechArticle, FAQPage | ✅ Sehr gut |
+**Positive Signale:**
+- Vercel Edge-CDN, automatische Komprimierung
+- Keine Third-Party-Scripts (Analytics, Pixel)
+- Minimales JavaScript (nur AI-Check-Formular)
 
-**Fehlend:**
-- HiveMind: FAQPage-Schema (FAQ-Sektion ist da, Schema noch nicht eingebaut)
-- Alle Seiten: BreadcrumbList
-- Person-Schema: sameAs-Links (LinkedIn, GitHub) fehlen
+**Optimierungspotenzial:**
+- Tailwind via CDN → PostCSS-Build für Produktion empfohlen
+- Kein `srcset` für Cosmo-Bilder
+- Kein `loading="lazy"` auf below-fold Bilder
 
----
-
-## Performance
-
-### HTTP Response Headers
-- Cache-Control: `public, max-age=0, must-revalidate` — Vercel CDN cachet, re-validiert bei Änderung ✅
-- Server: Vercel (Frankfurt, EU) — geringer Latenz für DACH ✅
-- ETag vorhanden ✅
-
-### Render-Blocking Resources
-- Tailwind CSS via CDN — lädt synchron, könnte LCP verlangsamen ⚠️
-- Google Fonts via CDN — blocking render bis Schriften geladen ⚠️
-- Empfehlung: Schriften self-hosten + `font-display: swap`
-
-### JavaScript
-- Kein schweres JS-Framework (kein React, kein Next.js) ✅
-- Nur Tailwind CDN + minimales Inline-JS für Formular ✅
-- Erwartet sehr gute CWV-Scores
+**Geschätzte Core Web Vitals:**
+- LCP: ~1.2–1.5s (gut)
+- CLS: Sehr niedrig (Grid-Layout)
+- INP: Sehr niedrig (minimales JS)
 
 ---
 
-## Images 🔴
+## 6. Images — 88/100
 
-**Kritischer Befund: Keine echten Bilder auf der gesamten Website.**
+### OG-Images ✅ Vollständig
 
-| Problem | Seiten | Impact |
-|---------|--------|--------|
-| `og-image.png` → 404 | Startseite (og:image referenziert) | 🔴 Hoch |
-| Kein Gründerfoto | Startseite, Über uns, AI-Check | 🔴 Hoch |
-| Keine Produkt-Screenshots | Lösungen, HiveMind | 🟠 Mittel |
-| Alle Bildplatzhalter via CSS | Alle Seiten | 🟠 Mittel |
+| Seite | Datei | Status |
+|-------|-------|--------|
+| / | images/og-home.png | ✅ 1200×630 |
+| /hivemind | images/og-hivemind.png | ✅ 1200×630 |
+| /loesungen | images/og-loesungen.png | ✅ 1200×630 |
+| /ai-ready-check | images/og-ai-check.png | ✅ 1200×630 |
+| /ueber-uns | images/og-ueber-uns.png | ✅ 1200×630 |
 
-Alt-Text: Nicht anwendbar (keine `<img>`-Tags) — aber sobald Bilder ergänzt werden, zwingend erforderlich.
-
----
-
-## AI Search Readiness
-
-- robots.txt: Alle AI-Crawler erlaubt ✅
-- llms.txt: Vorhanden, strukturiert ✅
-- Schema-Abdeckung: 6/6 Indexseiten ✅
-- SSR: 100% statisches HTML ✅
-- FAQ-Schema auf 3 Seiten ✅
-- Gründergeschichte (GEO-Kandidat, ~140 Wörter) ✅
-- Wikipedia/Reddit-Präsenz: ❌ Fehlt (größte GEO-Lücke)
+### In-Content
+- ✅ Alt-Text auf allen Cosmo-Bildern korrekt
+- ⚠️ Keine Produkt-Screenshots oder Workflow-Diagramme
+- ⚠️ Kein `loading="lazy"` auf below-fold Bilder
 
 ---
 
-## Vollständige Befunde — Rechtliches
+## 7. AI Search Readiness — 71/100
 
-**Impressum:**
-- Platzhalter noch offen: `<!-- CUI EINTRAGEN -->`, `<!-- J-NUMMER EINTRAGEN -->`, `<!-- UST-ID EINTRAGEN -->`
-- Rechtlich kritisch — Bußgeldrisiko bei Abmahnung ohne vollständige Registerangaben
+**Stärken:**
+- robots.txt für alle AI-Crawler offen
+- FAQPage-Schema auf 3 Seiten
+- Konkrete Metriken in Case Studies (zitierbar)
+
+**Schwächen:**
+- llms.txt nicht von HTML-Seiten verlinkt
+- FAQ-Antworten zu kurz (100–150 Wörter ideal)
+- Keine Autor-Attribution (`<meta name="author">`) auf Content-Seiten
+- Kein `sameAs` für externe Verifikation
+
+---
+
+## Per-Page Scores
+
+| Seite | Score | Größte Stärke | Größte Lücke |
+|-------|-------|---------------|--------------|
+| / | 82 | Value Prop, Schema | Interne Verlinkung |
+| /hivemind | 79 | FAQ-Schema, Preise | Kein Wettbewerbsvergleich |
+| /loesungen | 71 | Case Studies | Dünne Produktbeschreibungen |
+| /ai-ready-check | 84 | Conversion-UX | Keine sichtbare FAQ |
+| /ueber-uns | 75 | Gründerstory | H1 ohne Keywords |
+| /eu-ai-act | 76 | Transparenz | Inhalt könnte tiefer sein |
+| /impressum | 88 | Rechtlich korrekt | Generic Title |
+| /datenschutz | 87 | DSGVO-Muster | Kein Inhaltsverzeichnis |
+
+---
+
+*Audit generiert am 2026-04-10*

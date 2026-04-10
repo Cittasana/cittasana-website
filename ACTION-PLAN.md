@@ -1,166 +1,243 @@
 # SEO Action Plan — ai.cittasana.de
-**Stand: 10. April 2026 | Score: 71/100 → Ziel: 85/100**
+**Stand: 2026-04-10 | Score: 78/100 → Ziel: 88/100**
 
 ---
 
-## 🔴 KRITISCH — Sofort beheben
+## CRITICAL — Sofort (< 2 Stunden gesamt, alle "S" Effort)
 
-### 1. og-image.png erstellen (404-Fehler)
-Die Startseite referenziert `https://ai.cittasana.de/og-image.png` — Datei existiert nicht.
-Jeder Social-Share (LinkedIn, WhatsApp, Twitter) zeigt kein Vorschaubild.
+### 1. BreadcrumbList-Schema auf allen Unterseiten ergänzen
+- **Problem:** Kein Breadcrumb-Schema → Google zeigt keine Sitelink-Navigation in SERPs
+- **Impact:** 5–10% CTR-Verbesserung möglich
+- **Effort:** S
+- **Dateien:** loesungen/, hivemind/, ai-ready-check/, ueber-uns/, eu-ai-act/ — je `index.html` im `<head>`
 
-**Fix:**
-- 1200×630px PNG/WebP erstellen (Canva, Figma, etc.)
-- Als `og-image.png` in Root des Repos ablegen
-- Auf allen Unterseiten ebenfalls referenzieren (derzeit 5 Seiten ohne og:image)
-
----
-
-### 2. Gründerfoto einbauen
-3 Seiten haben CSS-Platzhalter ("CG"-Initials-Avatar). Echte Fotos sind für E-E-A-T und Conversion entscheidend.
-
-**Fix:** Professionelles Foto (400×400px, WebP) als `/images/cosmo-graef.jpg` ablegen:
 ```html
-<img src="/images/cosmo-graef.jpg"
-     alt="Cosmo Gräf, Gründer von Cittasana AI"
-     width="288" height="288"
-     class="w-72 h-72 rounded-full object-cover border border-outline" />
-```
-Auf: Startseite, Über uns, AI-Ready-Check.
-
----
-
-## 🟠 HOCH — Diese Woche
-
-### 3. Security Headers in vercel.json
-
-```json
-{
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
-      ]
-    }
-  ]
-}
-```
-
----
-
-### 4. Meta-Descriptions kürzen (5 Seiten zu lang)
-
-| Seite | Aktuell | Gekürzt auf |
-|-------|---------|-------------|
-| Startseite (192 Z.) | "Cittasana AI automatisiert repetitive Prozesse für Unternehmen mit 10–50 Mitarbeitern. Von Dokumentensuche bis Workflow-Automatisierung. Kostenloser AI-Ready-Check — 5 Plätze pro Monat." | "KI-Automatisierung für den Mittelstand. Workflows, Dokumentensuche, HiveMind-Wissensmanagement. Kostenloser AI-Ready-Check — 5 Plätze/Monat." (138 Z.) |
-| Lösungen (168 Z.) | Aktuell | "Sechs fertige KI-Lösungen für Unternehmen mit 10–50 MA: AutoFlow, InvoiceBot, HiveMind und mehr. In Wochen live, nicht Monaten." (129 Z.) |
-| HiveMind (185 Z.) | Aktuell | "HiveMind verbindet Dokumente, Slack und E-Mails zu einem KI-Assistenten. Semantische Suche, Auto-Connectors, KI-Agenten. Ab €149/Monat." (136 Z.) |
-| Über uns (200 Z.) | Aktuell | "Cittasana AI — gegründet von Cosmo Gräf aus eigener Unternehmenserfahrung. Kein Account-Manager. Sie sprechen immer mit dem Entwickler." (138 Z.) |
-| AI-Check (204 Z.) | Aktuell | "Kostenloser AI-Ready-Check: 20 Minuten, konkrete Automatisierungspotenziale, Umsetzungsplan ohne Kaufverpflichtung. 5 Plätze/Monat." (133 Z.) |
-
----
-
-### 5. Impressum Pflichtangaben ausfüllen
-Abmahnrisiko solange CUI und J-Nummer fehlen.
-
-```
-CUI (Codul Unic de Înregistrare): [beim Registrul Comerțului abrufen]
-Nr. Reg. Com. (J-Nummer): [beim Oficiul Registrului Comerțului abrufen]
-UST-ID: [bei ANSPDCP oder Steuerbehörde beantragen, sofern pflichtig]
-```
-
----
-
-## 🟡 MITTEL — Diesen Monat
-
-### 6. Google Fonts selbst hosten
-Eliminiert US-Datentransfer (DSGVO-Grauzone) und verbessert LCP.
-
-```bash
-# Schriften herunterladen: https://gwfh.mranftl.com/fonts
-# Newsreader + Manrope als woff2 in /fonts/ ablegen
-```
-In CSS ersetzen:
-```css
-@font-face {
-  font-family: 'Manrope';
-  src: url('/fonts/manrope.woff2') format('woff2');
-  font-display: swap;
-}
-```
-
----
-
-### 7. HiveMind FAQ-Schema ergänzen
-Die FAQ-Sektion ist vorhanden, das Schema fehlt noch.
-
-```json
+<!-- BreadcrumbList Schema — in <head> einfügen -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    { "@type": "Question", "name": "Müssen wir bestehende Systeme ersetzen?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Nein. HiveMind verbindet sich mit Ihren bestehenden Tools..." } },
-    { "@type": "Question", "name": "Wie sicher sind unsere Daten?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Alle Daten liegen auf EU-Servern (Frankfurt). DSGVO-konform, kein Training auf Kundendaten." } }
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ai.cittasana.de/" },
+    { "@type": "ListItem", "position": 2, "name": "SEITENNAME", "item": "https://ai.cittasana.de/SLUG" }
   ]
+}
+</script>
+```
+
+Konkrete Werte pro Seite:
+- /loesungen → "Lösungen" / `/loesungen`
+- /hivemind → "HiveMind" / `/hivemind`
+- /ai-ready-check → "AI-Ready-Check" / `/ai-ready-check`
+- /ueber-uns → "Über uns" / `/ueber-uns`
+- /eu-ai-act → "EU AI Act" / `/eu-ai-act`
+
+---
+
+### 2. llms.txt von allen Seiten verlinken
+- **Problem:** `/llms.txt` existiert, aber AI-Crawler finden sie nicht zuverlässig ohne HTML-Referenz
+- **Impact:** Direkte Verbesserung der AI-Suchsichtbarkeit
+- **Effort:** S
+- **Aktion:** In `<head>` aller 8 HTML-Seiten nach `<meta charset>` einfügen:
+
+```html
+<link rel="alternate" type="text/plain" href="/llms.txt" />
+```
+
+---
+
+### 3. sitemap.xml — /impressum und /datenschutz ergänzen
+- **Problem:** 2 Seiten fehlen in der Sitemap
+- **Effort:** S
+- **Datei:** `sitemap.xml` — vor `</urlset>` einfügen:
+
+```xml
+<url>
+  <loc>https://ai.cittasana.de/impressum</loc>
+  <lastmod>2026-04-10</lastmod>
+  <changefreq>never</changefreq>
+</url>
+<url>
+  <loc>https://ai.cittasana.de/datenschutz</loc>
+  <lastmod>2026-04-10</lastmod>
+  <changefreq>never</changefreq>
+</url>
+```
+
+---
+
+### 4. WebPage-Schema mit Datum auf Content-Seiten
+- **Problem:** Nur /eu-ai-act hat `datePublished`/`dateModified` — Google wertet Freshness
+- **Effort:** S
+- **Dateien:** index.html, loesungen/, hivemind/, ai-ready-check/, ueber-uns/
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "datePublished": "2026-04-01",
+  "dateModified": "2026-04-10"
 }
 </script>
 ```
 
 ---
 
-### 8. Person-Schema: sameAs ergänzen
+### 5. Title Tags für Impressum und Datenschutz verbessern
+- **Problem:** "Impressum | Cittasana AI" (29 Zeichen) zu kurz und generisch
+- **Effort:** S
+- **Fixes:**
+  - `impressum/index.html` Zeile 6: → `"Impressum — Cittasana S.R.L. | KI-Automatisierung, Frankfurt"`
+  - `datenschutz/index.html` Zeile 6: → `"Datenschutzerklärung — Kein Tracking, DSGVO-konform | Cittasana AI"`
+
+---
+
+## HIGH — Diese Woche (Woche 1–2)
+
+### 6. FAQ-Antworten auf 100+ Wörter erweitern
+- **Problem:** Google AI Overview und "People also ask" bevorzugen ausführliche Antworten (100–150 Wörter)
+- **Impact:** Hoch — direkte Sichtbarkeit in AI-generierten Suchergebnissen
+- **Effort:** M
+- **Dateien:**
+  - `index.html` — 3 FAQs im JSON-LD (Zeilen 51–74)
+  - `hivemind/index.html` — 5 FAQs im JSON-LD (Zeilen 44–85)
+  - `eu-ai-act/index.html` — 3 FAQs im JSON-LD
+
+**Beispiel-Erweiterung (hivemind — "Müssen wir bestehende Systeme ersetzen?"):**
+
+Vorher (40 Wörter):
+> "Nein. HiveMind verbindet sich mit Ihren bestehenden Tools — es ersetzt nichts, es verbindet. Slack, Gmail, Drive, Notion bleiben wie sie sind."
+
+Nachher (120 Wörter):
+> "Nein — HiveMind ist ein Add-on, kein Ersatz. Das System verbindet sich via API mit Ihren bestehenden Tools und liest Daten aus, ohne etwas zu verändern. Slack-Kanäle, Gmail-Postfächer, Google Drive-Ordner, Notion-Workspaces und GitHub-Repositories bleiben exakt so wie sie sind. Ihre Mitarbeiter arbeiten weiterhin in den gewohnten Tools. HiveMind läuft im Hintergrund, synchronisiert automatisch und macht alle Inhalte über eine einzige Suchoberfläche zugänglich. Die Einrichtung der Connectors übernehmen wir vollständig — kein IT-Aufwand auf Ihrer Seite. Im Starter-Plan beginnen wir mit manuellem Dokumenten-Upload; im Business-Plan laufen alle 6 Auto-Connectors automatisch."
+
+---
+
+### 7. sameAs und foundingDate in Organization-Schema ergänzen
+- **Problem:** Schema ohne `sameAs` → Google kann Entität nicht mit externen Quellen verknüpfen
+- **Effort:** S
+- **Datei:** `index.html` — Organization-Schema erweitern:
+
 ```json
-{
-  "@type": "Person",
-  "name": "Cosmo Gräf",
-  "sameAs": [
-    "https://www.linkedin.com/in/[your-profile]",
-    "https://github.com/[your-github]"
-  ]
-}
+"sameAs": [
+  "https://www.linkedin.com/company/cittasana-ai"
+],
+"foundingDate": "2024",
+"numberOfEmployees": { "@type": "QuantitativeValue", "value": 1 }
 ```
 
 ---
 
-### 9. EU AI Act Title Tag verlängern
-Aktuell: "EU AI Act Konformität | Cittasana AI" (35 Z.)
-Empfohlen: "EU AI Act Konformität & KI-Transparenz | Cittasana AI" (52 Z.)
+### 8. Person-Schema für Cosmo Gräf vervollständigen
+- **Problem:** `image` und `sameAs` fehlen → AI-Crawler können Founder-Entität nicht verifizieren
+- **Effort:** S
+- **Datei:** `ueber-uns/index.html` — Person-Schema (Zeile 22):
+
+```json
+"image": "https://ai.cittasana.de/images/cosmo-graef.jpg",
+"sameAs": ["https://www.linkedin.com/in/cosmo-graef"]
+```
 
 ---
 
-### 10. H5-Tags auf Lösungsseite zu H3 hochstufen
-"5 Fehler die KI-Projekte scheitern lassen" verwendet H5 — sollte H3 sein für korrekte Hierarchie.
+## MEDIUM — Nächste 2–4 Wochen
+
+### 9. Produktbeschreibungen auf /loesungen auf 300+ Wörter erweitern
+- **Problem:** 183 Wörter pro Produkt im Durchschnitt — SEO-Minimum sind 300
+- **Impact:** Hoch (Keyword-Rankings, Verweildauer, Bounce Rate)
+- **Effort:** L (3–4 Stunden gesamt)
+- **Datei:** `loesungen/index.html` — 6 Produktkarten (Zeilen 120–254)
+
+Pro Produkt ergänzen:
+- Technische Anforderungen / Integrationen
+- Konkreter Anwendungsfall (Branche)
+- Typischer ROI / Zeitersparnis
+- DSGVO / Compliance-Hinweis
 
 ---
 
-## 📋 NIEDRIG — Backlog
-
-| # | Maßnahme | Aufwand |
-|---|----------|---------|
-| 11 | hreflang für AT + CH ergänzen (wenn DACH-Targeting) | Niedrig |
-| 12 | BreadcrumbList-Schema auf allen Seiten | Niedrig |
-| 13 | Produkt-Screenshots für Lösungsseite | Mittel |
-| 14 | Wikipedia-Stub Cosmo Gräf / Cittasana | Hoch |
-| 15 | Reddit-Präsenz aufbauen | Hoch |
-| 16 | YouTube-Kanal (stärkster AI-Citation-Faktor: 0.737 Korrelation) | Hoch |
+### 10. Interne Verlinkung verbessern
+- **Problem:** /loesungen verlinkt alle CTAs nur auf /ai-ready-check, keine Quervernetzung
+- **Effort:** M
+- **Empfehlungen:**
+  - /hivemind → Link zu /loesungen ("Weitere KI-Lösungen für Ihren Betrieb")
+  - /loesungen → Link zu /ueber-uns ("Alle Systeme werden von Cosmo Gräf persönlich gebaut")
+  - /ai-ready-check → Link zu /hivemind ("Sehen Sie HiveMind live in Aktion")
+  - Homepage → Link zu /eu-ai-act ("EU AI Act konform seit 2026")
 
 ---
 
-## Score-Prognose nach Umsetzung
+### 11. H1 auf /ueber-uns mit Keywords versehen
+- **Problem:** H1 "Nicht weil der Markt es hergab..." enthält null Keywords
+- **Effort:** S
+- **Datei:** `ueber-uns/index.html`
+- **Vorschlag:** Subtitle nach H1 ergänzen:
 
-| Phase | Maßnahmen | Erwarteter Score |
-|-------|-----------|-----------------|
-| Jetzt | 71/100 | — |
-| Nach Phase 1 (Kritisch) | #1–2 | +5 → 76/100 |
-| Nach Phase 2 (Hoch) | #3–5 | +5 → 81/100 |
-| Nach Phase 3 (Mittel) | #6–10 | +4 → 85/100 |
-| Nach Phase 4 (Niedrig + Brand) | #11–16 | +7 → 92/100 |
+```html
+<h1 ...>Nicht weil der Markt es hergab.<br/>Sondern weil wir daran glauben.</h1>
+<p class="text-primary ...">KI-Automatisierung für den Mittelstand — gegründet von Cosmo Gräf</p>
+```
+
+---
+
+### 12. E-E-A-T auf /ueber-uns stärken
+- **Problem:** Gründerstory überzeugend, aber keine Drittpartei-Validierung
+- **Effort:** M (abhängig von Verfügbarkeit der Inhalte)
+- **Ergänzungen:**
+  - 2–3 anonymisierte Kunden-Testimonials (mit Rolle/Unternehmensgröße)
+  - Zertifizierungen oder Partnerschaften (falls vorhanden)
+  - LinkedIn-Profil-Link (falls öffentlich)
+
+---
+
+## LOW — Backlog (Monat 2–3)
+
+### 13. Vergleichs-Content ergänzen
+- "HiveMind vs. Notion AI" / "Cittasana vs. Zapier / Make.com"
+- Captures comparison-searches, positioniert als thought leader
+- **Effort:** M
+
+### 14. Produkt-Screenshots und Workflow-Diagramme
+- Keine visuellen Beweise der Produktinterfaces vorhanden
+- **Effort:** L (4–6 Stunden pro Produkt)
+
+### 15. Blog / Resource Section starten
+- 10+ Artikel über KI-Automatisierung im Mittelstand
+- Langfristiger organischer Traffic-Aufbau
+- **Effort:** L (ongoing)
+
+### 16. hreflang vorbereiten
+- Aktuell nicht nötig (nur DE), aber Template für zukünftige EN-Version bereit halten
+- **Effort:** S (wenn benötigt)
+
+---
+
+## Zusammenfassung
+
+| Priorität | Anzahl Items | Geschätzte Zeit | Erwarteter Score-Lift |
+|-----------|-------------|-----------------|----------------------|
+| Critical | 5 | ~2 Stunden | +4–5 Punkte |
+| High | 3 | ~3 Stunden | +3–4 Punkte |
+| Medium | 4 | ~6 Stunden | +2–3 Punkte |
+| Low | 4 | Ongoing | +1–2 Punkte |
+
+**Realistisches Ziel nach Critical + High:** 85–86 / 100
+
+---
+
+## Quick-Win-Checkliste (1 Tag)
+
+- [ ] BreadcrumbList-Schema auf 5 Unterseiten
+- [ ] llms.txt-Link auf alle 8 Seiten
+- [ ] sitemap.xml um /impressum und /datenschutz ergänzen
+- [ ] WebPage-Schema mit Datum auf 5 Seiten
+- [ ] Title Tags für Impressum und Datenschutz
+- [ ] sameAs + foundingDate in Organization-Schema
+- [ ] Person-Schema image + sameAs für Cosmo
+
+**Geschätzte Gesamtzeit für Quick Wins: 2–3 Stunden**
+
+---
+
+*Erstellt am 2026-04-10*
