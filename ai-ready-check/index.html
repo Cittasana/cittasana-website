@@ -217,8 +217,8 @@
               <input class="form-field" type="text" id="company" name="company" placeholder="Mustermann GmbH" />
             </div>
             <div>
-              <label class="form-label" for="phone">Telefonnummer</label>
-              <input class="form-field" type="tel" id="phone" name="phone" placeholder="+49 123 456789" />
+              <label class="form-label" for="phone">Telefonnummer *</label>
+              <input class="form-field" type="tel" id="phone" name="phone" placeholder="+49 123 456789" required />
             </div>
             <div>
               <label class="form-label" for="industry">Branche</label>
@@ -369,10 +369,11 @@
 
     const name      = form.name.value.trim();
     const email     = form.email.value.trim();
+    const phone     = form.phone.value.trim();
     const challenge = form.challenge.value.trim();
 
-    if (!name || !email || !challenge) {
-      errEl.textContent = 'Bitte füllen Sie alle Pflichtfelder aus (Name, E-Mail, Herausforderung).';
+    if (!name || !email || !phone || !challenge) {
+      errEl.textContent = 'Bitte füllen Sie alle Pflichtfelder aus (Name, E-Mail, Telefonnummer, Herausforderung).';
       errEl.classList.remove('hidden');
       return;
     }
@@ -385,7 +386,7 @@
       source:   'website',
       name,
       email,
-      phone:    form.phone.value.trim()    || null,
+      phone,
       company:  form.company.value.trim()  || null,
       interest: form.industry.value.trim() || null,
       message:  challenge
