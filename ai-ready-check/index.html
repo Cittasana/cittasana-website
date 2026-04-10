@@ -236,7 +236,7 @@
             AI-Check anfragen →
           </button>
           <p class="text-on-surface-faint text-xs mt-4 text-center">
-            Nach dem Absenden: persönliche Antwort von Cosmo innerhalb von 48h. Kein automatisierter Funnel.
+            Nach dem Absenden: persönliche Antwort innerhalb von 48h. Kein automatisierter Funnel.
           </p>
         </form>
 
@@ -245,10 +245,10 @@
           <div class="border border-primary-border bg-primary-subtle p-10 text-center">
             <p class="serif-italic text-4xl text-primary font-light mb-4">Danke.</p>
             <p class="text-on-surface-dim text-sm leading-relaxed mb-4">
-              Ihre Anfrage ist angekommen. Cosmo meldet sich persönlich innerhalb von 48 Stunden — mit einem konkreten Terminvorschlag.
+              Ihre Anfrage ist angekommen. Unser Team meldet sich innerhalb von 48 Stunden — mit einem konkreten Terminvorschlag.
             </p>
             <p class="text-on-surface-faint text-xs">
-              Kein automatisierter Funnel. Kein Pitch. Eine echte Antwort.
+              Kein automatisierter Funnel. Eine echte Antwort.
             </p>
           </div>
         </div>
@@ -306,7 +306,7 @@
              class="text-primary hover-amber text-sm font-semibold">
             office@cittasana.de →
           </a>
-          <p class="text-on-surface-faint text-xs mt-1">Ich antworte persönlich — in der Regel innerhalb von 24 Stunden.</p>
+          <p class="text-on-surface-faint text-xs mt-1">Unser Team antwortet innerhalb von 24 Stunden.</p>
         </div>
       </div>
 
@@ -334,20 +334,19 @@
 </footer>
 
 <script>
-  const SUPABASE_URL = 'https://mhwrxmbsislnshyhsqrx.supabase.co';
-  const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1od3J4bWJzaXNsbnNoeWhzcXJ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU3NjI2NDgsImV4cCI6MjA5MTMzODY0OH0.4vXjgEipecXfcHy-2wJP8YiUHSVABszXhSZGT0QjySU';
+  const CRM_WEBHOOK = 'https://zaielgrkpqxaxipwoozh.supabase.co/functions/v1/new-lead';
 
   document.getElementById('check-form').addEventListener('submit', async function(e) {
     e.preventDefault();
 
-    const form = e.target;
-    const btn  = document.getElementById('submit-btn');
+    const form  = e.target;
+    const btn   = document.getElementById('submit-btn');
     const errEl = document.getElementById('form-error');
 
-    // Basic validation
     const name      = form.name.value.trim();
     const email     = form.email.value.trim();
     const challenge = form.challenge.value.trim();
+
     if (!name || !email || !challenge) {
       errEl.textContent = 'Bitte füllen Sie alle Pflichtfelder aus (Name, E-Mail, Herausforderung).';
       errEl.classList.remove('hidden');
@@ -359,23 +358,18 @@
     btn.textContent = 'Wird gesendet...';
 
     const payload = {
+      source:   'website',
       name,
       email,
-      company:   form.company.value.trim()   || null,
-      industry:  form.industry.value.trim()  || null,
-      challenge,
-      source: 'ai-ready-check'
+      company:  form.company.value.trim()  || null,
+      interest: form.industry.value.trim() || null,
+      message:  challenge
     };
 
     try {
-      const res = await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+      const res = await fetch(CRM_WEBHOOK, {
         method: 'POST',
-        headers: {
-          'Content-Type':  'application/json',
-          'apikey':        SUPABASE_ANON_KEY,
-          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-          'Prefer':        'return=minimal'
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
       });
 
