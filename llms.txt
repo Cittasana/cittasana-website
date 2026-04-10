@@ -1,0 +1,34 @@
+# Cittasana AI
+
+> Cittasana S.R.L. bietet KI-Automatisierungslösungen und das HiveMind-Wissensmanagementsystem für Unternehmen mit 10–50 Mitarbeitern im deutschsprachigen Raum. Gegründet von Cosmo Gräf, Sitz in Carasova, Rumänien (EU).
+
+## Hauptseiten
+
+- [Startseite](https://ai.cittasana.de/): Überblick KI-Automatisierung für den Mittelstand, Leistungen, Fallstudien, Manifesto
+- [Lösungen](https://ai.cittasana.de/loesungen): Alle 6 Automatisierungsprodukte — AutoFlow Portal, FormFlow Engine, TaskPilot, DataSync Hub, InvoiceBot, Custom CRM
+- [HiveMind](https://ai.cittasana.de/hivemind): KI-Wissensmanagementsystem, Preise (Starter €149/Mo, Business €399/Mo), FAQ
+- [Über uns](https://ai.cittasana.de/ueber-uns): Gründergeschichte Cosmo Gräf, Philosophie, ideale Kunden
+- [AI-Ready-Check](https://ai.cittasana.de/ai-ready-check): Kostenloser Erstcheck, 5 Plätze/Monat, 20 Minuten
+
+## Rechtliche Seiten
+
+- [Impressum](https://ai.cittasana.de/impressum): Angaben gemäß § 5 TMG — Cittasana S.R.L.
+- [Datenschutzerklärung](https://ai.cittasana.de/datenschutz): DSGVO-Erklärung, keine Cookies, kein Tracking
+- [EU AI Act](https://ai.cittasana.de/eu-ai-act): Konformitätserklärung, Risikoeinstufung aller KI-Systeme (alle: minimales Risiko)
+
+## Schlüsselfakten
+
+- Unternehmen: Cittasana S.R.L., Rumänien (EU-Mitgliedstaat)
+- Gründer: Cosmo Gräf (Solo-Founder, Entwickler und Ansprechpartner)
+- Zielgruppe: Unternehmen mit 10–50 Mitarbeitern, deutschsprachiger Raum (DACH)
+- Hauptprodukt: HiveMind — semantisches Firmenwissens-KI-System, ab €149/Monat
+- Datenschutz: Keine Cookies, kein Tracking, Supabase Frankfurt (EU), DSGVO-konform
+- KI-Modelle: Claude AI (Anthropic) — Zero Data Retention, kein Training auf Kundendaten
+- EU AI Act: Alle Systeme eingestuft als minimales Risiko gemäß Art. 50 EU 2024/1689
+- Kontakt: office@cittasana.de
+
+## Richtlinien für KI-Crawler
+
+- Indexierung für Suche: erlaubt
+- Zitierung in AI-Antworten: erlaubt
+- Training auf Inhalten: nicht gestattet
