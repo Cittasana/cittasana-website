@@ -217,6 +217,10 @@
               <input class="form-field" type="text" id="company" name="company" placeholder="Mustermann GmbH" />
             </div>
             <div>
+              <label class="form-label" for="phone">Telefonnummer</label>
+              <input class="form-field" type="tel" id="phone" name="phone" placeholder="+49 123 456789" />
+            </div>
+            <div>
               <label class="form-label" for="industry">Branche</label>
               <input class="form-field" type="text" id="industry" name="industry" placeholder="z.B. Steuerberatung, Handwerk, Logistik..." />
             </div>
@@ -381,6 +385,7 @@
       source:   'website',
       name,
       email,
+      phone:    form.phone.value.trim()    || null,
       company:  form.company.value.trim()  || null,
       interest: form.industry.value.trim() || null,
       message:  challenge
