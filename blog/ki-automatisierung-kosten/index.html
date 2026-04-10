@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+<head>
+<meta charset="utf-8"/>
+<link rel="alternate" type="text/plain" href="/llms.txt" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Was kostet KI-Automatisierung wirklich? Eine ehrliche ROI-Kalkulation | Cittasana AI</title>
+<meta name="description" content="Was kostet KI-Automatisierung für ein 20-Mann-Unternehmen wirklich? Einmalkosten, laufende Kosten, Break-Even — eine ehrliche Kalkulation ohne Schönrechnerei." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://ai.cittasana.de/blog/ki-automatisierung-kosten/" />
+
+<!-- Open Graph -->
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="Was kostet KI-Automatisierung wirklich? Eine ehrliche ROI-Kalkulation" />
+<meta property="og:description" content="Einmalkosten, laufende Kosten, Break-Even — eine ehrliche Kalkulation für ein 20-Mann-Unternehmen ohne Schönrechnerei." />
+<meta property="og:url"         content="https://ai.cittasana.de/blog/ki-automatisierung-kosten/" />
+<meta property="og:locale"      content="de_DE" />
+<meta property="og:image"       content="https://ai.cittasana.de/images/og-home.png" />
+<meta property="article:published_time" content="2026-04-10" />
+<meta property="article:modified_time"  content="2026-04-10" />
+<meta property="article:author"         content="Cosmo Gräf" />
+<meta property="article:section"        content="KI-Automatisierung" />
+
+<!-- Schema: Article -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Was kostet KI-Automatisierung wirklich? Eine ehrliche ROI-Kalkulation",
+  "description": "Einmalkosten, laufende Kosten, Break-Even — eine ehrliche Kalkulation für ein 20-Mann-Unternehmen ohne Schönrechnerei.",
+  "url": "https://ai.cittasana.de/blog/ki-automatisierung-kosten/",
+  "datePublished": "2026-04-10",
+  "dateModified": "2026-04-10",
+  "author": {
+    "@type": "Person",
+    "name": "Cosmo Gräf",
+    "jobTitle": "Gründer",
+    "url": "https://ai.cittasana.de/ueber-uns"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Cittasana AI",
+    "url": "https://ai.cittasana.de",
+    "logo": { "@type": "ImageObject", "url": "https://ai.cittasana.de/images/og-home.png" }
+  },
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://ai.cittasana.de/blog/ki-automatisierung-kosten/" },
+  "keywords": ["KI Automatisierung Kosten", "KI Mittelstand Kosten", "ROI KI", "Automatisierung Preis", "KI Investition"]
+}
+</script>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="/fonts/fonts.css" />
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "background":       "#0d0d12",
+          "surface":          "#111117",
+          "surface-low":      "#16161e",
+          "surface-mid":      "#1d1d26",
+          "surface-high":     "#24242f",
+          "on-surface":       "#e8e6f0",
+          "on-surface-dim":   "rgba(232,230,240,0.55)",
+          "on-surface-faint": "rgba(232,230,240,0.28)",
+          "primary":          "#f59e0b",
+          "primary-dim":      "#d97706",
+          "primary-subtle":   "rgba(245,158,11,0.08)",
+          "primary-border":   "rgba(245,158,11,0.2)",
+          "outline":          "rgba(255,255,255,0.07)",
+          "outline-med":      "rgba(255,255,255,0.12)",
+        },
+        fontFamily: {
+          headline: ["Newsreader", "serif"],
+          body:     ["Manrope", "sans-serif"],
+        },
+      },
+    },
+  }
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Manrope', sans-serif; background-color: #0d0d12; color: #e8e6f0; -webkit-font-smoothing: antialiased; }
+  .serif { font-family: 'Newsreader', serif; }
+  .serif-italic { font-family: 'Newsreader', serif; font-style: italic; }
+  .glass-nav { background: rgba(13,13,18,0.88); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+  .hover-amber { transition: color .2s, border-color .2s, background .2s; }
+  nav a, nav button { border-radius: 9999px; }
+  .btn { border-radius: 9999px; display: inline-block; }
+
+  /* Artikel-Typografie */
+  .prose h2 {
+    font-family: 'Newsreader', serif;
+    font-weight: 300;
+    font-size: 1.75rem;
+    line-height: 1.3;
+    color: #e8e6f0;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+  }
+  .prose h3 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #f59e0b;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+  }
+  .prose p {
+    color: rgba(232,230,240,0.75);
+    line-height: 1.8;
+    margin-bottom: 1.25rem;
+    font-size: 1.05rem;
+  }
+  .prose strong {
+    color: #e8e6f0;
+    font-weight: 600;
+  }
+  .prose ul {
+    margin-bottom: 1.25rem;
+    padding-left: 1.25rem;
+    list-style: none;
+  }
+  .prose ul li {
+    color: rgba(232,230,240,0.75);
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1.05rem;
+  }
+  .prose ul li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #f59e0b;
+    font-weight: 700;
+  }
+  .prose .callout {
+    border-left: 3px solid #f59e0b;
+    background: rgba(245,158,11,0.06);
+    border-radius: 0 12px 12px 0;
+    padding: 1.25rem 1.5rem;
+    margin: 2rem 0;
+  }
+  .prose .callout p {
+    margin-bottom: 0;
+    color: rgba(232,230,240,0.85);
+  }
+  .cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0 2rem;
+    font-size: 0.95rem;
+  }
+  .cost-table th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    background: rgba(245,158,11,0.08);
+    color: #f59e0b;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    border-bottom: 1px solid rgba(245,158,11,0.2);
+  }
+  .cost-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    color: rgba(232,230,240,0.75);
+    vertical-align: top;
+  }
+  .cost-table td:first-child {
+    color: #e8e6f0;
+    font-weight: 500;
+  }
+  .cost-table td.price {
+    color: #f59e0b;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .cost-table tr:last-child td {
+    border-bottom: none;
+  }
+  .cost-table .total-row td {
+    background: rgba(245,158,11,0.06);
+    border-top: 1px solid rgba(245,158,11,0.2);
+    font-weight: 600;
+    color: #e8e6f0;
+  }
+  .cost-table .total-row td.price {
+    color: #f59e0b;
+  }
+</style>
+</head>
+<body class="bg-background">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline">
+  <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+    <a href="/" class="serif-italic text-xl font-bold tracking-tight text-on-surface">Cittasana AI</a>
+    <div class="hidden md:flex items-center gap-10">
+      <a href="/loesungen" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Lösungen</a>
+      <a href="/hivemind"  class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">HiveMind</a>
+      <a href="/ueber-uns" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Über uns</a>
+      <a href="/blog"      class="text-primary text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Blog</a>
+      <a href="/ai-ready-check" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">AI-Check</a>
+    </div>
+    <a href="/ai-ready-check" class="btn bg-primary text-black px-6 py-2.5 text-xs uppercase tracking-[0.12em] font-extrabold hover-amber hover:bg-amber-400">
+      AI-Check →
+    </a>
+  </div>
+</nav>
+
+<!-- ARTIKEL HEADER -->
+<header class="pt-40 pb-16 px-8 md:px-24 border-b border-outline">
+  <div class="max-w-3xl mx-auto">
+    <!-- Breadcrumb -->
+    <div class="flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-on-surface-faint mb-8">
+      <a href="/blog" class="hover-amber hover:text-primary">Blog</a>
+      <span>·</span>
+      <span>Kosten &amp; ROI</span>
+    </div>
+
+    <!-- Meta -->
+    <div class="flex flex-wrap items-center gap-3 mb-6">
+      <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-primary border border-primary-border bg-primary-subtle px-3 py-1 rounded-full">Kosten &amp; ROI</span>
+      <span class="text-[10px] uppercase tracking-[0.15em] text-on-surface-faint">10. April 2026</span>
+      <span class="text-[10px] uppercase tracking-[0.15em] text-on-surface-faint">·</span>
+      <span class="text-[10px] uppercase tracking-[0.15em] text-on-surface-faint">9 Min. Lesezeit</span>
+    </div>
+
+    <!-- Title -->
+    <h1 class="serif font-light text-4xl md:text-6xl leading-tight tracking-tight text-on-surface mb-6">
+      Was kostet KI-Automatisierung<br/>
+      <span class="serif-italic text-primary">wirklich?</span>
+    </h1>
+
+    <p class="text-on-surface-dim text-xl leading-relaxed mb-8">
+      Wir schreiben keine Preislisten. Wir rechnen ehrlich durch — was eine typische Lösung für ein 20-Mann-Unternehmen kostet, was sie einspart, und ab wann sich die Investition rechnet. Mit echten Zahlen, nicht mit Hochglanz-Versprechen.
+    </p>
+
+    <!-- Author -->
+    <div class="flex items-center gap-4 pt-6 border-t border-outline">
+      <div class="w-10 h-10 rounded-full bg-surface-high border border-outline flex items-center justify-center text-primary font-bold text-sm">CG</div>
+      <div>
+        <p class="text-on-surface text-sm font-semibold">Cosmo Gräf</p>
+        <p class="text-on-surface-faint text-xs">Gründer, Cittasana AI</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ARTIKEL INHALT -->
+<article class="py-16 px-8 md:px-24">
+  <div class="max-w-3xl mx-auto prose">
+
+    <p>
+      "Was kostet das ungefähr?" ist die Frage, die wir am häufigsten bekommen — und die wir am liebsten direkt beantworten. Nicht mit "das kommt drauf an", sondern mit konkreten Zahlen. Hier ist die ehrliche Version.
+    </p>
+
+    <p>
+      Vorab das Wichtigste: KI-Automatisierung ist keine einheitliche Leistung wie eine Dachreparatur mit Festpreis. Was ein Projekt kostet, hängt davon ab, welcher Prozess automatisiert werden soll, wie komplex die bestehende IT-Landschaft ist, und ob maßgeschneiderte Entwicklung oder ein konfigurierbares Produkt die richtige Wahl ist. Aber die Kategorien sind immer dieselben — und die Zahlen liegen näher beieinander als die meisten denken.
+    </p>
+
+    <h2>Die zwei Kostenarten, die zählen</h2>
+
+    <p>
+      Bei jeder KI-Automatisierungslösung gibt es zwei voneinander unabhängige Kostenpositionen: die <strong>einmaligen Implementierungskosten</strong> und die <strong>laufenden Betriebskosten</strong>. Beide müssen in die ROI-Rechnung.
+    </p>
+
+    <h3>Einmalige Implementierungskosten</h3>
+
+    <p>
+      Das ist der Aufwand für Analyse, Entwicklung, Integration und Einschulung. Dieser Betrag wird einmalig bezahlt — danach läuft das System.
+    </p>
+
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>Lösung</th>
+          <th>Beschreibung</th>
+          <th>Einmalkosten</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>InvoiceBot</td>
+          <td>Automatische Rechnungsstellung aus Stundenberichten, DATEV-Export</td>
+          <td class="price">ab €8.000</td>
+        </tr>
+        <tr>
+          <td>AutoFlow</td>
+          <td>Maßgeschneiderter Automatisierungsworkflow (z.B. Angebotserstellung, Terminkoordination)</td>
+          <td class="price">ab €8.000</td>
+        </tr>
+        <tr>
+          <td>HiveMind Starter</td>
+          <td>KI-Wissensmanagement, keine Entwicklung nötig — direkt nutzbar</td>
+          <td class="price">€0 Einrichtung</td>
+        </tr>
+        <tr>
+          <td>Custom-CRM</td>
+          <td>Maßgeschneidertes CRM mit KI-Integration, Kundendatenbank, Reporting</td>
+          <td class="price">ab €15.000</td>
+        </tr>
+        <tr>
+          <td>Kombiniertes Projekt</td>
+          <td>Angebot + Rechnung + Disposition in einem System</td>
+          <td class="price">ab €12.000</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout">
+      <p><strong>Was ist in "ab €8.000" enthalten?</strong> Analyse und Konzept (ca. 2 Wochen), Entwicklung und Integration (ca. 3–4 Wochen), Einschulung aller relevanten Mitarbeiter, 12 Monate Hosting, Wartung und Support inklusive. Keine versteckten Folgekosten im ersten Jahr.</p>
+    </div>
+
+    <h3>Laufende Betriebskosten ab Jahr 2</h3>
+
+    <p>
+      Nach den ersten 12 Monaten fallen folgende Kosten an:
+    </p>
+
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>Position</th>
+          <th>Details</th>
+          <th>Monatlich</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hosting &amp; Infrastruktur</td>
+          <td>Server (Frankfurt), Datenbank, Backup</td>
+          <td class="price">€40–€120</td>
+        </tr>
+        <tr>
+          <td>KI-API-Kosten</td>
+          <td>Nutzungsabhängig — bei typischem Volumen eines 20-Mann-Betriebs</td>
+          <td class="price">€30–€80</td>
+        </tr>
+        <tr>
+          <td>Wartung &amp; Updates</td>
+          <td>Optionaler Wartungsvertrag, inkl. Security-Updates und kleinere Anpassungen</td>
+          <td class="price">€150–€300</td>
+        </tr>
+        <tr class="total-row">
+          <td colspan="2"><strong>Gesamt laufende Kosten (typisch)</strong></td>
+          <td class="price">€220–€500/Monat</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      HiveMind läuft als SaaS-Abonnement ohne Einmalkosten: <strong>€149/Monat</strong> (Starter, bis 5 Nutzer, monatlich kündbar) oder <strong>€349/Monat</strong> (Team, bis 25 Nutzer, unbegrenzte Dokumente).
+    </p>
+
+    <h2>Die Gegenseite: Was wird eingespart?</h2>
+
+    <p>
+      Kosten ohne Einsparung ist keine Kalkulation, das ist Buchhaltung. Hier die typischen Einsparpotenziale für einen 20-Mann-Betrieb — <strong>konservativ gerechnet</strong>, ohne Wachstumseffekte.
+    </p>
+
+    <h3>Zeitersparnis in Euro umrechnen</h3>
+
+    <p>
+      Die Faustformel: <strong>1 gesparte Stunde Verwaltungsarbeit = €25–€45 Wert</strong>, je nachdem ob ein Facharbeiter, Bürokraft oder der Chef selbst die Zeit bisher aufgewendet hat. Bei Führungskräften rechnen wir mit €60–€80 pro Stunde — das ist die Zeit, die sie stattdessen für Akquise, Kundenpflege oder Unternehmenssteuerung nutzen können.
+    </p>
+
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>Automatisierter Prozess</th>
+          <th>Zeitersparnis/Monat</th>
+          <th>Wert (€35/h)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Angebotserstellung</td>
+          <td>12–20 Stunden</td>
+          <td class="price">€420–€700</td>
+        </tr>
+        <tr>
+          <td>Rechnungsstellung</td>
+          <td>6–10 Stunden</td>
+          <td class="price">€210–€350</td>
+        </tr>
+        <tr>
+          <td>Terminkoordination</td>
+          <td>8–15 Stunden</td>
+          <td class="price">€280–€525</td>
+        </tr>
+        <tr>
+          <td>Dokumentensuche / Wissensmanagement</td>
+          <td>5–10 Stunden</td>
+          <td class="price">€175–€350</td>
+        </tr>
+        <tr class="total-row">
+          <td><strong>Gesamt (konservativ)</strong></td>
+          <td><strong>31–55 Stunden/Monat</strong></td>
+          <td class="price"><strong>€1.085–€1.925/Monat</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Hinzu kommen <strong>qualitative Effekte</strong>, die sich schwerer beziffern lassen, aber real sind: weniger Fehler in Rechnungen (kein manuelles Nachkorrigieren), schnellere Angebote (höhere Abschlussquote), kein vergessener Rückruf (bessere Kundenbindung).
+    </p>
+
+    <h2>Die konkrete ROI-Rechnung</h2>
+
+    <p>
+      Nehmen wir ein realistisches Beispiel: Ein Sanitärbetrieb mit 18 Mitarbeitern implementiert InvoiceBot + automatisierte Angebotserstellung. Gesamtkosten im ersten Jahr:
+    </p>
+
+    <table class="cost-table">
+      <thead>
+        <tr>
+          <th>Position</th>
+          <th>Betrag</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Implementierung (einmalig)</td>
+          <td class="price">€12.000</td>
+        </tr>
+        <tr>
+          <td>Hosting + Betrieb (12 Monate × €300)</td>
+          <td class="price">€3.600</td>
+        </tr>
+        <tr class="total-row">
+          <td><strong>Gesamtkosten Jahr 1</strong></td>
+          <td class="price"><strong>€15.600</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      Monatliche Einsparung (konservativ: 25 Stunden × €35): <strong>€875/Monat</strong>.<br/>
+      Break-Even: <strong>€15.600 ÷ €875 = 17,8 Monate</strong>.
+    </p>
+
+    <p>
+      Bei optimistischerer Rechnung (40 Stunden × €40): <strong>€1.600/Monat</strong> → Break-Even bei <strong>9,75 Monaten</strong>.
+    </p>
+
+    <div class="callout">
+      <p><strong>Realität aus der Praxis:</strong> Die meisten unserer Kunden erreichen den Break-Even zwischen Monat 8 und 14. Wer unter 8 Monaten liegt, hat entweder besonders hohe Verwaltungskosten gehabt oder besonders präzise automatisiert. Wer über 18 Monate liegt, hat vermutlich zu viel automatisiert auf einmal — die richtigen Prozesse zu priorisieren ist entscheidend.</p>
+    </div>
+
+    <h2>Wann lohnt es sich nicht?</h2>
+
+    <p>
+      Ehrlichkeit gebietet es: Nicht jede Situation ist reif für KI-Automatisierung. Drei Konstellationen, bei denen wir abraten:
+    </p>
+
+    <ul>
+      <li><strong>Prozesse sind noch nicht stabil.</strong> Wer seine eigenen Abläufe noch nicht kennt oder laufend ändert, sollte erst die Grundlage schaffen. Automatisierung von Chaos produziert schnelleren Chaos.</li>
+      <li><strong>Volumen ist zu gering.</strong> Unter 5 Angeboten pro Monat oder unter 3 Mitarbeitern in der Verwaltung rechnet sich eine maßgeschneiderte Lösung meist nicht — HiveMind als SaaS schon eher.</li>
+      <li><strong>Das Team ist nicht bereit.</strong> Wenn Mitarbeiter das System aktiv ablehnen, verpufft der ROI. Change Management ist kein Extra — es ist Voraussetzung.</li>
+    </ul>
+
+    <h2>Was die Kalkulation nicht zeigt</h2>
+
+    <p>
+      ROI-Rechnungen erfassen Kostenersparnis gut. Was sie schlechter erfassen: den Wert von <strong>zurückgewonnener Führungszeit</strong>. Ein Inhaber, der statt 3 Stunden täglich Verwaltung nur noch 45 Minuten aufwendet, hat 2,25 Stunden täglich mehr für strategische Arbeit. Bei 220 Arbeitstagen im Jahr sind das <strong>495 Stunden</strong> — oder 12 Vollzeit-Arbeitswochen.
+    </p>
+
+    <p>
+      Was er in dieser Zeit macht, entscheidet über Wachstum, neue Kunden und Marktposition — das ist kein Posten in einer Tabelle, aber der eigentliche Hebel.
+    </p>
+
+    <h2>Wie eine individuelle Kalkulation entsteht</h2>
+
+    <p>
+      Die Zahlen oben sind Richtwerte. Ob Ihr Betrieb eher am unteren oder oberen Ende liegt, hängt von drei Faktoren ab:
+    </p>
+
+    <ul>
+      <li><strong>Welche Prozesse</strong> — nicht alle sind gleich teuer oder gleich wertvoll zu automatisieren</li>
+      <li><strong>Ihre bestehende IT</strong> — DATEV-Integration ist Standard, aber ein proprietäres Warenwirtschaftssystem kann Mehraufwand bedeuten</li>
+      <li><strong>Ihr Volumen</strong> — Anzahl Angebote, Rechnungen, Anfragen pro Monat bestimmt den Einspareffekt direkt</li>
+    </ul>
+
+    <p>
+      Im AI-Ready-Check erheben wir genau diese Zahlen — und erstellen eine individuelle ROI-Kalkulation. Keine Schätzung, sondern eine Rechnung mit Ihren echten Werten.
+    </p>
+
+  </div>
+</article>
+
+<!-- CTA -->
+<section class="py-24 px-8 border-t border-outline">
+  <div class="max-w-3xl mx-auto">
+    <div class="border border-primary-border bg-primary-subtle rounded-2xl p-10 md:p-14 text-center">
+      <p class="text-primary text-[10px] uppercase tracking-[0.3em] font-bold mb-4">Nächster Schritt</p>
+      <h2 class="serif font-light text-3xl md:text-4xl text-on-surface mb-6">
+        Ihre individuelle<br/>
+        <span class="serif-italic text-primary">ROI-Kalkulation</span>
+      </h2>
+      <p class="text-on-surface-dim mb-8 max-w-lg mx-auto">
+        In 20 Minuten analysieren wir Ihre konkreten Prozesse und erstellen eine Kalkulation mit Ihren echten Zahlen — kostenlos, ohne Pitch, ohne Verpflichtung.
+      </p>
+      <a href="/ai-ready-check" class="btn bg-primary text-black px-10 py-4 text-xs uppercase tracking-[0.15em] font-extrabold hover-amber hover:bg-amber-400">
+        Kostenlosen Check sichern
+      </a>
+      <p class="text-on-surface-faint text-xs mt-5">20 Min. Gespräch &nbsp;·&nbsp; 5 Plätze / Monat &nbsp;·&nbsp; Antwort in 48h</p>
+    </div>
+
+    <!-- Back to Blog -->
+    <div class="mt-12 text-center">
+      <a href="/blog" class="text-on-surface-dim text-xs uppercase tracking-[0.15em] font-semibold hover-amber hover:text-primary">← Zurück zum Blog</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-outline px-8 md:px-12 py-12 bg-surface-low">
+  <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <span class="serif-italic text-lg text-on-surface">Cittasana AI</span>
+    <div class="flex flex-wrap justify-center gap-8 text-[10px] uppercase tracking-[0.1em] text-on-surface-faint">
+      <a href="/loesungen" class="hover-amber hover:text-primary">Lösungen</a>
+      <a href="/hivemind" class="hover-amber hover:text-primary">HiveMind</a>
+      <a href="/ueber-uns" class="hover-amber hover:text-primary">Über uns</a>
+      <a href="/blog" class="hover-amber hover:text-primary">Blog</a>
+      <a href="/ai-ready-check" class="hover-amber hover:text-primary">AI-Check</a>
+      <a href="mailto:office@cittasana.de" class="hover-amber hover:text-primary">office@cittasana.de</a>
+      <a href="/impressum" class="hover-amber hover:text-primary">Impressum</a>
+      <a href="/datenschutz" class="hover-amber hover:text-primary">Datenschutz</a>
+      <a href="/eu-ai-act" class="hover-amber hover:text-primary">EU AI Act</a>
+    </div>
+    <span class="text-[10px] uppercase tracking-[0.1em] text-on-surface-faint">
+      © 2026 Cittasana AI
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>
