@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="dark" lang="de">
+<head>
+<meta charset="utf-8"/>
+<link rel="alternate" type="text/plain" href="/llms.txt" />
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Blog — KI-Automatisierung für den Mittelstand | Cittasana AI</title>
+<meta name="description" content="Praxiswissen zu KI-Automatisierung, Prozessoptimierung und Wissensmanagement für mittelständische Unternehmen. Keine Trends — nur was wirklich funktioniert." />
+<meta name="robots" content="index, follow" />
+<link rel="canonical" href="https://ai.cittasana.de/blog/" />
+
+<!-- Open Graph -->
+<meta property="og:type"        content="website" />
+<meta property="og:title"       content="Blog — KI-Automatisierung für den Mittelstand | Cittasana AI" />
+<meta property="og:description" content="Praxiswissen zu KI-Automatisierung für den Mittelstand. Keine Trends — nur was wirklich funktioniert." />
+<meta property="og:url"         content="https://ai.cittasana.de/blog/" />
+<meta property="og:locale"      content="de_DE" />
+<meta property="og:image"       content="https://ai.cittasana.de/images/og-home.png" />
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="/fonts/fonts.css" />
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "background":       "#0d0d12",
+          "surface":          "#111117",
+          "surface-low":      "#16161e",
+          "surface-mid":      "#1d1d26",
+          "surface-high":     "#24242f",
+          "on-surface":       "#e8e6f0",
+          "on-surface-dim":   "rgba(232,230,240,0.55)",
+          "on-surface-faint": "rgba(232,230,240,0.28)",
+          "primary":          "#f59e0b",
+          "primary-dim":      "#d97706",
+          "primary-subtle":   "rgba(245,158,11,0.08)",
+          "primary-border":   "rgba(245,158,11,0.2)",
+          "outline":          "rgba(255,255,255,0.07)",
+          "outline-med":      "rgba(255,255,255,0.12)",
+        },
+        fontFamily: {
+          headline: ["Newsreader", "serif"],
+          body:     ["Manrope", "sans-serif"],
+        },
+      },
+    },
+  }
+</script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Manrope', sans-serif; background-color: #0d0d12; color: #e8e6f0; -webkit-font-smoothing: antialiased; }
+  .serif { font-family: 'Newsreader', serif; }
+  .serif-italic { font-family: 'Newsreader', serif; font-style: italic; }
+  .glass-nav { background: rgba(13,13,18,0.88); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgba(245,158,11,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,158,11,0.025) 1px, transparent 1px);
+    background-size: 80px 80px;
+  }
+  .hover-amber { transition: color .2s, border-color .2s, background .2s; }
+  nav a, nav button { border-radius: 9999px; }
+  .btn { border-radius: 9999px; display: inline-block; }
+  .card-hover { transition: border-color .2s, background .2s; }
+  .card-hover:hover { border-color: rgba(245,158,11,0.3); background: rgba(245,158,11,0.04); }
+</style>
+</head>
+<body class="bg-background">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline">
+  <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
+    <a href="/" class="serif-italic text-xl font-bold tracking-tight text-on-surface">Cittasana AI</a>
+    <div class="hidden md:flex items-center gap-10">
+      <a href="/loesungen" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Lösungen</a>
+      <a href="/hivemind"  class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">HiveMind</a>
+      <a href="/ueber-uns" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Über uns</a>
+      <a href="/blog"      class="text-primary text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Blog</a>
+      <a href="/ai-ready-check" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">AI-Check</a>
+    </div>
+    <a href="/ai-ready-check" class="btn bg-primary text-black px-6 py-2.5 text-xs uppercase tracking-[0.12em] font-extrabold hover-amber hover:bg-amber-400">
+      AI-Check →
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="grid-bg pt-40 pb-20 px-8 md:px-24">
+  <div class="max-w-4xl mx-auto">
+    <p class="text-primary text-[10px] uppercase tracking-[0.35em] font-bold mb-6">Cittasana AI — Blog</p>
+    <h1 class="serif font-light text-5xl md:text-7xl leading-tight tracking-tight mb-6 text-on-surface">
+      Praxiswissen.<br/>
+      <span class="serif-italic text-primary">Keine Trends.</span>
+    </h1>
+    <p class="text-on-surface-dim text-lg max-w-2xl">
+      Was wir in echten Projekten mit mittelständischen Unternehmen gelernt haben — über KI-Automatisierung, Prozesse und Wissensmanagement. Kein Hype, keine Theorie.
+    </p>
+  </div>
+</section>
+
+<!-- ARTIKEL -->
+<section class="py-20 px-8 md:px-24 max-w-4xl mx-auto">
+
+  <!-- Artikel 1 -->
+  <a href="/blog/ki-automatisierung-handwerk/" class="block border border-outline card-hover rounded-2xl p-8 md:p-10 mb-8">
+    <div class="flex flex-wrap items-center gap-3 mb-5">
+      <span class="text-[10px] uppercase tracking-[0.2em] font-bold text-primary border border-primary-border bg-primary-subtle px-3 py-1 rounded-full">Handwerk &amp; KMU</span>
+      <span class="text-[10px] uppercase tracking-[0.15em] text-on-surface-faint">10. April 2026</span>
+      <span class="text-[10px] uppercase tracking-[0.15em] text-on-surface-faint">·</span>
+      <span class="text-[10px] uppercase tracking-[0.15em] text-on-surface-faint">8 Min. Lesezeit</span>
+    </div>
+    <h2 class="serif font-light text-2xl md:text-3xl text-on-surface mb-4 leading-snug">
+      5 Prozesse im Handwerk, die sich sofort automatisieren lassen
+    </h2>
+    <p class="text-on-surface-dim text-base leading-relaxed mb-6">
+      Angebote erstellen, Rechnungen schreiben, Termine koordinieren — Handwerksbetriebe verlieren jede Woche Stunden an Verwaltungsarbeit. Welche fünf Prozesse sich mit KI-Automatisierung am schnellsten amortisieren und wie das in der Praxis aussieht.
+    </p>
+    <span class="text-primary text-xs uppercase tracking-[0.15em] font-bold hover-amber">Artikel lesen →</span>
+  </a>
+
+  <!-- Platzhalter für kommende Artikel -->
+  <div class="border border-dashed border-outline rounded-2xl p-8 md:p-10 opacity-40">
+    <p class="text-[10px] uppercase tracking-[0.2em] font-bold text-on-surface-faint mb-4">Nächster Artikel — Mai 2026</p>
+    <h2 class="serif font-light text-2xl text-on-surface-dim">Was kostet KI-Automatisierung wirklich?</h2>
+    <p class="text-on-surface-faint text-sm mt-3">Eine ehrliche ROI-Kalkulation für ein 20-Mann-Unternehmen — ohne Schönrechnerei.</p>
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section class="py-24 px-8 text-center border-t border-outline">
+  <div class="max-w-2xl mx-auto">
+    <h2 class="serif font-light text-4xl md:text-5xl text-on-surface mb-6">
+      Bereit für den ersten Schritt?
+    </h2>
+    <p class="text-on-surface-dim text-lg mb-10">
+      Im AI-Ready-Check analysieren wir in 20 Minuten welche Prozesse bei Ihnen sofort automatisiert werden können.
+    </p>
+    <a href="/ai-ready-check" class="btn bg-primary text-black px-10 py-5 text-sm uppercase tracking-[0.15em] font-extrabold hover-amber hover:bg-amber-400">
+      Kostenlosen Check sichern
+    </a>
+    <p class="text-on-surface-faint text-xs mt-6">20 Min. Gespräch &nbsp;·&nbsp; Kein Pitch &nbsp;·&nbsp; 5 Plätze / Monat</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="border-t border-outline px-8 md:px-12 py-12 bg-surface-low">
+  <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+    <span class="serif-italic text-lg text-on-surface">Cittasana AI</span>
+    <div class="flex flex-wrap justify-center gap-8 text-[10px] uppercase tracking-[0.1em] text-on-surface-faint">
+      <a href="/loesungen" class="hover-amber hover:text-primary">Lösungen</a>
+      <a href="/hivemind" class="hover-amber hover:text-primary">HiveMind</a>
+      <a href="/ueber-uns" class="hover-amber hover:text-primary">Über uns</a>
+      <a href="/blog" class="hover-amber hover:text-primary">Blog</a>
+      <a href="/ai-ready-check" class="hover-amber hover:text-primary">AI-Check</a>
+      <a href="mailto:office@cittasana.de" class="hover-amber hover:text-primary">office@cittasana.de</a>
+      <a href="/impressum" class="hover-amber hover:text-primary">Impressum</a>
+      <a href="/datenschutz" class="hover-amber hover:text-primary">Datenschutz</a>
+      <a href="/eu-ai-act" class="hover-amber hover:text-primary">EU AI Act</a>
+    </div>
+    <span class="text-[10px] uppercase tracking-[0.1em] text-on-surface-faint">
+      © 2026 Cittasana AI
+    </span>
+  </div>
+</footer>
+
+</body>
+</html>

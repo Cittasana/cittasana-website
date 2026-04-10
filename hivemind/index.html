@@ -2,6 +2,7 @@
 <html class="dark" lang="de">
 <head>
 <meta charset="utf-8"/>
+<link rel="alternate" type="text/plain" href="/llms.txt" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>HiveMind — KI-Wissensmanagement für den Mittelstand | Cittasana AI</title>
 <meta name="description" content="HiveMind verbindet Dokumente, Slack und E-Mails zu einem KI-Assistenten. Semantische Suche, Auto-Connectors, KI-Agenten. Ab €149/Monat für den Mittelstand." />
@@ -12,8 +13,12 @@
 <meta property="og:title"       content="HiveMind — KI-Wissensmanagement für den Mittelstand | Cittasana AI" />
 <meta property="og:description" content="Ihr Firmenwissen. Intelligent durchsuchbar. Ab €149/Monat." />
 <meta property="og:url"         content="https://ai.cittasana.de/hivemind" />
+<meta property="og:image"       content="https://ai.cittasana.de/images/og-hivemind.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
 <meta property="og:locale"      content="de_DE" />
 <meta name="twitter:card"       content="summary_large_image" />
+<meta name="twitter:image"      content="https://ai.cittasana.de/images/og-hivemind.png" />
 
 <!-- Schema: SoftwareApplication -->
 <script type="application/ld+json">
@@ -29,6 +34,77 @@
     { "@type": "Offer", "name": "Starter", "price": "149", "priceCurrency": "EUR", "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" } },
     { "@type": "Offer", "name": "Business", "price": "399", "priceCurrency": "EUR", "priceSpecification": { "@type": "UnitPriceSpecification", "billingDuration": "P1M" } }
   ]
+}
+</script>
+
+<!-- Schema: FAQPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Müssen wir bestehende Systeme ersetzen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nein — HiveMind ist ein Add-on, kein Ersatz. Das System verbindet sich via API mit Ihren bestehenden Tools und liest Daten aus, ohne etwas zu verändern. Slack-Kanäle, Gmail-Postfächer, Google Drive-Ordner, Notion-Workspaces und GitHub-Repositories bleiben exakt so wie sie sind. Ihre Mitarbeiter arbeiten weiterhin in den gewohnten Tools. HiveMind läuft im Hintergrund, synchronisiert automatisch und macht alle Inhalte über eine einzige Suchoberfläche zugänglich. Die Einrichtung der Connectors übernehmen wir vollständig — kein IT-Aufwand auf Ihrer Seite. Im Starter-Plan beginnen wir mit manuellem Dokumenten-Upload; im Business-Plan laufen alle 6 Auto-Connectors automatisch."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie sicher sind unsere Daten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Alle Unternehmensdaten in HiveMind liegen ausschließlich auf EU-Servern in Frankfurt (Supabase EU-Region). Die Übertragung ist TLS-verschlüsselt, die Speicherung AES-256-verschlüsselt. Rollenbasierte Zugriffsrechte (RBAC) stellen sicher, dass jeder Mitarbeiter nur die Inhalte sieht, für die er berechtigt ist. HiveMind ist DSGVO-konform: Es werden keine Kundendaten für das Training von KI-Modellen verwendet. Das eingesetzte Sprachmodell (Claude AI von Anthropic) arbeitet im API-Modus mit Zero Data Retention. Auf Anfrage stellen wir einen Auftragsverarbeitungsvertrag (AVV) gemäß Art. 28 DSGVO bereit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie lange dauert die Einrichtung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der HiveMind Starter-Plan ist in der Regel innerhalb von 2 Wochen einsatzbereit. In dieser Zeit richten wir Ihre Instanz ein, importieren die ersten Dokumente und schulen Ihr Team im Umgang mit der Suchoberfläche. Der Business-Plan mit allen 6 Auto-Connectors (Slack, Gmail, Drive, Notion, GitHub, Kalender) benötigt je nach Komplexität 3 bis 4 Wochen — inklusive Connector-Einrichtung, Berechtigungsstruktur und Testphase. Der gesamte Onboarding-Prozess liegt bei uns; Ihr IT-Team muss nichts konfigurieren, installieren oder bereitstellen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert wenn wir kündigen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "HiveMind ist monatlich kündbar — ohne Mindestlaufzeit, ohne Kündigungsfristen. Nach einer Kündigung erhalten Sie innerhalb von 5 Werktagen einen vollständigen Datenexport: alle hochgeladenen Dokumente, alle gespeicherten Wissensinhalte und alle Konfigurationsdaten in maschinenlesbarem Format (JSON und ZIP). Ihre Daten werden anschließend vollständig und unwiderruflich aus unseren Systemen gelöscht — konform mit Art. 17 DSGVO (Recht auf Löschung). Es fallen keine Ausstiegskosten oder Stornogebühren an. Einmalig bezahlte Setup-Gebühren werden nicht erstattet, da diese für die geleistete Einrichtungsarbeit anfallen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Können wir vorher testen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Im kostenlosen AI-Ready-Check zeigen wir HiveMind live — mit echten Daten aus Ihrem Unternehmen. Sie laden vorab einige repräsentative Dokumente hoch (z.B. Prozesshandbücher, E-Mails, Meeting-Protokolle), und wir demonstrieren live wie HiveMind darauf antwortet. So sehen Sie den konkreten Mehrwert für Ihre spezifische Situation, bevor Sie eine Entscheidung treffen. Der AI-Ready-Check dauert 20 Minuten, ist kostenlos und unverbindlich. Es gibt keine versteckten Folgekosten und keine Verpflichtung zur Zusammenarbeit. Pro Monat sind 5 Plätze verfügbar — Termin direkt über das Kontaktformular buchen."
+      }
+    }
+  ]
+}
+</script>
+
+<!-- Schema: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ai.cittasana.de/" },
+    { "@type": "ListItem", "position": 2, "name": "HiveMind", "item": "https://ai.cittasana.de/hivemind" }
+  ]
+}
+</script>
+<!-- Schema: WebPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "datePublished": "2026-04-01",
+  "dateModified": "2026-04-10"
 }
 </script>
 
@@ -85,6 +161,7 @@
       <a href="/loesungen" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Lösungen</a>
       <a href="/hivemind"  class="text-on-surface text-xs uppercase tracking-[0.08em] font-semibold">HiveMind</a>
       <a href="/ueber-uns" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Über uns</a>
+      <a href="/blog"      class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Blog</a>
       <a href="/ai-ready-check" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">AI-Check</a>
     </div>
     <a href="/ai-ready-check" class="btn bg-primary text-black px-6 py-2.5 text-xs uppercase tracking-[0.12em] font-extrabold hover-amber hover:bg-amber-400">
@@ -345,6 +422,20 @@
   </div>
 </section>
 
+<!-- Internal link: weitere Lösungen -->
+<section class="py-16 px-8 md:px-24 border-t border-outline">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+    <div>
+      <p class="text-on-surface-faint text-[10px] uppercase tracking-[0.2em] font-bold mb-2">Weitere KI-Lösungen</p>
+      <p class="text-on-surface font-semibold mb-1">AutoFlow, InvoiceBot, DataSync und mehr</p>
+      <p class="text-on-surface-dim text-sm">HiveMind ist eine von sechs fertigen KI-Lösungen für den Mittelstand — alle in Wochen live, inkl. 12 Monate Betrieb.</p>
+    </div>
+    <a href="/loesungen" class="btn border border-outline-med text-on-surface-dim px-8 py-3 text-[10px] uppercase tracking-widest font-bold hover-amber hover:border-primary hover:text-primary shrink-0">
+      Alle Lösungen →
+    </a>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="py-40 px-8 text-center relative overflow-hidden bg-surface-low border-t border-outline">
   <div class="max-w-3xl mx-auto">
@@ -365,6 +456,7 @@
       <a href="/loesungen" class="hover-amber hover:text-primary">Lösungen</a>
       <a href="/hivemind" class="hover-amber hover:text-primary">HiveMind</a>
       <a href="/ueber-uns" class="hover-amber hover:text-primary">Über uns</a>
+      <a href="/blog" class="hover-amber hover:text-primary">Blog</a>
       <a href="/ai-ready-check" class="hover-amber hover:text-primary">AI-Check</a>
       <a href="mailto:office@cittasana.de" class="hover-amber hover:text-primary">office@cittasana.de</a>
       <a href="/impressum" class="hover-amber hover:text-primary">Impressum</a>

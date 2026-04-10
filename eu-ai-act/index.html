@@ -2,6 +2,7 @@
 <html class="dark" lang="de">
 <head>
 <meta charset="utf-8"/>
+<link rel="alternate" type="text/plain" href="/llms.txt" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>EU AI Act Konformität | Cittasana AI</title>
 <meta name="description" content="Cittasana AI und EU AI Act: Transparenz über den Einsatz von KI-Systemen, Risikoeinstufung, menschliche Aufsicht und Ihre Rechte als Betroffener." />
@@ -51,18 +52,30 @@
     {
       "@type": "Question",
       "name": "Welche KI-Systeme setzt Cittasana AI ein?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Cittasana AI setzt vier KI-Systeme ein: HiveMind (Wissensmanagementsystem mit semantischer Suche), Workflow-Automatisierungslösungen (AutoFlow, InvoiceBot u.a.), AI-Ready-Check (Beratungsanalyse) und KI-unterstützte Softwareentwicklung. Alle Systeme sind als minimales Risiko gemäß EU AI Act eingestuft." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Cittasana AI entwickelt und betreibt vier Kategorien von KI-Systemen: (1) HiveMind — ein KI-gestütztes Wissensmanagementsystem mit semantischer Suche über Unternehmensdokumente, (2) Workflow-Automatisierungslösungen wie AutoFlow Portal und InvoiceBot für die Prozessautomatisierung in mittelständischen Betrieben, (3) AI-Ready-Check — eine KI-unterstützte Analyse von Automatisierungspotenzialen im Kundengespräch, (4) KI-unterstützte Softwareentwicklung für individuelle Kundenprojekte. Alle eingesetzten Systeme sind gemäß EU AI Act Verordnung (EU) 2024/1689 als Systeme mit minimalem Risiko klassifiziert und unterliegen den freiwilligen Transparenzpflichten nach Art. 50." }
     },
     {
       "@type": "Question",
       "name": "Wie stuft Cittasana AI seine KI-Systeme nach dem EU AI Act ein?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Alle KI-Systeme von Cittasana AI sind als Systeme mit minimalem Risiko gemäß Art. 50 EU AI Act (Verordnung EU 2024/1689) eingestuft. Es werden keine Hochrisiko-KI-Systeme gemäß Anhang III eingesetzt — keine biometrische Identifikation, kein Social Scoring, keine KI in kritischer Infrastruktur." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Alle KI-Systeme von Cittasana AI sind als Systeme mit minimalem Risiko gemäß EU AI Act (Verordnung EU 2024/1689) eingestuft. Die Risikoeinstufung erfolgt anhand der Kriterien in Artikel 6 und Anhang III der Verordnung. Cittasana AI betreibt keine Hochrisiko-KI-Systeme: Es werden weder biometrische Identifikationssysteme noch Social-Scoring-Systeme eingesetzt. KI wird nicht in kritischer Infrastruktur, im Bildungswesen, in der Strafverfolgung oder im Personalwesen zur automatisierten Entscheidungsfindung verwendet. Alle KI-Ausgaben unterliegen menschlicher Aufsicht — kein System trifft eigenständig bindende Entscheidungen." }
     },
     {
       "@type": "Question",
       "name": "Werden Kundendaten für das Training von KI-Modellen verwendet?",
-      "acceptedAnswer": { "@type": "Answer", "text": "Nein. HiveMind und alle eingesetzten Sprachmodelle (Claude AI von Anthropic) werden nicht auf Kundendaten trainiert. Kundendaten dienen ausschließlich der Beantwortung von Anfragen innerhalb der jeweiligen Kundeninstanz. Anthropic bietet Zero Data Retention im API-Modus." }
+      "acceptedAnswer": { "@type": "Answer", "text": "Nein — Kundendaten werden unter keinen Umständen für das Training von KI-Modellen verwendet. HiveMind nutzt das Sprachmodell Claude AI von Anthropic ausschließlich über die API im Zero-Data-Retention-Modus: Anthropic speichert keine API-Anfragen und verwendet diese nicht für das Modelltraining. Kundendaten (Dokumente, E-Mails, Slack-Nachrichten) verbleiben in der EU-Datenbank des jeweiligen Kunden und verlassen diese nur für die Dauer einer einzelnen Suchanfrage — verschlüsselt und pseudonymisiert. Diese Praxis entspricht den Anforderungen der DSGVO (Art. 5 Abs. 1 lit. b — Zweckbindung) und den Transparenzpflichten des EU AI Act." }
     }
+  ]
+}
+</script>
+
+<!-- Schema: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ai.cittasana.de/" },
+    { "@type": "ListItem", "position": 2, "name": "EU AI Act", "item": "https://ai.cittasana.de/eu-ai-act" }
   ]
 }
 </script>
@@ -118,6 +131,7 @@
       <a href="/loesungen"      class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Lösungen</a>
       <a href="/hivemind"       class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">HiveMind</a>
       <a href="/ueber-uns"      class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Über uns</a>
+      <a href="/blog"           class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Blog</a>
       <a href="/ai-ready-check" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">AI-Check</a>
     </div>
     <a href="/ai-ready-check" class="btn bg-primary text-black px-6 py-2.5 text-xs uppercase tracking-[0.12em] font-extrabold hover-amber hover:bg-amber-400">
@@ -452,6 +466,7 @@
       <a href="/loesungen"      class="hover-amber hover:text-primary">Lösungen</a>
       <a href="/hivemind"       class="hover-amber hover:text-primary">HiveMind</a>
       <a href="/ueber-uns"      class="hover-amber hover:text-primary">Über uns</a>
+      <a href="/blog" class="hover-amber hover:text-primary">Blog</a>
       <a href="/ai-ready-check" class="hover-amber hover:text-primary">AI-Check</a>
       <a href="mailto:office@cittasana.de" class="hover-amber hover:text-primary">office@cittasana.de</a>
       <a href="/impressum"   class="hover-amber hover:text-primary">Impressum</a>

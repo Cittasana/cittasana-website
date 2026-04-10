@@ -2,6 +2,7 @@
 <html class="dark" lang="de">
 <head>
 <meta charset="utf-8"/>
+<link rel="alternate" type="text/plain" href="/llms.txt" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>KI-Automatisierungslösungen für den Mittelstand | Cittasana AI</title>
 <meta name="description" content="Sechs fertige KI-Lösungen für Unternehmen mit 10–50 MA: AutoFlow, InvoiceBot, HiveMind und mehr. In Wochen live, nicht Monaten. Inkl. 12 Monate Hosting." />
@@ -11,9 +12,13 @@
 <meta property="og:type"        content="website" />
 <meta property="og:title"       content="KI-Automatisierungslösungen für den Mittelstand | Cittasana AI" />
 <meta property="og:description" content="Sechs fertige Systeme. In Wochen live. Inkl. 12 Monate Hosting und Betrieb." />
-<meta property="og:url"         content="https://ai.cittasana.de/loesungen" />
-<meta property="og:locale"      content="de_DE" />
-<meta name="twitter:card"       content="summary_large_image" />
+<meta property="og:url"          content="https://ai.cittasana.de/loesungen" />
+<meta property="og:image"        content="https://ai.cittasana.de/images/og-loesungen.png" />
+<meta property="og:image:width"  content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale"       content="de_DE" />
+<meta name="twitter:card"        content="summary_large_image" />
+<meta name="twitter:image"       content="https://ai.cittasana.de/images/og-loesungen.png" />
 
 <!-- Schema: ItemList of Services -->
 <script type="application/ld+json">
@@ -30,6 +35,27 @@
     { "@type": "ListItem", "position": 5, "name": "InvoiceBot", "url": "https://ai.cittasana.de/loesungen" },
     { "@type": "ListItem", "position": 6, "name": "Custom CRM", "url": "https://ai.cittasana.de/loesungen" }
   ]
+}
+</script>
+
+<!-- Schema: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ai.cittasana.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Lösungen", "item": "https://ai.cittasana.de/loesungen" }
+  ]
+}
+</script>
+<!-- Schema: WebPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "datePublished": "2026-04-01",
+  "dateModified": "2026-04-10"
 }
 </script>
 
@@ -86,6 +112,7 @@
       <a href="/loesungen" class="text-on-surface text-xs uppercase tracking-[0.08em] font-semibold">Lösungen</a>
       <a href="/hivemind"  class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">HiveMind</a>
       <a href="/ueber-uns" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Über uns</a>
+      <a href="/blog"      class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Blog</a>
       <a href="/ai-ready-check" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">AI-Check</a>
     </div>
     <a href="/ai-ready-check" class="btn bg-primary text-black px-6 py-2.5 text-xs uppercase tracking-[0.12em] font-extrabold hover-amber hover:bg-amber-400">
@@ -121,12 +148,16 @@
         <p class="text-on-surface-dim text-sm leading-relaxed mb-6">
           Alle Kundenanfragen laufen strukturiert ein, werden automatisch getrackt, zugewiesen und bearbeitet. E-Mail-Chaos gehört der Vergangenheit an.
         </p>
-        <ul class="text-sm space-y-2 mb-8 text-on-surface-dim">
+        <ul class="text-sm space-y-2 mb-6 text-on-surface-dim">
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Strukturierte Erfassung aller Anfragen</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Automatisches Routing und Statustracking</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Benachrichtigungen und Eskalationsregeln</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Kundenseitiges Statusportal</li>
         </ul>
+        <p class="text-on-surface-faint text-xs leading-relaxed mb-8 border-t border-outline pt-6">
+          <span class="text-on-surface-dim font-semibold block mb-2">Geeignet für:</span>
+          Dienstleister, Steuerberatungen, Agenturen und Beratungsunternehmen mit hohem E-Mail-Aufkommen. Überall dort, wo Anfragen per E-Mail eingehen, manuell priorisiert und von Hand zugewiesen werden — und dabei regelmäßig Dinge zwischen den Stühlen fallen. AutoFlow Portal verbindet sich via Webhook mit Ihrem bestehenden E-Mail-Postfach; alle eingehenden Anfragen werden automatisch kategorisiert und dem richtigen Mitarbeiter zugewiesen. Die Integration in bestehende Tools (Gmail, Outlook, Slack) erfolgt ohne IT-Aufwand auf Ihrer Seite. DSGVO-konform, EU-Server, rollenbasierte Zugriffsrechte inklusive. Einsatzbereit in 2–3 Wochen.
+        </p>
         <!-- Case Study -->
         <div class="bg-surface-low border-l-2 border-primary p-4 mb-8">
           <p class="text-on-surface-dim text-xs leading-relaxed">
@@ -148,12 +179,16 @@
         <p class="text-on-surface-dim text-sm leading-relaxed mb-6">
           Digitale Formulare mit mehrstufigen Genehmigungsprozessen, automatischer PDF-Generierung und revisionssicherem Archiv. Compliance-ready von Anfang an.
         </p>
-        <ul class="text-sm space-y-2 mb-8 text-on-surface-dim">
+        <ul class="text-sm space-y-2 mb-6 text-on-surface-dim">
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Mehrstufige Genehmigungsworkflows</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Automatische PDF-Generierung</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Revisionssicheres digitales Archiv</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Digitale Unterschrift integriert</li>
         </ul>
+        <p class="text-on-surface-faint text-xs leading-relaxed mb-8 border-t border-outline pt-6">
+          <span class="text-on-surface-dim font-semibold block mb-2">Geeignet für:</span>
+          Unternehmen mit papiergebundenen Genehmigungsprozessen — HR-Abteilungen, Einkauf, Compliance-Teams. Typische Anwendungsfälle: Urlaubsanträge, Bestellfreigaben, Eingangsrechnungen, Vertragsunterzeichnungen. Die digitale Unterschrift ist eIDAS-konform integriert; das Archiv erfüllt die Anforderungen der GoBD. Jeder Schritt im Genehmigungsprozess wird mit Zeitstempel protokolliert und ist revisionssicher abrufbar — für Steuerprüfungen, interne Audits oder ISO-Zertifizierungen. Papierlos in 4 Wochen ohne Änderung an bestehenden Abläufen.
+        </p>
         <div class="flex items-center justify-between pt-6 border-t border-outline mt-auto">
           <p class="text-on-surface-faint text-xs">Papierlos in 4 Wochen</p>
           <a href="/ai-ready-check" class="text-[10px] uppercase tracking-widest text-on-surface-faint hover-amber hover:text-primary transition-colors">Anfragen →</a>
@@ -169,12 +204,16 @@
         <p class="text-on-surface-dim text-sm leading-relaxed mb-6">
           Zentrales Operations-Board das Excel-Listen und E-Mail-Ketten ersetzt. Aufgaben, Deadlines, Rollen, Reporting — in einem System, das Ihr Team tatsächlich nutzt.
         </p>
-        <ul class="text-sm space-y-2 mb-8 text-on-surface-dim">
+        <ul class="text-sm space-y-2 mb-6 text-on-surface-dim">
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Kanban, Listen- und Kalenderansicht</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Rollenbasierte Zugriffsrechte</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Automatische Deadline-Erinnerungen</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Wöchentlicher Status-Report per E-Mail</li>
         </ul>
+        <p class="text-on-surface-faint text-xs leading-relaxed mb-8 border-t border-outline pt-6">
+          <span class="text-on-surface-dim font-semibold block mb-2">Geeignet für:</span>
+          Teams zwischen 5 und 30 Personen, die aktuell mit Excel-Listen, WhatsApp-Gruppen oder E-Mail-Ketten als Projektmanagement arbeiten. TaskPilot ist bewusst einfacher als Jira oder Asana — keine Einarbeitung nötig, kein Admin-Overhead. Drei Ansichten (Kanban, Liste, Kalender) decken unterschiedliche Arbeitsweisen ab. Slack-Benachrichtigungen bei Statusänderungen halten das Team automatisch im Bild. Der wöchentliche Status-Report per E-Mail ersetzt das manuelle Montagsmeeting. Kein SaaS-Abo auf Lebenszeit — einmalige Investition, 12 Monate Betrieb inklusive.
+        </p>
         <div class="flex items-center justify-between pt-6 border-t border-outline">
           <p class="text-on-surface-faint text-xs">Ersetzt Excel + E-Mail-Ping-Pong</p>
           <a href="/ai-ready-check" class="text-[10px] uppercase tracking-widest text-on-surface-faint hover-amber hover:text-primary transition-colors">Anfragen →</a>
@@ -190,12 +229,16 @@
         <p class="text-on-surface-dim text-sm leading-relaxed mb-6">
           Verbindet bis zu 5 bestehende Systeme automatisch. Daten fließen in Echtzeit zwischen CRM, ERP, Buchhaltung und Kommunikationstools — kein manueller Export mehr.
         </p>
-        <ul class="text-sm space-y-2 mb-8 text-on-surface-dim">
+        <ul class="text-sm space-y-2 mb-6 text-on-surface-dim">
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Echtzeit-Synchronisation</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Fehler-Monitoring und Alerts</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Historische Daten-Nachsynchronisation</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Bis zu 5 Systemverbindungen</li>
         </ul>
+        <p class="text-on-surface-faint text-xs leading-relaxed mb-8 border-t border-outline pt-6">
+          <span class="text-on-surface-dim font-semibold block mb-2">Geeignet für:</span>
+          Unternehmen mit mehreren gewachsenen Systeminseln — typisch: CRM, ERP, Online-Shop und Buchhaltungssoftware die nicht miteinander sprechen. Jede manuelle Datenpflege, jeder CSV-Export und jedes Kopieren zwischen Systemen ist eine potenzielle Fehlerquelle. DataSync Hub verbindet bis zu 5 Systeme via REST-API, GraphQL oder Webhook in Echtzeit. Konfliktauflösung, Fehler-Alerting und automatischer Rollback bei fehlgeschlagener Synchronisation sind integriert. Unterstützte Systeme: Lexoffice, Sevdesk, Shopify, HubSpot, Pipedrive, Salesforce und weitere auf Anfrage.
+        </p>
         <div class="flex items-center justify-between pt-6 border-t border-outline">
           <p class="text-on-surface-faint text-xs">Kein Datenverlust, kein manueller Export</p>
           <a href="/ai-ready-check" class="text-[10px] uppercase tracking-widest text-on-surface-faint hover-amber hover:text-primary transition-colors">Anfragen →</a>
@@ -211,12 +254,16 @@
         <p class="text-on-surface-dim text-sm leading-relaxed mb-6">
           Vollautomatische Rechnungsstellung vom Angebot bis zur Mahnung. 3-stufiger Mahnlauf, automatischer Zahlungsabgleich, DATEV-kompatibler Export.
         </p>
-        <ul class="text-sm space-y-2 mb-8 text-on-surface-dim">
+        <ul class="text-sm space-y-2 mb-6 text-on-surface-dim">
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Angebots- bis Rechnungsautomatik</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> 3-stufiger Mahnlauf automatisch</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Zahlungsabgleich per Bankverbindung</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> DATEV-Export für Steuerberater</li>
         </ul>
+        <p class="text-on-surface-faint text-xs leading-relaxed mb-6 border-t border-outline pt-6">
+          <span class="text-on-surface-dim font-semibold block mb-2">Geeignet für:</span>
+          Handwerksbetriebe, Agenturen und Dienstleister mit wiederkehrenden Rechnungen und hohem Aufwand in der Debitorenbuchhaltung. InvoiceBot erstellt Rechnungen automatisch aus abgeschlossenen Aufträgen, verschickt sie per E-Mail und gleicht Zahlungseingänge via Bankverbindungs-API (Finapi/GoCardless) automatisch ab. Bei Zahlungsverzug startet der dreistufige Mahnlauf eigenständig — mit konfigurierbaren Fristen und Mahngebühren. Das ZUGFeRD-Format für E-Rechnungen (B2B-Pflicht ab 2025) ist integriert. DATEV-kompatibler Export für die direkte Übergabe an Ihren Steuerberater.
+        </p>
         <div class="bg-surface-low border-l-2 border-primary p-4 mb-8">
           <p class="text-on-surface-dim text-xs leading-relaxed">
             <span class="text-on-surface font-semibold">Ergebnis:</span> Handwerksunternehmen, 22 MA — Rechnungserstellung von 45 Min. auf 8 Min. reduziert.
@@ -237,12 +284,16 @@
         <p class="text-on-surface-dim text-sm leading-relaxed mb-6">
           Maßgeschneidertes CRM nach Ihren Prozessen — keine Kompromisse mit Off-the-Shelf-Software. Kontakte, Pipelines, Angebote, Reporting, API-Integrationen.
         </p>
-        <ul class="text-sm space-y-2 mb-8 text-on-surface-dim">
+        <ul class="text-sm space-y-2 mb-6 text-on-surface-dim">
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Vollständig auf Ihre Prozesse zugeschnitten</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> Pipeline-Management und Forecasting</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> API-Integrationen zu Bestandssystemen</li>
           <li class="flex items-start gap-2"><span class="text-primary shrink-0 mt-0.5">—</span> 12-Wochen-Projekt, 4 Phasen</li>
         </ul>
+        <p class="text-on-surface-faint text-xs leading-relaxed mb-8 border-t border-outline pt-6">
+          <span class="text-on-surface-dim font-semibold block mb-2">Geeignet für:</span>
+          Unternehmen für die Salesforce zu groß, HubSpot zu teuer und Excel zu fehleranfällig ist — typisch: B2B-Dienstleister, Handelsunternehmen oder Beratungen mit komplexen Vertriebsprozessen. Das Custom CRM wird in vier Phasen à 3 Wochen gebaut: Anforderungsanalyse, Datenbankdesign, Entwicklung und Rollout. Der Tech-Stack (React, Supabase, EU-Server) gehört Ihnen — kein monatliches SaaS-Abo, kein Vendor-Lock-in. API-Integrationen zu ERP-Systemen, Buchhaltung und Kommunikationstools sind inklusive. Sie sprechen während des gesamten Projekts direkt mit <a href="/ueber-uns" class="text-primary hover:underline">Cosmo Gräf</a>, dem Entwickler der Ihr System baut.
+        </p>
         <div class="flex items-center justify-between pt-6 border-t border-outline">
           <p class="text-on-surface-faint text-xs">Kein Off-the-Shelf-Kompromiss</p>
           <a href="/ai-ready-check" class="text-[10px] uppercase tracking-widest text-on-surface-faint hover-amber hover:text-primary transition-colors">Anfragen →</a>
@@ -251,6 +302,17 @@
 
     </div>
     <p class="text-on-surface-faint text-xs mt-8">Alle Einmallösungen inkl. Hosting &amp; Betrieb für 12 Monate.</p>
+    <!-- Internal link to HiveMind -->
+    <div class="mt-16 border border-primary-border bg-primary-subtle p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div>
+        <p class="text-primary text-[10px] uppercase tracking-[0.2em] font-bold mb-2">Auch interessant</p>
+        <p class="text-on-surface font-semibold mb-1">HiveMind — KI-Wissensmanagement</p>
+        <p class="text-on-surface-dim text-sm">Nicht nur Prozesse automatisieren — auch Ihr Firmenwissen durchsuchbar machen. Dokumente, Slack, E-Mails: ein KI-Assistent der alles kennt.</p>
+      </div>
+      <a href="/hivemind" class="btn border border-primary text-primary px-8 py-3 text-[10px] uppercase tracking-widest font-bold hover-amber hover:bg-primary hover:text-black shrink-0">
+        HiveMind ansehen →
+      </a>
+    </div>
   </div>
 </section>
 
@@ -394,6 +456,7 @@
       <a href="/loesungen" class="hover-amber hover:text-primary">Lösungen</a>
       <a href="/hivemind" class="hover-amber hover:text-primary">HiveMind</a>
       <a href="/ueber-uns" class="hover-amber hover:text-primary">Über uns</a>
+      <a href="/blog" class="hover-amber hover:text-primary">Blog</a>
       <a href="/ai-ready-check" class="hover-amber hover:text-primary">AI-Check</a>
       <a href="mailto:office@cittasana.de" class="hover-amber hover:text-primary">office@cittasana.de</a>
       <a href="/impressum" class="hover-amber hover:text-primary">Impressum</a>

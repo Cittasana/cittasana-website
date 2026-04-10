@@ -2,6 +2,7 @@
 <html class="dark" lang="de">
 <head>
 <meta charset="utf-8"/>
+<link rel="alternate" type="text/plain" href="/llms.txt" />
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Über uns — Cosmo Gräf & Cittasana AI | KI-Automatisierung Mittelstand</title>
 <meta name="description" content="Cittasana AI — gegründet von Cosmo Gräf aus eigener Unternehmenserfahrung. Kein Account-Manager. Sie sprechen immer mit dem Entwickler der Ihr System baut." />
@@ -11,9 +12,13 @@
 <meta property="og:type"        content="website" />
 <meta property="og:title"       content="Über uns — Cosmo Gräf & Cittasana AI" />
 <meta property="og:description" content="Gegründet aus persönlicher Überzeugung. Sie sprechen immer mit dem Menschen der Ihr System baut." />
-<meta property="og:url"         content="https://ai.cittasana.de/ueber-uns" />
-<meta property="og:locale"      content="de_DE" />
-<meta name="twitter:card"       content="summary_large_image" />
+<meta property="og:url"          content="https://ai.cittasana.de/ueber-uns" />
+<meta property="og:image"        content="https://ai.cittasana.de/images/og-ueber-uns.png" />
+<meta property="og:image:width"  content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:locale"       content="de_DE" />
+<meta name="twitter:card"        content="summary_large_image" />
+<meta name="twitter:image"       content="https://ai.cittasana.de/images/og-ueber-uns.png" />
 
 <!-- Schema: Person + Organization -->
 <script type="application/ld+json">
@@ -25,7 +30,30 @@
   "worksFor": { "@type": "Organization", "name": "Cittasana AI", "url": "https://ai.cittasana.de" },
   "email": "office@cittasana.de",
   "url": "https://ai.cittasana.de/ueber-uns",
-  "knowsAbout": ["KI-Automatisierung", "Prozessautomatisierung", "Mittelstand", "HiveMind"]
+  "image": "https://ai.cittasana.de/images/cosmo-graef.jpg",
+  "knowsAbout": ["KI-Automatisierung", "Prozessautomatisierung", "Mittelstand", "HiveMind", "Workflow-Automatisierung"],
+  "sameAs": ["https://www.linkedin.com/in/cosmo-graef"]
+}
+</script>
+
+<!-- Schema: BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://ai.cittasana.de/" },
+    { "@type": "ListItem", "position": 2, "name": "Über uns", "item": "https://ai.cittasana.de/ueber-uns" }
+  ]
+}
+</script>
+<!-- Schema: WebPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "datePublished": "2026-04-01",
+  "dateModified": "2026-04-10"
 }
 </script>
 
@@ -82,6 +110,7 @@
       <a href="/loesungen" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Lösungen</a>
       <a href="/hivemind"  class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">HiveMind</a>
       <a href="/ueber-uns" class="text-on-surface text-xs uppercase tracking-[0.08em] font-semibold">Über uns</a>
+      <a href="/blog"      class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Blog</a>
       <a href="/ai-ready-check" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">AI-Check</a>
     </div>
     <a href="/ai-ready-check" class="btn bg-primary text-black px-6 py-2.5 text-xs uppercase tracking-[0.12em] font-extrabold hover-amber hover:bg-amber-400">
@@ -95,9 +124,10 @@
   <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[150px] pointer-events-none" style="background:rgba(245,158,11,0.06);"></div>
   <div class="max-w-7xl mx-auto relative">
     <p class="text-primary text-[10px] uppercase tracking-[0.25em] font-bold mb-8">Über Cittasana</p>
-    <h1 class="serif font-light text-6xl md:text-[7rem] leading-[0.9] tracking-tight mb-12">
+    <h1 class="serif font-light text-6xl md:text-[7rem] leading-[0.9] tracking-tight mb-6">
       Nicht weil der<br/>Markt es hergab.<br/><span class="serif-italic">Sondern weil wir<br/>daran glauben.</span>
     </h1>
+    <p class="text-primary text-sm uppercase tracking-[0.15em] font-bold mb-12">KI-Automatisierung für den Mittelstand — gegründet von Cosmo Gräf</p>
     <p class="text-on-surface-dim text-xl max-w-2xl leading-relaxed">
       Cittasana entstand aus persönlicher Überzeugung — nicht aus einer Marktanalyse. Was hinter diesem Unternehmen steht, warum es so arbeitet wie es arbeitet, und was das für Sie bedeutet.
     </p>
@@ -291,6 +321,7 @@
       <a href="/loesungen" class="hover-amber hover:text-primary">Lösungen</a>
       <a href="/hivemind" class="hover-amber hover:text-primary">HiveMind</a>
       <a href="/ueber-uns" class="hover-amber hover:text-primary">Über uns</a>
+      <a href="/blog" class="hover-amber hover:text-primary">Blog</a>
       <a href="/ai-ready-check" class="hover-amber hover:text-primary">AI-Check</a>
       <a href="mailto:office@cittasana.de" class="hover-amber hover:text-primary">office@cittasana.de</a>
       <a href="/impressum" class="hover-amber hover:text-primary">Impressum</a>
