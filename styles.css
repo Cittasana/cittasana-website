@@ -239,11 +239,14 @@
   z-index: -1;
 }
 
-/* --------- TYPEWRITER ------------------------------------------------- */
+/* --------- TYPEWRITER -------------------------------------------------
+   No white-space:nowrap — on mobile, long phrases like
+   "Welche Verträge laufen dieses Quartal aus?" forced the parent card
+   wider than the viewport and caused horizontal overflow. Let the text
+   wrap naturally; the blinking caret stays at the end of the last line. */
 .typewriter {
   border-right: 2px solid var(--primary);
   animation: blink-caret 0.9s steps(2) infinite;
-  white-space: nowrap;
 }
 
 /* --------- SECTION LABEL ---------------------------------------------- */
@@ -275,6 +278,12 @@
   line-height: 0.94;
   letter-spacing: -0.025em;
   color: #f3f1fb;
+  /* German compound words like "KI-Automatisierung" overflow narrow
+     viewports at display sizes. Let the browser hyphenate (requires
+     <html lang="de">) and break as a last resort. */
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  overflow-wrap: break-word;
 }
 .display-italic {
   font-family: "Newsreader", serif;
