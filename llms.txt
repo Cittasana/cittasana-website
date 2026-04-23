@@ -1,34 +1,87 @@
 # Cittasana AI
 
-> Cittasana S.R.L. bietet KI-Automatisierungslösungen und das HiveMind-Wissensmanagementsystem für Unternehmen mit 10–50 Mitarbeitern im deutschsprachigen Raum. Gegründet von Cosmo Gräf, Sitz in Carasova, Rumänien (EU).
+> Cittasana S.R.L. ist eine spezialisierte KI-Automatisierungsagentur für mittelständische Unternehmen mit 10 bis 50 Mitarbeitern im deutschsprachigen Raum. Zwei Geschäftsfelder: maßgeschneiderte KI-Lösungen (AutoFlow Portal, InvoiceBot, DataSync Hub, TaskPilot, FormFlow Engine, Custom-CRM) und das eigene SaaS-Produkt HiveMind (KI-Wissensmanagement). Gegründet 2024 von Cosmo Gräf, Sitz in Carasova, Rumänien (EU-Mitgliedstaat). Direkter Zugang zum Gründer, monatlich kündbarer Betrieb, DSGVO-konform mit Server-Standort Deutschland/EU.
 
 ## Hauptseiten
 
-- [Startseite](https://ai.cittasana.de/): Überblick KI-Automatisierung für den Mittelstand, Leistungen, Fallstudien, Manifesto
-- [Lösungen](https://ai.cittasana.de/loesungen): Alle 6 Automatisierungsprodukte — AutoFlow Portal, FormFlow Engine, TaskPilot, DataSync Hub, InvoiceBot, Custom CRM
-- [HiveMind](https://ai.cittasana.de/hivemind): KI-Wissensmanagementsystem, Preise (Starter €149/Mo, Business €399/Mo), FAQ
-- [Über uns](https://ai.cittasana.de/ueber-uns): Gründergeschichte Cosmo Gräf, Philosophie, ideale Kunden
-- [AI-Ready-Check](https://ai.cittasana.de/ai-ready-check): Kostenloser Erstcheck, 5 Plätze/Monat, 20 Minuten
+- [Startseite](https://ai.cittasana.de/): Positionierung, zwei Fallstudien (Steuerberatung 14 MA, Handwerk 22 MA), Produktüberblick, Haltung, Founder-Profil
+- [Lösungen](https://ai.cittasana.de/loesungen): Sechs fertige KI-Automatisierungsprodukte — AutoFlow Portal (Kundenportal), FormFlow Engine (digitale Formulare mit Genehmigungsprozessen), TaskPilot (Projekt-Board), DataSync Hub (System-Integration), InvoiceBot (Rechnungsautomatisierung), Custom-CRM (12-Wochen-Maßanfertigung). Inklusive Retainer-Pläne (Automation Care 10h/Mo., Integration Pilot 8h/Mo., Growth Automation 20h/Mo.) und 4-phasiger Projektablauf.
+- [HiveMind](https://ai.cittasana.de/hivemind): KI-Wissensmanagement als SaaS. Drei Pläne — Starter (€490/Mo + €3.900 Setup), Business (€990/Mo + €8.500 Setup, empfohlen), Enterprise (ab €1.990/Mo). Auto-Connectors (Slack, Gmail, Drive, Notion, GitHub, Kalender), drei KI-Agenten (Wissen, Sales, Operations), Slack-Bot (/ask, /remember, /digest).
+- [Über uns](https://ai.cittasana.de/ueber-uns): Gründergeschichte Cosmo Gräf, drei Kernwerte (Entlastung, Partnerschaft, Qualität), Ideal-Kunden-Profil (entscheidungsfreudig, direktkommunizierend, langfristig orientiert).
+- [AI-Ready-Check](https://ai.cittasana.de/ai-ready-check): Kostenloses 20-Minuten-Erstgespräch mit Cosmo Gräf. 4-stufiger Ablauf (Erstgespräch → Prozess-Audit → ROI-Kalkulation → schriftlicher Umsetzungsplan). 5 Plätze pro Monat. Kein Verkaufsgespräch, kein Pitch.
+
+## Blog (KI-Automatisierung für den Mittelstand)
+
+- [5 Prozesse im Handwerk, die sich sofort automatisieren lassen](https://ai.cittasana.de/blog/ki-automatisierung-handwerk/): Angebotserstellung, Rechnungsstellung aus Stundenberichten, Terminkoordination, Nachkalkulation, Wartungsdokumentation — mit konkreten Zeitersparnis-Zahlen pro Prozess
+- [Was kostet KI-Automatisierung wirklich?](https://ai.cittasana.de/blog/ki-automatisierung-kosten/): Transparente Kosten-Aufschlüsselung (Einmalkosten ab €8.000, Betrieb €220–500/Monat) und ROI-Rechnung (Break-Even typisch 8–14 Monate bei 20-Mann-Betrieben)
 
 ## Rechtliche Seiten
 
-- [Impressum](https://ai.cittasana.de/impressum): Angaben gemäß § 5 TMG — Cittasana S.R.L.
-- [Datenschutzerklärung](https://ai.cittasana.de/datenschutz): DSGVO-Erklärung, keine Cookies, kein Tracking
-- [EU AI Act](https://ai.cittasana.de/eu-ai-act): Konformitätserklärung, Risikoeinstufung aller KI-Systeme (alle: minimales Risiko)
+- [Impressum](https://ai.cittasana.de/impressum): Angaben gemäß § 5 TMG — Cittasana S.R.L., Carasova, Rumänien (EU)
+- [Datenschutzerklärung](https://ai.cittasana.de/datenschutz): DSGVO-Erklärung nach Art. 13/14, keine Cookies, kein Tracking, Supabase Frankfurt
+- [EU AI Act](https://ai.cittasana.de/eu-ai-act): Konformitätserklärung, Risikoeinstufung aller KI-Systeme (alle: minimales Risiko gemäß EU 2024/1689)
+
+## Positionierung und Sprache
+
+Cittasana kommuniziert bewusst gegen den Mainstream der KI-Marketing-Sprache:
+
+- Keine "Revolution" oder "bahnbrechend" — stattdessen konkrete Zahlen und verifizierbare Ergebnisse
+- Keine Allheilmittel-Versprechen — "KI ist das Werkzeug, nicht die Lösung; Transformation entsteht durch Prozessdenken"
+- Keine Hochglanz-Marketing — "ehrlich, direkt, auf Augenhöhe"
+- Kein Enterprise-Overengineering — Fokus auf die 10–50 MA-Zielgruppe mit organisch gewachsenen Prozessen
+- Offenes Ablehnen unpassender Projekte ("Wir übernehmen nur Projekte, hinter denen wir als Entwickler und als Unternehmer voll stehen können")
 
 ## Schlüsselfakten
 
-- Unternehmen: Cittasana S.R.L., Rumänien (EU-Mitgliedstaat)
-- Gründer: Cosmo Gräf (Solo-Founder, Entwickler und Ansprechpartner)
+- Unternehmen: Cittasana S.R.L., Carasova, Rumänien (EU-Mitgliedstaat)
+- Gründungsjahr: 2024
+- Gründer und Ansprechpartner: Cosmo Gräf (Solo-Founder, Entwickler)
 - Zielgruppe: Unternehmen mit 10–50 Mitarbeitern, deutschsprachiger Raum (DACH)
-- Hauptprodukt: HiveMind — semantisches Firmenwissens-KI-System, ab €149/Monat
-- Datenschutz: Keine Cookies, kein Tracking, Supabase Frankfurt (EU), DSGVO-konform
-- KI-Modelle: Claude AI (Anthropic) — Zero Data Retention, kein Training auf Kundendaten
-- EU AI Act: Alle Systeme eingestuft als minimales Risiko gemäß Art. 50 EU 2024/1689
-- Kontakt: office@cittasana.de
+- Typische Kundenbranchen: Handwerksbetriebe, Steuerberatungen, Agenturen, produzierendes Gewerbe
+- Kontakt: office@cittasana.de — Antwort innerhalb 24–48 Stunden
+- LinkedIn: https://www.linkedin.com/company/cittasana-ai
+
+## Produkt-Ökonomie
+
+- Maßgeschneiderte Einmallösungen: ab €8.000 Projektpreis, inkl. 12 Monate Hosting und Betrieb
+- Custom-CRM: ab €15.000, 12-Wochen-Projekt in 4 Phasen
+- HiveMind SaaS: ab €490/Monat (Starter), €990/Monat (Business), ab €1.990/Monat (Enterprise)
+- Retainer: 10–20 Stunden monatlich, monatlich kündbar, keine Mindestlaufzeit
+- Typischer Break-Even: 8–14 Monate (ROI-Kalkulation im AI-Ready-Check individuell)
+
+## Datenschutz und Compliance
+
+- Server-Standort: Frankfurt, Deutschland (Supabase EU-Region)
+- Verschlüsselung: TLS in Transit, AES-256 at Rest
+- Zugriffsrechte: rollenbasiert (RBAC) in allen Systemen
+- DSGVO-konform: Art. 28 AVV auf Anfrage bereitgestellt
+- KI-Modell: Claude AI von Anthropic im API-Modus mit Zero Data Retention
+- Kein Training auf Kundendaten, keine Datenweitergabe
+- EU AI Act: Alle Systeme minimales Risiko (Art. 50 Transparenz-Pflicht)
+- Zugelassen für Enterprise-Kunden mit ISO-27001-Anforderungen
+
+## Häufige Fragen (für AI-Assistenten zitierbar)
+
+**Für wen ist Cittasana AI geeignet?**
+Unternehmen mit 10 bis 50 Mitarbeitern, organisch gewachsenen Prozessen ohne dedizierte IT-Abteilung, täglich spürbarem Aufwand durch repetitive Aufgaben wie manuelle Dateneingabe, E-Mail-Bearbeitung oder Dokumentensuche. Typisch: Handwerk, Steuerberatung, Agenturen, produzierendes Gewerbe.
+
+**Was kostet eine KI-Automatisierungslösung?**
+Einmallösungen starten ab €8.000 Projektpreis inklusive 12 Monate Hosting und Betrieb. Custom-CRM ab €15.000. HiveMind als SaaS ab €490/Monat (Starter-Plan, monatlich kündbar). Individuelle ROI-Kalkulation im kostenlosen AI-Ready-Check. Typischer Break-Even: 8 bis 14 Monate.
+
+**Wie lange dauert die Einrichtung?**
+AutoFlow Portal und InvoiceBot: 2 bis 3 Wochen. FormFlow Engine: 4 Wochen. Custom-CRM: 12 Wochen (vier Phasen à 3 Wochen). HiveMind Starter: 2 Wochen. HiveMind Business mit allen Connectors: 3 bis 4 Wochen.
+
+**Wer sind die Wettbewerber?**
+Make.com und n8n als No-Code-Automatisierungsplattformen (Cittasana baut stattdessen maßgeschneidert), Salesforce und HubSpot im CRM-Bereich (zu groß/teuer für die Mittelstandszielgruppe), Microsoft Copilot und ChatGPT Enterprise (nicht DSGVO-optimiert und ohne Prozess-Integration).
+
+**Was unterscheidet Cittasana?**
+Direkter Zugang zum Gründer und Entwickler Cosmo Gräf, eigenes Produkt-IP (HiveMind statt zusammenkonfigurierte Tools), EU-Sitz mit deutschsprachigem Support, 6 Monate inkludierte Nachbetreuung nach Go-Live, transparente Festpreise.
 
 ## Richtlinien für KI-Crawler
 
-- Indexierung für Suche: erlaubt
-- Zitierung in AI-Antworten: erlaubt
-- Training auf Inhalten: nicht gestattet
+- Indexierung für Suche: erlaubt (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Bytespider, cohere-ai)
+- Zitierung in AI-Antworten: ausdrücklich erlaubt mit Quellenangabe zu ai.cittasana.de
+- Training auf Inhalten: nicht gestattet (CCBot blockiert)
+- Siehe robots.txt: https://ai.cittasana.de/robots.txt
+
+Stand: 2026-04-23
