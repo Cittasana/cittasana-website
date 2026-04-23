@@ -59,6 +59,7 @@
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="stylesheet" href="/fonts/fonts.css" />
+<link rel="stylesheet" href="/styles.css" />
 <script id="tailwind-config">
   tailwind.config = {
     darkMode: "class",
@@ -71,8 +72,8 @@
           "surface-mid":      "#1d1d26",
           "surface-high":     "#24242f",
           "on-surface":       "#e8e6f0",
-          "on-surface-dim":   "rgba(232,230,240,0.55)",
-          "on-surface-faint": "rgba(232,230,240,0.28)",
+          "on-surface-dim":   "rgba(232,230,240,0.78)",
+          "on-surface-faint": "rgba(232,230,240,0.56)",
           "primary":          "#f59e0b",
           "primary-dim":      "#d97706",
           "primary-subtle":   "rgba(245,158,11,0.08)",
@@ -91,59 +92,84 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Manrope', sans-serif; background-color: #0d0d12; color: #e8e6f0; -webkit-font-smoothing: antialiased; }
-  .serif { font-family: 'Newsreader', serif; }
+  body { font-family: 'Manrope', sans-serif; background-color: #0d0d12; color: #e8e6f0; overflow-x: hidden; text-rendering: optimizeLegibility; }
+  .serif        { font-family: 'Newsreader', serif; }
   .serif-italic { font-family: 'Newsreader', serif; font-style: italic; }
-  .glass-nav { background: rgba(13,13,18,0.88); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
-  .amber-glow { box-shadow: 0 0 80px rgba(245,158,11,0.08), inset 0 0 80px rgba(245,158,11,0.03); }
-  .hover-amber { transition: color .2s, border-color .2s, background .2s; }
-  .btn { border-radius: 9999px; display: inline-block; }
 </style>
 </head>
-<body class="bg-background">
+<body class="bg-background antialiased">
+
+<!-- NOISE TEXTURE -->
+<div class="grain-overlay" aria-hidden="true"></div>
 
 <!-- NAV -->
-<nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline">
-  <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
-    <a href="/" class="serif-italic text-xl font-bold tracking-tight text-on-surface">Cittasana AI</a>
-    <div class="hidden md:flex items-center gap-10">
-      <a href="/loesungen" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Lösungen</a>
-      <a href="/hivemind"  class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">HiveMind</a>
-      <a href="/ueber-uns" class="text-on-surface text-xs uppercase tracking-[0.08em] font-semibold">Über uns</a>
-      <a href="/blog"      class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Blog</a>
-      <a href="/ai-ready-check" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">AI-Check</a>
+<nav data-nav class="fixed top-0 w-full z-50 glass-refract border-b border-outline transition-all duration-300">
+  <div class="flex justify-between items-center px-6 md:px-10 py-4 max-w-screen-2xl mx-auto">
+    <a href="/" class="flex items-center gap-3 group">
+      <span class="serif-italic text-xl font-bold tracking-tight text-on-surface group-hover:text-primary transition-colors">Cittasana AI</span>
+      <span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-outline text-[9px] uppercase tracking-[0.15em] text-on-surface-faint">
+        <span class="live-dot"></span>
+        <span>5&nbsp;/&nbsp;5&nbsp;Plätze&nbsp;frei</span>
+      </span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="/loesungen" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover:text-on-surface transition-colors">Lösungen</a>
+      <a href="/hivemind"  class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover:text-on-surface transition-colors">HiveMind</a>
+      <a href="/ueber-uns" class="text-primary text-xs uppercase tracking-[0.08em] font-semibold">Über uns</a>
+      <a href="/blog"      class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover:text-on-surface transition-colors">Blog</a>
     </div>
-    <a href="/ai-ready-check" class="btn bg-primary text-black px-6 py-2.5 text-xs uppercase tracking-[0.12em] font-extrabold hover-amber hover:bg-amber-400">
-      AI-Check →
+    <a href="/ai-ready-check" data-magnetic class="btn btn--primary px-6 py-2.5 text-[11px]">
+      AI-Check <span class="arrow">→</span>
     </a>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="pt-40 pb-32 px-8 md:px-24 relative overflow-hidden">
-  <div class="absolute top-0 right-0 w-[500px] h-[500px] rounded-full blur-[150px] pointer-events-none" style="background:rgba(245,158,11,0.06);"></div>
-  <div class="max-w-7xl mx-auto relative">
-    <p class="text-primary text-[10px] uppercase tracking-[0.25em] font-bold mb-8">Über Cittasana</p>
-    <h1 class="serif font-light text-6xl md:text-[7rem] leading-[0.9] tracking-tight mb-6">
-      Aus Überzeugung<br/>gebaut.<br/><span class="serif-italic">Für den Mittelstand<br/>gemacht.</span>
-    </h1>
-    <p class="text-primary text-sm uppercase tracking-[0.15em] font-bold mb-12">KI-Automatisierung für den Mittelstand — Cittasana AI S.R.L.</p>
-    <p class="text-on-surface-dim text-xl max-w-2xl leading-relaxed">
-      Cittasana ist ein spezialisiertes Team für KI-Automatisierung — entstanden aus persönlicher Überzeugung und eigener Unternehmenserfahrung. Was uns antreibt, wie wir arbeiten, und warum das für Sie einen Unterschied macht.
-    </p>
+<!-- HERO — asymmetric -->
+<section class="relative pt-32 md:pt-40 pb-20 md:pb-32 px-6 md:px-16 overflow-hidden">
+  <div class="absolute top-[20%] right-[8%] w-[560px] h-[460px] rounded-full blur-[150px] pointer-events-none drift-x" style="background:radial-gradient(circle,rgba(245,158,11,0.09),transparent 65%);"></div>
+  <div class="absolute inset-0 grid-bg pointer-events-none opacity-60"></div>
+  <div class="max-w-[1440px] mx-auto relative">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+      <div class="lg:col-span-9 reveal">
+        <span class="eyebrow mb-6">Über Cittasana</span>
+        <h1 class="display text-5xl md:text-7xl lg:text-[7rem] mt-6 mb-8">
+          Aus Überzeugung<br/>gebaut.<br/>
+          <span class="display-italic text-primary">Für den Mittelstand<br/>gemacht.</span>
+        </h1>
+      </div>
+      <div class="lg:col-span-3 reveal" data-delay="2">
+        <p class="font-mono text-[10px] uppercase tracking-[0.2em] text-on-surface-faint mb-3">Firmensitz</p>
+        <p class="text-on-surface font-semibold mb-6">Cittasana S.R.L.<br/>Seit 2024</p>
+        <p class="text-on-surface-dim text-sm leading-relaxed">
+          KI-Automatisierung für den Mittelstand — mit europäischer DNA und direktem Kundenzugang.
+        </p>
+      </div>
+    </div>
+    <div class="mt-16 pt-8 border-t border-outline reveal" data-delay="3">
+      <p class="text-on-surface-dim text-lg md:text-xl max-w-3xl leading-relaxed">
+        Cittasana ist ein spezialisiertes Team für KI-Automatisierung — entstanden aus persönlicher Überzeugung und eigener Unternehmenserfahrung. Was uns antreibt, wie wir arbeiten, und warum das für Sie einen Unterschied macht.
+      </p>
+    </div>
   </div>
 </section>
 
 <!-- FOUNDER -->
 <section class="py-32 px-8 md:px-24 bg-surface-low border-y border-outline">
   <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-start">
-    <div class="flex flex-col items-center md:items-start gap-8">
-      <img src="/images/cosmo-graef.jpg" alt="Cosmo Gräf, Gründer von Cittasana AI" width="288" height="288" class="w-72 h-72 object-cover object-top border border-outline" />
+    <div class="flex flex-col items-center md:items-start gap-8 reveal">
+      <div data-tilt class="tilt relative">
+        <div class="absolute inset-0 rounded-2xl blur-2xl" style="background:radial-gradient(circle,rgba(245,158,11,0.18),transparent 65%);"></div>
+        <div class="relative p-1.5 rounded-2xl bg-gradient-to-br from-primary/40 via-transparent to-outline-med">
+          <img src="/images/cosmo-graef.jpg" alt="Cosmo Gräf, Gründer von Cittasana AI" width="288" height="288" class="block w-72 h-72 object-cover object-top rounded-xl border border-outline" />
+        </div>
+        <span class="absolute bottom-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full glass-refract text-[10px] uppercase tracking-[0.15em] font-semibold">
+          <span class="live-dot"></span> Antwortet in 24h
+        </span>
+      </div>
       <div>
         <h2 class="serif text-3xl font-semibold mb-1">Cosmo Gräf</h2>
         <p class="text-on-surface-faint text-sm uppercase tracking-widest mb-4">Gründer &amp; Geschäftsführer, Cittasana AI</p>
-        <a href="mailto:office@cittasana.de" class="text-primary hover-amber text-sm">office@cittasana.de</a>
-        <p class="text-on-surface-faint text-xs mt-1">Unser Team antwortet innerhalb von 24 Stunden.</p>
+        <a href="mailto:office@cittasana.de" class="text-primary hover:text-amber-400 transition-colors text-sm">office@cittasana.de</a>
       </div>
     </div>
     <div>
@@ -331,6 +357,8 @@
     <span class="text-[10px] uppercase tracking-[0.1em] text-on-surface-faint">© 2026 Cittasana AI</span>
   </div>
 </footer>
+
+<script src="/motion.js" defer></script>
 
 </body>
 </html>

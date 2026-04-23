@@ -61,6 +61,7 @@
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="stylesheet" href="/fonts/fonts.css" />
+<link rel="stylesheet" href="/styles.css" />
 <script id="tailwind-config">
   tailwind.config = {
     darkMode: "class",
@@ -73,8 +74,8 @@
           "surface-mid":      "#1d1d26",
           "surface-high":     "#24242f",
           "on-surface":       "#e8e6f0",
-          "on-surface-dim":   "rgba(232,230,240,0.55)",
-          "on-surface-faint": "rgba(232,230,240,0.28)",
+          "on-surface-dim":   "rgba(232,230,240,0.78)",
+          "on-surface-faint": "rgba(232,230,240,0.56)",
           "primary":          "#f59e0b",
           "primary-dim":      "#d97706",
           "primary-subtle":   "rgba(245,158,11,0.08)",
@@ -93,44 +94,74 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Manrope', sans-serif; background-color: #0d0d12; color: #e8e6f0; -webkit-font-smoothing: antialiased; }
-  .serif { font-family: 'Newsreader', serif; }
+  body { font-family: 'Manrope', sans-serif; background-color: #0d0d12; color: #e8e6f0; overflow-x: hidden; text-rendering: optimizeLegibility; }
+  .serif        { font-family: 'Newsreader', serif; }
   .serif-italic { font-family: 'Newsreader', serif; font-style: italic; }
-  .glass-nav { background: rgba(13,13,18,0.88); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
-  .amber-glow { box-shadow: 0 0 80px rgba(245,158,11,0.08), inset 0 0 80px rgba(245,158,11,0.03); }
-  .hover-amber { transition: color .2s, border-color .2s, background .2s; }
-  .btn { border-radius: 9999px; display: inline-block; }
 </style>
 </head>
-<body class="bg-background">
+<body class="bg-background antialiased">
+
+<!-- NOISE TEXTURE -->
+<div class="grain-overlay" aria-hidden="true"></div>
 
 <!-- NAV -->
-<nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline">
-  <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
-    <a href="/" class="serif-italic text-xl font-bold tracking-tight text-on-surface">Cittasana AI</a>
-    <div class="hidden md:flex items-center gap-10">
-      <a href="/loesungen" class="text-on-surface text-xs uppercase tracking-[0.08em] font-semibold">Lösungen</a>
-      <a href="/hivemind"  class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">HiveMind</a>
-      <a href="/ueber-uns" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Über uns</a>
-      <a href="/blog"      class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Blog</a>
-      <a href="/ai-ready-check" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">AI-Check</a>
+<nav data-nav class="fixed top-0 w-full z-50 glass-refract border-b border-outline transition-all duration-300">
+  <div class="flex justify-between items-center px-6 md:px-10 py-4 max-w-screen-2xl mx-auto">
+    <a href="/" class="flex items-center gap-3 group">
+      <span class="serif-italic text-xl font-bold tracking-tight text-on-surface group-hover:text-primary transition-colors">Cittasana AI</span>
+      <span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-outline text-[9px] uppercase tracking-[0.15em] text-on-surface-faint">
+        <span class="live-dot"></span>
+        <span>5&nbsp;/&nbsp;5&nbsp;Plätze&nbsp;frei</span>
+      </span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="/loesungen" class="text-primary text-xs uppercase tracking-[0.08em] font-semibold">Lösungen</a>
+      <a href="/hivemind"  class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover:text-on-surface transition-colors">HiveMind</a>
+      <a href="/ueber-uns" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover:text-on-surface transition-colors">Über uns</a>
+      <a href="/blog"      class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover:text-on-surface transition-colors">Blog</a>
     </div>
-    <a href="/ai-ready-check" class="btn bg-primary text-black px-6 py-2.5 text-xs uppercase tracking-[0.12em] font-extrabold hover-amber hover:bg-amber-400">
-      AI-Check →
+    <a href="/ai-ready-check" data-magnetic class="btn btn--primary px-6 py-2.5 text-[11px]">
+      AI-Check <span class="arrow">→</span>
     </a>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="pt-40 pb-24 px-8 md:px-24 border-b border-outline">
-  <div class="max-w-7xl mx-auto">
-    <p class="text-primary text-[10px] uppercase tracking-[0.25em] font-bold mb-6">Was wir bauen</p>
-    <h1 class="serif font-light text-6xl md:text-7xl leading-[0.9] tracking-tight mb-8">
-      Fertige Systeme.<br/><span class="serif-italic">In Wochen live,<br/>nicht in Monaten.</span>
-    </h1>
-    <p class="text-on-surface-dim text-xl max-w-2xl leading-relaxed">
-      Sechs bewährte Automatisierungslösungen — gebaut für Unternehmen mit 10–50 Mitarbeitern. Alle inkl. Hosting und Betrieb für 12 Monate.
-    </p>
+<!-- HERO — asymmetric -->
+<section class="relative pt-32 md:pt-40 pb-20 md:pb-28 px-6 md:px-16 border-b border-outline overflow-hidden">
+  <div class="absolute top-[30%] right-[8%] w-[500px] h-[400px] rounded-full blur-[150px] pointer-events-none drift-x" style="background:radial-gradient(circle,rgba(245,158,11,0.09),transparent 65%);"></div>
+  <div class="absolute inset-0 grid-bg pointer-events-none opacity-70"></div>
+  <div class="max-w-[1440px] mx-auto relative">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+      <div class="lg:col-span-8 reveal">
+        <span class="eyebrow mb-6">Was wir bauen</span>
+        <h1 class="display text-5xl md:text-7xl lg:text-[7rem] mt-6 mb-8">
+          Fertige Systeme.<br/>
+          <span class="display-italic text-primary">In Wochen live,<br/>nicht in Monaten.</span>
+        </h1>
+      </div>
+      <div class="lg:col-span-4 reveal" data-delay="2">
+        <p class="text-on-surface-dim text-lg leading-relaxed mb-6">
+          Sechs bewährte Automatisierungslösungen — gebaut für Unternehmen mit 10–50 Mitarbeitern.
+        </p>
+        <p class="text-on-surface-faint text-sm leading-relaxed">
+          Alle inkl. Hosting und Betrieb für 12 Monate. Monatlich kündbare Betreuung optional.
+        </p>
+        <div class="mt-8 grid grid-cols-3 gap-3">
+          <div class="p-3 border border-outline rounded-xl text-center">
+            <p class="font-mono text-lg text-primary">6</p>
+            <p class="text-[9px] uppercase tracking-widest text-on-surface-faint mt-1">Lösungen</p>
+          </div>
+          <div class="p-3 border border-outline rounded-xl text-center">
+            <p class="font-mono text-lg text-primary">2–12</p>
+            <p class="text-[9px] uppercase tracking-widest text-on-surface-faint mt-1">Wochen</p>
+          </div>
+          <div class="p-3 border border-outline rounded-xl text-center">
+            <p class="font-mono text-lg text-primary">12 Mo.</p>
+            <p class="text-[9px] uppercase tracking-widest text-on-surface-faint mt-1">Betrieb inkl.</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -435,16 +466,26 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="py-40 px-8 text-center relative overflow-hidden">
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/5 blur-[100px] pointer-events-none rounded-full"></div>
-  <div class="max-w-3xl mx-auto relative">
-    <h2 class="serif text-5xl font-light leading-tight mb-8">Welche Lösung<br/><span class="serif-italic">passt zu Ihnen?</span></h2>
-    <p class="text-on-surface-dim mb-10">Im kostenlosen AI-Ready-Check finden wir es gemeinsam heraus — mit konkreter ROI-Kalkulation.</p>
-    <a href="/ai-ready-check" class="btn bg-primary text-black px-12 py-6 text-sm uppercase tracking-[0.2em] font-extrabold hover-amber hover:bg-amber-400">
-      Kostenlosen Check sichern
-    </a>
-    <p class="text-on-surface-faint text-xs mt-6">20 Min. Gespräch &nbsp;·&nbsp; Antwort in 48h &nbsp;·&nbsp; Kein Pitch</p>
+<!-- CTA — asymmetric -->
+<section class="py-32 md:py-40 px-6 md:px-16 relative overflow-hidden">
+  <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[340px] blur-[140px] pointer-events-none rounded-full drift-x" style="background:radial-gradient(circle,rgba(245,158,11,0.08),transparent 70%);"></div>
+  <div class="max-w-[1440px] mx-auto relative grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+    <div class="lg:col-span-8 reveal">
+      <span class="eyebrow mb-8">Ihr nächster Schritt</span>
+      <h2 class="display text-5xl md:text-7xl mt-6 leading-[0.95]">
+        Welche Lösung<br/>
+        <span class="display-italic text-primary">passt zu Ihnen?</span>
+      </h2>
+    </div>
+    <div class="lg:col-span-4 reveal" data-delay="2">
+      <p class="text-on-surface-dim text-base leading-relaxed mb-8">
+        Im kostenlosen AI-Ready-Check finden wir es gemeinsam heraus — mit konkreter ROI-Kalkulation.
+      </p>
+      <a href="/ai-ready-check" data-magnetic class="btn btn--primary px-10 py-5 text-sm w-full justify-center glow-pulse">
+        Check sichern <span class="arrow">→</span>
+      </a>
+      <p class="text-on-surface-faint text-xs mt-5 uppercase tracking-[0.18em]">20 Min · 48h Antwort · Kein Pitch</p>
+    </div>
   </div>
 </section>
 
@@ -466,6 +507,8 @@
     <span class="text-[10px] uppercase tracking-[0.1em] text-on-surface-faint">© 2026 Cittasana AI</span>
   </div>
 </footer>
+
+<script src="/motion.js" defer></script>
 
 </body>
 </html>

@@ -23,7 +23,7 @@
 <meta name="twitter:title"      content="KI-Automatisierung für den Mittelstand | Cittasana AI" />
 <meta name="twitter:description" content="Repetitive Prozesse automatisieren. Firmenwissen durchsuchbar machen." />
 <meta name="article:published_time" content="2026-04-01" />
-<meta name="article:modified_time"  content="2026-04-10" />
+<meta name="article:modified_time"  content="2026-04-23" />
 
 <!-- Schema: WebPage -->
 <script type="application/ld+json">
@@ -31,7 +31,7 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "datePublished": "2026-04-01",
-  "dateModified": "2026-04-10"
+  "dateModified": "2026-04-23"
 }
 </script>
 
@@ -89,6 +89,7 @@
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="stylesheet" href="/fonts/fonts.css" />
+<link rel="stylesheet" href="/styles.css" />
 <script id="tailwind-config">
   tailwind.config = {
     darkMode: "class",
@@ -101,8 +102,8 @@
           "surface-mid":      "#1d1d26",
           "surface-high":     "#24242f",
           "on-surface":       "#e8e6f0",
-          "on-surface-dim":   "rgba(232,230,240,0.55)",
-          "on-surface-faint": "rgba(232,230,240,0.28)",
+          "on-surface-dim":   "rgba(232,230,240,0.78)",
+          "on-surface-faint": "rgba(232,230,240,0.56)",
           "primary":          "#f59e0b",
           "primary-dim":      "#d97706",
           "primary-subtle":   "rgba(245,158,11,0.08)",
@@ -121,226 +122,474 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Manrope', sans-serif; background-color: #0d0d12; color: #e8e6f0; -webkit-font-smoothing: antialiased; }
-  .serif { font-family: 'Newsreader', serif; }
+  body { font-family: 'Manrope', sans-serif; background-color: #0d0d12; color: #e8e6f0; overflow-x: hidden; text-rendering: optimizeLegibility; }
+  .serif        { font-family: 'Newsreader', serif; }
   .serif-italic { font-family: 'Newsreader', serif; font-style: italic; }
-  .glass-nav { background: rgba(13,13,18,0.88); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
-  .grid-bg {
-    background-image:
-      linear-gradient(rgba(245,158,11,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(245,158,11,0.025) 1px, transparent 1px);
-    background-size: 80px 80px;
-  }
-  .amber-glow { box-shadow: 0 0 80px rgba(245,158,11,0.08), inset 0 0 80px rgba(245,158,11,0.03); }
-  .hover-amber { transition: color .2s, border-color .2s, background .2s; }
-  nav a, nav button { border-radius: 9999px; }
-  .btn { border-radius: 9999px; display: inline-block; }
 </style>
 </head>
-<body class="bg-background">
+<body class="bg-background antialiased">
+
+<!-- NOISE TEXTURE (fixed overlay) -->
+<div class="grain-overlay" aria-hidden="true"></div>
 
 <!-- NAV -->
-<nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline">
-  <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
-    <a href="/" class="serif-italic text-xl font-bold tracking-tight text-on-surface">Cittasana AI</a>
-    <div class="hidden md:flex items-center gap-10">
-      <a href="/loesungen" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Lösungen</a>
-      <a href="/hivemind"  class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">HiveMind</a>
-      <a href="/ueber-uns" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Über uns</a>
-      <a href="/blog"      class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Blog</a>
-      <a href="/ai-ready-check" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">AI-Check</a>
+<nav data-nav class="fixed top-0 w-full z-50 glass-refract border-b border-outline transition-all duration-300">
+  <div class="flex justify-between items-center px-6 md:px-10 py-4 max-w-screen-2xl mx-auto">
+    <a href="/" class="flex items-center gap-3 group">
+      <span class="serif-italic text-xl font-bold tracking-tight text-on-surface group-hover:text-primary transition-colors">Cittasana AI</span>
+      <span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-outline text-[9px] uppercase tracking-[0.15em] text-on-surface-faint">
+        <span class="live-dot"></span>
+        <span id="nav-slots">5&nbsp;/&nbsp;5&nbsp;Plätze&nbsp;frei</span>
+      </span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="/loesungen" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover:text-on-surface transition-colors">Lösungen</a>
+      <a href="/hivemind"  class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover:text-on-surface transition-colors">HiveMind</a>
+      <a href="/ueber-uns" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover:text-on-surface transition-colors">Über uns</a>
+      <a href="/blog"      class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover:text-on-surface transition-colors">Blog</a>
     </div>
-    <a href="/ai-ready-check" class="btn bg-primary text-black px-6 py-2.5 text-xs uppercase tracking-[0.12em] font-extrabold hover-amber hover:bg-amber-400">
-      AI-Check →
+    <a href="/ai-ready-check" data-magnetic class="btn btn--primary px-6 py-2.5 text-[11px]">
+      AI-Check <span class="arrow">→</span>
     </a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="grid-bg min-h-screen flex flex-col justify-center relative overflow-hidden pt-20">
+<section class="relative overflow-hidden pt-28 md:pt-32 min-h-[100dvh] flex items-center">
+  <!-- Background stack -->
+  <div class="absolute inset-0 grid-bg pointer-events-none"></div>
   <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-[700px] h-[400px] rounded-full blur-[120px]" style="background:rgba(245,158,11,0.09);"></div>
+    <div class="absolute top-[20%] right-[8%] w-[540px] h-[540px] rounded-full blur-[140px] drift-x" style="background:radial-gradient(circle,rgba(245,158,11,0.12),transparent 65%);"></div>
+    <div class="absolute bottom-[-10%] left-[-8%] w-[420px] h-[420px] rounded-full blur-[140px]" style="background:radial-gradient(circle,rgba(217,119,6,0.08),transparent 65%);"></div>
   </div>
-  <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none z-10"></div>
+  <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent pointer-events-none z-10"></div>
 
-  <div class="max-w-7xl mx-auto px-8 md:px-24 py-32 relative z-20">
-    <p class="text-primary text-[10px] uppercase tracking-[0.35em] font-bold mb-8">Cittasana S.R.L.</p>
-    <h1 class="serif font-light text-6xl md:text-[7rem] leading-[0.9] tracking-tight mb-6 text-on-surface">
-      KI-Automatisierung<br/>
-      <span class="serif-italic text-primary">für den Mittelstand.</span>
-    </h1>
-    <p class="text-on-surface-dim text-lg md:text-xl max-w-2xl leading-relaxed mb-4">
-      Repetitive Aufgaben übernehmen. Firmenwissen durchsuchbar machen. Ihrem Team Zeit zurückgeben.
-    </p>
-    <p class="text-on-surface-faint text-sm max-w-xl leading-relaxed mb-12">
-      Für Unternehmen zwischen 10 und 50 Mitarbeitern, die wissen was sie können — und mehr daraus machen wollen.
-    </p>
-    <a href="/ai-ready-check" class="btn bg-primary text-black px-10 py-5 text-sm uppercase tracking-[0.15em] font-extrabold hover-amber hover:bg-amber-400">
-      Kostenlosen AI-Check starten
-    </a>
-    <p class="text-on-surface-faint text-xs mt-5">
-      Nach dem Klick: 3 kurze Fragen → unser Team meldet sich innerhalb von 48h. &nbsp;·&nbsp; Ehrliches Gespräch, direkte Ergebnisse.
-    </p>
+  <div class="max-w-[1440px] w-full mx-auto px-6 md:px-16 relative z-20 py-20">
+    <!-- 12-column asymmetric split -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-end">
+
+      <!-- LEFT: Headline block (span 8) -->
+      <div class="lg:col-span-8 reveal">
+        <div class="flex items-center gap-4 mb-8">
+          <span class="eyebrow">Cittasana S.R.L.</span>
+          <span class="text-on-surface-faint text-[10px] uppercase tracking-[0.25em]">Deutschland · Seit 2024</span>
+        </div>
+        <h1 class="display text-[3.4rem] sm:text-6xl md:text-7xl lg:text-[7.5rem] mb-8 text-on-surface">
+          KI&#8209;Automatisierung<br/>
+          <span class="display-italic text-primary">für den Mittelstand.</span>
+        </h1>
+        <p class="text-on-surface-dim text-lg md:text-xl max-w-2xl leading-relaxed mb-4">
+          Repetitive Aufgaben übernehmen. Firmenwissen durchsuchbar machen. Ihrem Team Zeit zurückgeben.
+        </p>
+        <p class="text-on-surface-faint text-sm max-w-xl leading-relaxed mb-10">
+          Für Unternehmen zwischen 10 und 50 Mitarbeitern, die wissen was sie können — und mehr daraus machen wollen.
+        </p>
+
+        <div class="flex flex-wrap items-center gap-5">
+          <a href="/ai-ready-check" data-magnetic class="btn btn--primary px-10 py-5 text-xs glow-pulse">
+            Kostenlosen AI-Check starten
+            <span class="arrow">→</span>
+          </a>
+          <a href="/hivemind" class="btn btn--ghost px-7 py-4 text-[10px]">
+            HiveMind ansehen
+            <span class="arrow">→</span>
+          </a>
+        </div>
+        <p class="text-on-surface-faint text-xs mt-6 max-w-lg">
+          3 kurze Fragen &nbsp;·&nbsp; Antwort in 48h &nbsp;·&nbsp; Kein Verkaufsgespräch
+        </p>
+      </div>
+
+      <!-- RIGHT: Live Query Panel (span 4) -->
+      <div class="lg:col-span-4 reveal" data-delay="2">
+        <div data-tilt class="tilt relative p-6 rounded-3xl glass-refract">
+          <div class="flex items-center justify-between mb-5">
+            <span class="flex items-center gap-2 text-[10px] uppercase tracking-[0.18em] text-on-surface-faint">
+              <span class="live-dot"></span> Live · HiveMind
+            </span>
+            <span class="text-[9px] font-mono text-on-surface-faint">v2.4.1</span>
+          </div>
+          <p class="text-on-surface-faint text-[11px] uppercase tracking-[0.2em] mb-3">Ihr Team fragt</p>
+          <div class="min-h-[3.5rem] flex items-start">
+            <p class="serif text-xl md:text-2xl text-on-surface leading-snug">
+              <span data-typewriter data-phrases='["Wo verlieren wir Zeit?","Welcher Prozess kostet am meisten?","Was kann ich automatisieren?","Welche Tools lohnen sich wirklich?"]' class="typewriter">Wo verlieren wir Zeit?</span>
+            </p>
+          </div>
+          <div class="mt-5 pt-5 border-t border-outline">
+            <p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-faint mb-2">Cittasana antwortet</p>
+            <div class="flex items-center gap-2 text-sm text-on-surface">
+              <span class="inline-block w-1.5 h-4 bg-primary breathe"></span>
+              <span class="shimmer-text font-medium">Analyse in 20 Minuten.</span>
+            </div>
+          </div>
+          <div class="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/40 to-transparent"></div>
+        </div>
+
+        <!-- Mini stats under card -->
+        <div class="mt-4 grid grid-cols-3 gap-3">
+          <div class="p-3 border border-outline rounded-xl">
+            <p class="font-mono text-xs text-primary" data-counter="47.2" data-suffix="%">47.2%</p>
+            <p class="text-[9px] uppercase tracking-widest text-on-surface-faint mt-1">Zeit gespart</p>
+          </div>
+          <div class="p-3 border border-outline rounded-xl">
+            <p class="font-mono text-xs text-primary">14 Tage</p>
+            <p class="text-[9px] uppercase tracking-widest text-on-surface-faint mt-1">bis Go-Live</p>
+          </div>
+          <div class="p-3 border border-outline rounded-xl">
+            <p class="font-mono text-xs text-primary">DE</p>
+            <p class="text-[9px] uppercase tracking-widest text-on-surface-faint mt-1">Hosting</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll hint -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-on-surface-faint text-[10px] uppercase tracking-[0.3em]">
+      <span>Scroll</span>
+      <span class="block w-px h-8 bg-gradient-to-b from-primary/60 to-transparent"></span>
+    </div>
   </div>
 </section>
 
-<!-- TRUST STRIP -->
-<div class="border-y border-outline bg-surface-low">
-  <div class="max-w-7xl mx-auto px-8 md:px-24 py-8 grid grid-cols-2 md:grid-cols-4 gap-8">
-    <div class="text-center">
-      <p class="serif text-3xl font-light text-primary mb-1">5</p>
-      <p class="text-on-surface-faint text-[10px] uppercase tracking-widest">Plätze / Monat</p>
+<!-- LIVE TICKER STRIP (replaces trust strip) -->
+<section class="border-y border-outline bg-surface-low py-6 overflow-hidden">
+  <div class="marquee">
+    <div class="marquee__track">
+      <!-- set 1 -->
+      <span class="flex items-center gap-3 text-on-surface-dim text-sm whitespace-nowrap"><span class="live-dot"></span> 5 Plätze / Monat</span>
+      <span class="text-primary/50">◆</span>
+      <span class="text-on-surface-dim text-sm whitespace-nowrap">24 h Antwortzeit</span>
+      <span class="text-primary/50">◆</span>
+      <span class="text-on-surface-dim text-sm whitespace-nowrap">Server-Standort Deutschland</span>
+      <span class="text-primary/50">◆</span>
+      <span class="text-on-surface-dim text-sm whitespace-nowrap">6 Monate Nachbetreuung</span>
+      <span class="text-primary/50">◆</span>
+      <span class="text-on-surface-dim text-sm whitespace-nowrap">DSGVO-konform by Design</span>
+      <span class="text-primary/50">◆</span>
+      <span class="text-on-surface-dim text-sm whitespace-nowrap">EU AI Act · Stand 2026</span>
+      <span class="text-primary/50">◆</span>
+      <span class="text-on-surface-dim text-sm whitespace-nowrap">Direktkontakt zum Gründer</span>
+      <span class="text-primary/50">◆</span>
+      <!-- set 2 (duplicate for seamless loop) -->
+      <span class="flex items-center gap-3 text-on-surface-dim text-sm whitespace-nowrap"><span class="live-dot"></span> 5 Plätze / Monat</span>
+      <span class="text-primary/50">◆</span>
+      <span class="text-on-surface-dim text-sm whitespace-nowrap">24 h Antwortzeit</span>
+      <span class="text-primary/50">◆</span>
+      <span class="text-on-surface-dim text-sm whitespace-nowrap">Server-Standort Deutschland</span>
+      <span class="text-primary/50">◆</span>
+      <span class="text-on-surface-dim text-sm whitespace-nowrap">6 Monate Nachbetreuung</span>
+      <span class="text-primary/50">◆</span>
+      <span class="text-on-surface-dim text-sm whitespace-nowrap">DSGVO-konform by Design</span>
+      <span class="text-primary/50">◆</span>
+      <span class="text-on-surface-dim text-sm whitespace-nowrap">EU AI Act · Stand 2026</span>
+      <span class="text-primary/50">◆</span>
+      <span class="text-on-surface-dim text-sm whitespace-nowrap">Direktkontakt zum Gründer</span>
+      <span class="text-primary/50">◆</span>
     </div>
-    <div class="text-center">
-      <p class="serif text-3xl font-light text-primary mb-1">24h</p>
-      <p class="text-on-surface-faint text-[10px] uppercase tracking-widest">Antwortzeit</p>
-    </div>
-    <div class="text-center">
-      <p class="serif text-3xl font-light text-primary mb-1">6 Mo.</p>
-      <p class="text-on-surface-faint text-[10px] uppercase tracking-widest">Nachbetreuung</p>
-    </div>
-    <div class="text-center">
-      <p class="serif text-3xl font-light text-primary mb-1">DE</p>
-      <p class="text-on-surface-faint text-[10px] uppercase tracking-widest">Server-Standort</p>
-    </div>
-  </div>
-</div>
-
-<!-- CASE STUDIES -->
-<section class="py-32 px-8 md:px-24">
-  <div class="max-w-7xl mx-auto">
-    <div class="mb-16">
-      <p class="text-primary text-[10px] uppercase tracking-[0.25em] font-bold mb-4">Ergebnisse</p>
-      <h2 class="serif text-5xl font-light leading-tight">Was KI<br/><span class="serif-italic">wirklich bewirkt.</span></h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline">
-      <!-- Case 1 -->
-      <div class="bg-surface p-10 md:p-12">
-        <div class="flex items-start gap-4 mb-8">
-          <div class="px-3 py-1 bg-primary-subtle border border-primary-border text-primary text-[9px] uppercase tracking-widest font-bold shrink-0">AutoFlow Portal</div>
-        </div>
-        <p class="text-on-surface-faint text-xs uppercase tracking-widest mb-6">Steuerberatungskanzlei · 14 Mitarbeiter · Bayern</p>
-        <p class="text-on-surface-dim text-sm leading-relaxed mb-8">
-          Mandantenanfragen liefen bisher unkontrolliert per E-Mail ein — kein Status, keine Zuweisung, kein Tracking. Drei Stunden täglich gingen allein für Koordination verloren.
-        </p>
-        <div class="border-t border-outline pt-8 flex items-end gap-8">
-          <div>
-            <p class="serif-italic text-4xl text-primary font-light">25 Min.</p>
-            <p class="text-on-surface-faint text-xs mt-1">Bearbeitungsaufwand / Tag</p>
-          </div>
-          <div class="text-on-surface-faint text-sm">
-            statt <span class="line-through">3h</span>
-          </div>
-        </div>
-      </div>
-      <!-- Case 2 -->
-      <div class="bg-surface p-10 md:p-12">
-        <div class="flex items-start gap-4 mb-8">
-          <div class="px-3 py-1 bg-primary-subtle border border-primary-border text-primary text-[9px] uppercase tracking-widest font-bold shrink-0">InvoiceBot</div>
-        </div>
-        <p class="text-on-surface-faint text-xs uppercase tracking-widest mb-6">Handwerksunternehmen · 22 Mitarbeiter · NRW</p>
-        <p class="text-on-surface-dim text-sm leading-relaxed mb-8">
-          Rechnungsstellung lief über Excel-Vorlagen, manuelle Übertragungen und E-Mail-Anhänge. Mahnungen wurden vergessen. Zahlungseingang nicht systematisch erfasst.
-        </p>
-        <div class="border-t border-outline pt-8 flex items-end gap-8">
-          <div>
-            <p class="serif-italic text-4xl text-primary font-light">8 Min.</p>
-            <p class="text-on-surface-faint text-xs mt-1">Rechnungserstellung</p>
-          </div>
-          <div class="text-on-surface-faint text-sm">
-            statt <span class="line-through">45 Min.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p class="text-on-surface-faint text-xs mt-6">Alle Angaben anonymisiert. Ergebnisse variieren je nach Unternehmen und Ausgangssituation.</p>
   </div>
 </section>
 
-<!-- PRODUCTS TEASER -->
-<section class="py-32 px-8 md:px-24 bg-surface-low border-y border-outline">
-  <div class="max-w-7xl mx-auto">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-      <div>
-        <p class="text-primary text-[10px] uppercase tracking-[0.25em] font-bold mb-4">Was wir bauen</p>
-        <h2 class="serif text-5xl font-light">Fertige Systeme.<br/><span class="serif-italic">In Wochen live,<br/>nicht in Monaten.</span></h2>
+<!-- CASE STUDIES — Asymmetric zig-zag -->
+<section class="py-28 md:py-36 px-6 md:px-16">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-16 reveal">
+      <div class="lg:col-span-7">
+        <span class="eyebrow mb-6">Ergebnisse</span>
+        <h2 class="display text-5xl md:text-7xl mt-4">
+          Was KI<br/>
+          <span class="display-italic text-primary">wirklich bewirkt.</span>
+        </h2>
       </div>
-      <a href="/loesungen" class="btn border border-outline-med text-on-surface-dim px-8 py-3 text-[10px] uppercase tracking-widest font-bold hover-amber hover:border-primary hover:text-primary self-start md:self-auto">
-        Alle Lösungen →
+      <div class="lg:col-span-5 lg:pb-4">
+        <p class="text-on-surface-dim leading-relaxed max-w-md">
+          Zwei Kunden. Gleiche Ausgangslage: zu viel manuelle Arbeit, zu wenig Sichtbarkeit, keine IT-Kapazität für Eigenentwicklung. Heute läuft der Prozess automatisch im Hintergrund.
+        </p>
+      </div>
+    </div>
+
+    <!-- Zig-zag layout -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+      <!-- Case 1: spans 7 cols, offset top -->
+      <article class="lg:col-span-7 reveal" data-delay="1">
+        <div data-tilt class="tilt relative p-10 md:p-14 rounded-3xl bg-surface border border-outline hover:border-primary-border transition-all">
+          <div class="flex items-start justify-between mb-10 flex-wrap gap-4">
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-primary-subtle border border-primary-border text-primary text-[10px] uppercase tracking-[0.2em] font-black rounded-full">
+              <span class="live-dot"></span> AutoFlow Portal
+            </span>
+            <span class="font-mono text-[10px] text-on-surface-faint">Case #24-0318</span>
+          </div>
+          <p class="text-on-surface-faint text-[10px] uppercase tracking-[0.2em] mb-6">Steuerberatungskanzlei · 14 Mitarbeiter · Bayern</p>
+          <p class="text-on-surface-dim text-base md:text-lg leading-relaxed mb-10 max-w-2xl">
+            Mandantenanfragen liefen unkontrolliert per E-Mail ein — kein Status, keine Zuweisung, kein Tracking. Drei Stunden täglich gingen allein für Koordination verloren.
+          </p>
+          <div class="border-t border-outline pt-8 flex items-end justify-between flex-wrap gap-8">
+            <div>
+              <p class="serif-italic text-6xl md:text-7xl text-primary font-light leading-none">
+                <span data-counter="25" data-suffix=" Min.">25 Min.</span>
+              </p>
+              <p class="text-on-surface-faint text-xs mt-3 uppercase tracking-widest">Bearbeitungsaufwand / Tag</p>
+            </div>
+            <div class="text-on-surface-faint text-sm flex items-center gap-3">
+              <span class="font-mono text-on-surface-dim line-through">3 h</span>
+              <span class="text-primary text-xl">→</span>
+              <span class="text-primary font-bold">-86%</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- Case 2: spans 5 cols, offset bottom, slightly smaller -->
+      <article class="lg:col-span-5 lg:mt-16 reveal" data-delay="2">
+        <div data-tilt class="tilt relative p-10 md:p-12 rounded-3xl bg-surface-mid border border-outline hover:border-primary-border transition-all h-full">
+          <div class="flex items-start justify-between mb-10 flex-wrap gap-4">
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 bg-primary-subtle border border-primary-border text-primary text-[10px] uppercase tracking-[0.2em] font-black rounded-full">
+              <span class="live-dot"></span> InvoiceBot
+            </span>
+            <span class="font-mono text-[10px] text-on-surface-faint">Case #24-0427</span>
+          </div>
+          <p class="text-on-surface-faint text-[10px] uppercase tracking-[0.2em] mb-6">Handwerksbetrieb · 22 Mitarbeiter · NRW</p>
+          <p class="text-on-surface-dim text-base leading-relaxed mb-10">
+            Rechnungsstellung lief über Excel-Vorlagen und E-Mail. Mahnungen wurden vergessen. Zahlungseingang nicht systematisch erfasst.
+          </p>
+          <div class="border-t border-outline pt-8">
+            <p class="serif-italic text-5xl md:text-6xl text-primary font-light leading-none">
+              <span data-counter="8" data-suffix=" Min.">8 Min.</span>
+            </p>
+            <p class="text-on-surface-faint text-xs mt-3 uppercase tracking-widest">Rechnungserstellung</p>
+            <p class="text-on-surface-faint text-xs mt-1">
+              statt <span class="line-through">45 Min.</span> · <span class="text-primary">-82%</span>
+            </p>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="text-on-surface-faint text-xs mt-10">Alle Angaben anonymisiert. Ergebnisse variieren je nach Unternehmen und Ausgangssituation.</p>
+  </div>
+</section>
+
+<!-- PRODUCTS — Bento Grid (replaces banned 3-column cards) -->
+<section class="py-28 md:py-36 px-6 md:px-16 bg-surface-low border-y border-outline relative overflow-hidden">
+  <div class="absolute -top-40 -left-20 w-[500px] h-[500px] rounded-full blur-[160px] opacity-40 pointer-events-none" style="background:radial-gradient(circle,rgba(245,158,11,0.08),transparent 70%);"></div>
+
+  <div class="max-w-[1440px] mx-auto relative">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end mb-14 reveal">
+      <div class="lg:col-span-8">
+        <span class="eyebrow">Was wir bauen</span>
+        <h2 class="display text-5xl md:text-7xl mt-5">
+          Fertige Systeme.<br/>
+          <span class="display-italic">In Wochen live,<br/>nicht in Monaten.</span>
+        </h2>
+      </div>
+      <div class="lg:col-span-4 flex lg:justify-end">
+        <a href="/loesungen" class="btn btn--ghost px-8 py-4 text-[10px]">
+          Alle Lösungen <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Bento: 12-col, asymmetric mix of sizes -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 auto-rows-[minmax(240px,auto)]">
+
+      <!-- AutoFlow: big hero tile, spans 8, tall -->
+      <a href="/loesungen" class="reveal lg:col-span-8 lg:row-span-2 group relative rounded-3xl bg-surface border border-outline hover:border-primary-border transition-all p-10 md:p-12 overflow-hidden flex flex-col justify-between">
+        <div class="absolute inset-0 opacity-60 pointer-events-none">
+          <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full blur-3xl" style="background:radial-gradient(circle,rgba(245,158,11,0.15),transparent 70%);"></div>
+        </div>
+        <div class="relative">
+          <div class="flex items-center gap-3 mb-8">
+            <span class="text-[9px] font-mono uppercase tracking-[0.2em] text-on-surface-faint">01 · Flagship</span>
+            <span class="text-primary/50">—</span>
+            <span class="text-[9px] font-mono uppercase tracking-[0.2em] text-on-surface-faint">Zentrales Kundenportal</span>
+          </div>
+          <h3 class="serif text-4xl md:text-5xl font-semibold mb-5 group-hover:text-primary transition-colors">AutoFlow Portal</h3>
+          <p class="text-on-surface-dim text-base md:text-lg leading-relaxed mb-8 max-w-xl">
+            Alle Mandanten- und Kundenanfragen strukturiert erfassen, tracken und bearbeiten. Automatische Zuweisung, klarer Status, Audit-Log.
+          </p>
+          <!-- Mock UI teaser -->
+          <div class="hidden md:block border border-outline rounded-2xl bg-surface-low p-5 max-w-lg">
+            <div class="flex items-center justify-between mb-4">
+              <span class="text-[10px] uppercase tracking-widest text-on-surface-faint">Anfragen heute</span>
+              <span class="flex items-center gap-2 text-[10px] font-mono text-primary"><span class="live-dot"></span> Live</span>
+            </div>
+            <div class="space-y-2.5">
+              <div class="flex items-center gap-3">
+                <span class="w-1 h-6 bg-primary rounded-full"></span>
+                <span class="flex-1 text-sm text-on-surface">Jahresabschluss 2025 · Müller GmbH</span>
+                <span class="font-mono text-[10px] text-on-surface-faint">#482</span>
+              </div>
+              <div class="flex items-center gap-3 opacity-80">
+                <span class="w-1 h-6 bg-primary/40 rounded-full"></span>
+                <span class="flex-1 text-sm text-on-surface-dim">USt-Voranmeldung Q1 · Schneider OHG</span>
+                <span class="font-mono text-[10px] text-on-surface-faint">#481</span>
+              </div>
+              <div class="flex items-center gap-3 opacity-60">
+                <span class="w-1 h-6 bg-on-surface-faint rounded-full"></span>
+                <span class="flex-1 text-sm text-on-surface-dim">Lohnbuchhaltung · Becker KG</span>
+                <span class="font-mono text-[10px] text-on-surface-faint">#480</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative flex items-end justify-between mt-8 flex-wrap gap-4">
+          <div class="flex items-baseline gap-4">
+            <span class="serif-italic text-4xl text-primary font-light">60%</span>
+            <span class="text-sm text-on-surface-dim">weniger E-Mail-Volumen</span>
+          </div>
+          <span class="text-[10px] uppercase tracking-widest text-on-surface-faint group-hover:text-primary transition-colors">Details <span class="arrow inline-block">→</span></span>
+        </div>
+      </a>
+
+      <!-- InvoiceBot: spans 4, tall -->
+      <a href="/loesungen" class="reveal lg:col-span-4 lg:row-span-1 group relative rounded-3xl bg-surface border border-outline hover:border-primary-border transition-all p-8 md:p-10 overflow-hidden flex flex-col justify-between" data-delay="1">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="text-[9px] font-mono uppercase tracking-[0.2em] text-on-surface-faint">02</span>
+            <span class="text-primary/50">—</span>
+            <span class="text-[9px] font-mono uppercase tracking-[0.2em] text-on-surface-faint">Billing</span>
+          </div>
+          <h3 class="serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-primary transition-colors">InvoiceBot</h3>
+          <p class="text-on-surface-dim text-sm leading-relaxed">
+            Vollautomatische Rechnungsstellung vom Angebot bis zur Mahnung. DATEV-Export inklusive.
+          </p>
+        </div>
+        <div class="mt-6 flex items-center gap-3 text-[10px] uppercase tracking-widest text-on-surface-faint group-hover:text-primary transition-colors">
+          <span>3-stufiger Mahnlauf</span>
+        </div>
+      </a>
+
+      <!-- DataSync Hub: spans 4 -->
+      <a href="/loesungen" class="reveal lg:col-span-4 lg:row-span-1 group relative rounded-3xl bg-surface-mid border border-outline hover:border-primary-border transition-all p-8 md:p-10 overflow-hidden flex flex-col justify-between" data-delay="2">
+        <div>
+          <div class="flex items-center gap-3 mb-6">
+            <span class="text-[9px] font-mono uppercase tracking-[0.2em] text-on-surface-faint">03</span>
+            <span class="text-primary/50">—</span>
+            <span class="text-[9px] font-mono uppercase tracking-[0.2em] text-on-surface-faint">Integration</span>
+          </div>
+          <h3 class="serif text-2xl md:text-3xl font-semibold mb-4 group-hover:text-primary transition-colors">DataSync Hub</h3>
+          <p class="text-on-surface-dim text-sm leading-relaxed">
+            Verbindet bis zu 5 bestehende Systeme automatisch. Echtzeit-Sync ohne manuellen Export.
+          </p>
+        </div>
+        <!-- Connector dots -->
+        <div class="mt-6 flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-primary breathe" style="animation-delay:0s"></span>
+          <span class="w-2 h-2 rounded-full bg-primary breathe" style="animation-delay:0.3s"></span>
+          <span class="w-2 h-2 rounded-full bg-primary breathe" style="animation-delay:0.6s"></span>
+          <span class="w-2 h-2 rounded-full bg-primary breathe" style="animation-delay:0.9s"></span>
+          <span class="w-2 h-2 rounded-full bg-primary breathe" style="animation-delay:1.2s"></span>
+          <span class="ml-2 text-[10px] font-mono uppercase tracking-widest text-on-surface-faint">5 sync'd</span>
+        </div>
       </a>
     </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 border-t border-l border-outline">
-      <div class="border-r border-b border-outline p-10 hover:bg-surface-mid transition-colors group cursor-default">
-        <h4 class="serif text-2xl font-semibold mb-4 group-hover:text-primary transition-colors">AutoFlow Portal</h4>
-        <p class="text-on-surface-dim text-sm leading-relaxed mb-6">Zentrales Kundenportal — alle Anfragen strukturiert erfassen, tracken und bearbeiten. 60% weniger E-Mail-Volumen.</p>
-        <a href="/loesungen" class="text-[10px] uppercase tracking-widest text-on-surface-faint hover-amber hover:text-primary transition-colors">Details →</a>
-      </div>
-      <div class="border-r border-b border-outline p-10 hover:bg-surface-mid transition-colors group cursor-default">
-        <h4 class="serif text-2xl font-semibold mb-4 group-hover:text-primary transition-colors">InvoiceBot</h4>
-        <p class="text-on-surface-dim text-sm leading-relaxed mb-6">Vollautomatische Rechnungsstellung vom Angebot bis zur Mahnung. 3-stufiger Mahnlauf, Zahlungsabgleich, DATEV-Export.</p>
-        <a href="/loesungen" class="text-[10px] uppercase tracking-widest text-on-surface-faint hover-amber hover:text-primary transition-colors">Details →</a>
-      </div>
-      <div class="border-r border-b border-outline p-10 hover:bg-surface-mid transition-colors group cursor-default">
-        <h4 class="serif text-2xl font-semibold mb-4 group-hover:text-primary transition-colors">DataSync Hub</h4>
-        <p class="text-on-surface-dim text-sm leading-relaxed mb-6">Verbindet bis zu 5 bestehende Systeme automatisch. Daten fließen in Echtzeit — kein manueller Export, kein Datenverlust.</p>
-        <a href="/loesungen" class="text-[10px] uppercase tracking-widest text-on-surface-faint hover-amber hover:text-primary transition-colors">Details →</a>
-      </div>
-    </div>
   </div>
 </section>
 
-<!-- HIVEMIND TEASER -->
-<section class="py-32 px-8 md:px-24">
-  <div class="max-w-7xl mx-auto border border-primary-border amber-glow">
-    <div class="flex flex-col md:flex-row">
-      <div class="flex-1 p-12 md:p-16 border-b md:border-b-0 md:border-r border-primary-border">
-        <span class="inline-block px-4 py-1.5 bg-primary-subtle border border-primary-border text-primary text-[9px] uppercase tracking-[0.18em] font-black mb-8">
-          Eigenes Produkt — SaaS
-        </span>
-        <h2 class="serif text-5xl font-light leading-tight mb-6">
+<!-- HIVEMIND Mega-Section -->
+<section class="py-28 md:py-40 px-6 md:px-16 relative overflow-hidden">
+  <div class="absolute top-1/3 right-1/4 w-[720px] h-[500px] rounded-full blur-[160px] pointer-events-none drift-x" style="background:radial-gradient(ellipse,rgba(245,158,11,0.08),transparent 65%);"></div>
+
+  <div class="max-w-[1440px] mx-auto relative">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+
+      <!-- LEFT: Statement + CTA -->
+      <div class="lg:col-span-7 reveal">
+        <div class="flex items-center gap-3 mb-8">
+          <span class="eyebrow">Eigenes Produkt · SaaS</span>
+          <span class="inline-flex items-center gap-2 px-3 py-1 bg-primary-subtle border border-primary-border text-primary text-[9px] uppercase tracking-[0.2em] font-bold rounded-full">
+            <span class="live-dot"></span> Beta 2026
+          </span>
+        </div>
+        <h2 class="display text-5xl md:text-7xl lg:text-[5.5rem] mb-8">
           HiveMind.<br/>
-          <span class="serif-italic">Ihr Firmenwissen,<br/>intelligent durchsuchbar.</span>
+          <span class="display-italic text-primary">Ihr Firmenwissen,<br/>intelligent durchsuchbar.</span>
         </h2>
-        <p class="text-on-surface-dim text-lg leading-relaxed mb-8">
+        <p class="text-on-surface-dim text-lg leading-relaxed mb-6 max-w-xl">
           Dokumente, E-Mails, Meetings, Slack — alles verbunden. Ein KI-Assistent, der den gesamten Kontext Ihres Unternehmens kennt und antwortet, wenn Sie fragen.
         </p>
-        <p class="text-on-surface-faint text-sm mb-10">
+        <p class="text-on-surface-faint text-sm mb-10 max-w-lg">
           Kein anderer Anbieter in Ihrem Segment hat eigenes KI-Produkt-IP. HiveMind ist nicht Make.com konfiguriert — es ist von Grund auf für den Mittelstand entwickelt.
         </p>
         <div class="flex items-center gap-6 flex-wrap">
-          <a href="/hivemind" class="btn bg-primary text-black px-8 py-4 text-xs uppercase tracking-[0.15em] font-extrabold hover-amber hover:bg-amber-400">
-            HiveMind entdecken
+          <a href="/hivemind" data-magnetic class="btn btn--primary px-9 py-5 text-xs">
+            HiveMind entdecken <span class="arrow">→</span>
           </a>
-          <span class="text-on-surface-faint text-sm">Ab <span class="text-on-surface font-semibold">€490/Monat</span></span>
+          <span class="text-on-surface-faint text-sm">Ab <span class="text-on-surface font-semibold">€490 / Monat</span></span>
         </div>
       </div>
-      <div class="flex-1 p-12 md:p-16 flex flex-col gap-8 justify-center">
-        <div class="flex gap-6">
-          <span class="text-primary mt-1">—</span>
-          <div>
-            <h5 class="font-bold text-sm mb-1">Semantische Suche</h5>
-            <p class="text-on-surface-faint text-sm">Fragen statt suchen. HiveMind versteht Kontext, nicht nur Keywords.</p>
+
+      <!-- RIGHT: Live Demo panel -->
+      <div class="lg:col-span-5 reveal" data-delay="2">
+        <div data-tilt class="tilt relative rounded-3xl glass-refract p-7 md:p-8 overflow-hidden">
+          <!-- Header row -->
+          <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-400/70"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-400/70"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/70"></span>
+            </div>
+            <span class="font-mono text-[10px] text-on-surface-faint">hivemind.cittasana.ai</span>
           </div>
-        </div>
-        <div class="flex gap-6">
-          <span class="text-primary mt-1">—</span>
-          <div>
-            <h5 class="font-bold text-sm mb-1">Auto-Connectors</h5>
-            <p class="text-on-surface-faint text-sm">Slack, Gmail, Drive, Notion, GitHub, Kalender — automatisch synchronisiert.</p>
+
+          <p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-faint mb-3">Sie fragen</p>
+          <div class="p-4 rounded-2xl bg-background/40 border border-outline mb-5">
+            <p class="serif text-base md:text-lg text-on-surface leading-snug">
+              <span data-typewriter data-phrases='["Welche Verträge laufen dieses Quartal aus?","Was haben wir letztes Jahr mit Kunde X besprochen?","Zeig mir alle offenen Angebote über 10k€","Wer hat zuletzt am Onboarding gearbeitet?"]' class="typewriter">Welche Verträge laufen dieses Quartal aus?</span>
+            </p>
           </div>
-        </div>
-        <div class="flex gap-6">
-          <span class="text-primary mt-1">—</span>
-          <div>
-            <h5 class="font-bold text-sm mb-1">KI-Agenten</h5>
-            <p class="text-on-surface-faint text-sm">Wissen, Sales, Operations — drei Agenten die aktiv unterstützen.</p>
+
+          <p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-faint mb-3">HiveMind analysiert</p>
+          <div class="space-y-2.5">
+            <div class="flex items-center gap-3 text-xs">
+              <span class="w-4 h-4 rounded-full border border-primary-border bg-primary-subtle flex items-center justify-center">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary breathe"></span>
+              </span>
+              <span class="text-on-surface-dim">Scanning <span class="font-mono text-on-surface">1,247</span> Dokumente…</span>
+            </div>
+            <div class="flex items-center gap-3 text-xs">
+              <span class="w-4 h-4 rounded-full border border-primary-border bg-primary-subtle flex items-center justify-center">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary breathe" style="animation-delay:0.4s"></span>
+              </span>
+              <span class="text-on-surface-dim">Querverweise in <span class="font-mono text-on-surface">Slack</span>, <span class="font-mono text-on-surface">Gmail</span>, <span class="font-mono text-on-surface">Drive</span></span>
+            </div>
+            <div class="flex items-center gap-3 text-xs">
+              <span class="w-4 h-4 rounded-full border border-primary-border bg-primary-subtle flex items-center justify-center">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary breathe" style="animation-delay:0.8s"></span>
+              </span>
+              <span class="text-on-surface-dim">Antwort in <span class="font-mono text-primary">1.3s</span></span>
+            </div>
           </div>
+
+          <div class="mt-6 pt-5 border-t border-outline flex items-center justify-between">
+            <div class="flex -space-x-2">
+              <span class="w-6 h-6 rounded-full bg-primary/80 border-2 border-background flex items-center justify-center text-[10px] font-bold text-background">W</span>
+              <span class="w-6 h-6 rounded-full bg-emerald-500/70 border-2 border-background flex items-center justify-center text-[10px] font-bold text-background">S</span>
+              <span class="w-6 h-6 rounded-full bg-sky-500/70 border-2 border-background flex items-center justify-center text-[10px] font-bold text-background">O</span>
+            </div>
+            <span class="text-[10px] font-mono uppercase tracking-widest text-on-surface-faint">3 Agenten aktiv</span>
+          </div>
+
+          <div class="absolute -top-px left-10 right-10 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
         </div>
-        <div class="flex gap-6">
-          <span class="text-primary mt-1">—</span>
-          <div>
-            <h5 class="font-bold text-sm mb-1">In 2 Wochen einsatzbereit</h5>
-            <p class="text-on-surface-faint text-sm">Keine IT-Abteilung nötig. Starter-Tier für erste Wissensprozesse.</p>
+
+        <!-- Features rail -->
+        <div class="mt-6 grid grid-cols-2 gap-3">
+          <div class="p-4 border border-outline rounded-xl">
+            <p class="text-[10px] uppercase tracking-widest text-on-surface-faint mb-1">Semantische Suche</p>
+            <p class="text-sm text-on-surface">Fragen statt Keywords</p>
+          </div>
+          <div class="p-4 border border-outline rounded-xl">
+            <p class="text-[10px] uppercase tracking-widest text-on-surface-faint mb-1">Auto-Connectors</p>
+            <p class="text-sm text-on-surface">6+ Systeme native</p>
+          </div>
+          <div class="p-4 border border-outline rounded-xl">
+            <p class="text-[10px] uppercase tracking-widest text-on-surface-faint mb-1">Agenten-Trio</p>
+            <p class="text-sm text-on-surface">Wissen · Sales · Ops</p>
+          </div>
+          <div class="p-4 border border-outline rounded-xl">
+            <p class="text-[10px] uppercase tracking-widest text-on-surface-faint mb-1">Go-Live</p>
+            <p class="text-sm text-on-surface">2 Wochen bis aktiv</p>
           </div>
         </div>
       </div>
@@ -348,32 +597,45 @@
   </div>
 </section>
 
-<!-- MANIFESTO -->
-<section class="py-32 px-8 md:px-24 bg-surface-low border-y border-outline">
-  <div class="max-w-7xl mx-auto">
-    <h2 class="serif-italic text-on-surface-faint text-4xl mb-24">Unsere Haltung.</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-20">
-      <div>
-        <h3 class="serif text-3xl font-semibold leading-tight mb-6">
-          KI entlastet.<br/><span class="text-primary">Gibt Raum zurück.</span>
+<!-- MANIFESTO — Asymmetric stance (replaces 3-col) -->
+<section class="py-28 md:py-36 px-6 md:px-16 bg-surface-low border-y border-outline">
+  <div class="max-w-[1440px] mx-auto">
+    <h2 class="serif-italic text-on-surface-faint text-3xl md:text-5xl mb-20 reveal">Unsere Haltung.</h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-x-8 gap-y-20">
+
+      <!-- 01: Big, left -->
+      <div class="lg:col-span-7 lg:col-start-1 reveal">
+        <span class="font-mono text-xs text-primary tracking-widest">01 &nbsp;—&nbsp; RAUM ZURÜCK</span>
+        <h3 class="serif text-4xl md:text-5xl font-semibold leading-tight mt-5 mb-6">
+          KI entlastet.<br/>
+          <span class="text-primary">Gibt Raum zurück.</span>
         </h3>
-        <p class="text-on-surface-dim leading-relaxed text-sm">
-          Technologie erweitert menschliches Potenzial. Wir automatisieren das Banale — damit Ihr Team wieder Raum für das hat, was wirklich zählt. Unternehmertum und Lebensqualität schließen sich aus.
+        <p class="text-on-surface-dim leading-relaxed text-base max-w-lg">
+          Technologie erweitert menschliches Potenzial. Wir automatisieren das Banale — damit Ihr Team wieder Raum für das hat, was wirklich zählt. Unternehmertum und Lebensqualität schließen sich nicht aus.
         </p>
       </div>
-      <div>
-        <h3 class="serif text-3xl font-semibold leading-tight mb-6">
-          Partner.<br/><span class="text-primary">Auf Augenhöhe.</span>
+
+      <!-- 02: Smaller, right, offset DOWN -->
+      <div class="lg:col-span-5 lg:col-start-8 lg:mt-32 reveal" data-delay="2">
+        <span class="font-mono text-xs text-primary tracking-widest">02 &nbsp;—&nbsp; AUGENHÖHE</span>
+        <h3 class="serif text-3xl md:text-4xl font-semibold leading-tight mt-5 mb-6">
+          Partner.<br/>
+          <span class="text-primary">Auf Augenhöhe.</span>
         </h3>
-        <p class="text-on-surface-dim leading-relaxed text-sm">
+        <p class="text-on-surface-dim leading-relaxed text-sm max-w-md">
           Wir denken mit, reden offen — auch wenn es unbequem ist — und sagen klar, wenn ein Ansatz besser funktioniert. Ihr Erfolg ist unsere einzige Metrik.
         </p>
       </div>
-      <div>
-        <h3 class="serif text-3xl font-semibold leading-tight mb-6">
-          Qualität.<br/><span class="text-primary">Immer.</span>
+
+      <!-- 03: Centered large, offset UP -->
+      <div class="lg:col-span-6 lg:col-start-4 reveal" data-delay="3">
+        <span class="font-mono text-xs text-primary tracking-widest">03 &nbsp;—&nbsp; QUALITÄT</span>
+        <h3 class="serif text-4xl md:text-5xl font-semibold leading-tight mt-5 mb-6">
+          Qualität.<br/>
+          <span class="text-primary">Immer.</span>
         </h3>
-        <p class="text-on-surface-dim leading-relaxed text-sm">
+        <p class="text-on-surface-dim leading-relaxed text-base max-w-lg">
           Was Cittasana verlässt, steht für sich — unter Zeitdruck, unter Kostendruck, in jedem Projekt. Wir legen die Hand dafür ins Feuer. Das ist unser Anspruch an uns selbst.
         </p>
       </div>
@@ -381,84 +643,125 @@
   </div>
 </section>
 
-<!-- FOUNDER -->
-<section class="py-32 px-8 md:px-24">
-  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-    <div>
-      <p class="text-primary text-[10px] uppercase tracking-[0.25em] font-bold mb-6">Das Team dahinter</p>
-      <h2 class="serif text-5xl font-light leading-tight mb-8">
-        Sie arbeiten direkt<br/>mit dem Team,<br/><span class="serif-italic">das Ihr System baut.</span>
-      </h2>
-      <p class="text-on-surface-dim leading-relaxed mb-6">
-        Cittasana wurde von Cosmo Gräf gegründet — aus persönlicher Überzeugung und eigener Unternehmenserfahrung. Was als Werkzeug für den eigenen Betrieb begann, ist heute ein spezialisiertes Team mit einem klaren Fokus: KI-Automatisierung die wirklich funktioniert.
-      </p>
-      <p class="text-on-surface-dim leading-relaxed mb-10">
-        Sie kennen Ihren Ansprechpartner von Anfang an — und arbeiten direkt mit den Menschen die Ihren Prozess verstehen und umsetzen. Fachkompetenz ohne Umwege.
-      </p>
-      <a href="/ueber-uns" class="btn border border-outline-med text-on-surface-dim px-8 py-4 text-[10px] uppercase tracking-widest font-bold hover-amber hover:border-primary hover:text-primary">
-        Mehr über uns →
-      </a>
-    </div>
-    <div class="flex flex-col items-center gap-8">
-      <img src="/images/cosmo-graef.jpg" alt="Cosmo Gräf, Gründer von Cittasana AI" width="256" height="256" class="w-64 h-64 rounded-full object-cover object-top border border-outline" />
-      <div class="text-center">
-        <p class="font-bold text-on-surface">Cosmo Gräf</p>
-        <p class="text-on-surface-faint text-sm">Gründer &amp; Geschäftsführer, Cittasana AI</p>
-        <a href="mailto:office@cittasana.de" class="text-primary text-sm hover-amber block mt-2">office@cittasana.de</a>
-        <p class="text-on-surface-faint text-xs mt-1">Unser Team antwortet innerhalb von 24 Stunden.</p>
+<!-- FOUNDER — asymmetric with tilt portrait -->
+<section class="py-28 md:py-36 px-6 md:px-16">
+  <div class="max-w-[1440px] mx-auto">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+      <div class="lg:col-span-7 reveal">
+        <span class="eyebrow mb-6">Das Team dahinter</span>
+        <h2 class="display text-5xl md:text-6xl mt-4 mb-8">
+          Sie arbeiten direkt<br/>mit dem Team,<br/>
+          <span class="display-italic">das Ihr System baut.</span>
+        </h2>
+        <p class="text-on-surface-dim leading-relaxed mb-6 max-w-xl">
+          Cittasana wurde von Cosmo Gräf gegründet — aus persönlicher Überzeugung und eigener Unternehmenserfahrung. Was als Werkzeug für den eigenen Betrieb begann, ist heute ein spezialisiertes Team mit klarem Fokus: KI-Automatisierung die wirklich funktioniert.
+        </p>
+        <p class="text-on-surface-dim leading-relaxed mb-10 max-w-xl">
+          Sie kennen Ihren Ansprechpartner von Anfang an — und arbeiten direkt mit den Menschen, die Ihren Prozess verstehen und umsetzen. Fachkompetenz ohne Umwege.
+        </p>
+        <a href="/ueber-uns" class="btn btn--ghost px-8 py-4 text-[10px]">
+          Mehr über uns <span class="arrow">→</span>
+        </a>
+      </div>
+
+      <div class="lg:col-span-5 flex flex-col items-center gap-8 reveal" data-delay="2">
+        <div data-tilt class="tilt relative">
+          <div class="absolute inset-0 rounded-full blur-2xl" style="background:radial-gradient(circle,rgba(245,158,11,0.18),transparent 65%);"></div>
+          <div class="relative p-2 rounded-full bg-gradient-to-br from-primary/40 via-transparent to-outline-med">
+            <img src="/images/cosmo-graef.jpg" alt="Cosmo Gräf, Gründer von Cittasana AI" width="256" height="256" class="block w-56 h-56 md:w-64 md:h-64 rounded-full object-cover object-top border border-outline" />
+          </div>
+          <span class="absolute bottom-4 right-4 flex items-center gap-1.5 px-3 py-1.5 rounded-full glass-refract text-[10px] uppercase tracking-[0.15em] font-semibold">
+            <span class="live-dot"></span> Antwortet in 24h
+          </span>
+        </div>
+        <div class="text-center">
+          <p class="font-bold text-on-surface text-lg">Cosmo Gräf</p>
+          <p class="text-on-surface-faint text-sm">Gründer &amp; Geschäftsführer, Cittasana AI</p>
+          <a href="mailto:office@cittasana.de" class="text-primary text-sm hover:text-amber-400 transition-colors inline-block mt-3">office@cittasana.de</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRIVACY CALLOUT -->
-<div class="border-y border-outline bg-surface-low">
-  <div class="max-w-7xl mx-auto px-8 md:px-24 py-10">
-    <p class="text-center text-on-surface-dim text-sm">
-      <span class="text-primary font-semibold">Volle Datensouveränität. DSGVO-konform. Privacy by Design.</span>
-      &nbsp;—&nbsp; Was wir für unsere Kunden bauen, leben wir selbst.
+<!-- PRIVACY / COMPLIANCE BADGES STRIP -->
+<section class="border-y border-outline bg-surface-low py-10">
+  <div class="max-w-[1440px] mx-auto px-6 md:px-16 flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+    <p class="text-on-surface-dim text-sm">
+      <span class="text-primary font-semibold">Volle Datensouveränität.</span>
+      Was wir für Kunden bauen, leben wir selbst.
     </p>
+    <div class="flex flex-wrap gap-3">
+      <span class="px-3 py-1.5 border border-outline-med rounded-full text-[10px] uppercase tracking-[0.18em] text-on-surface-dim font-semibold">DSGVO-konform</span>
+      <span class="px-3 py-1.5 border border-outline-med rounded-full text-[10px] uppercase tracking-[0.18em] text-on-surface-dim font-semibold">Server Deutschland</span>
+      <span class="px-3 py-1.5 border border-outline-med rounded-full text-[10px] uppercase tracking-[0.18em] text-on-surface-dim font-semibold">EU AI Act Ready</span>
+      <span class="px-3 py-1.5 border border-outline-med rounded-full text-[10px] uppercase tracking-[0.18em] text-on-surface-dim font-semibold">Privacy by Design</span>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- CLOSING CTA -->
-<section class="py-48 px-8 text-center relative overflow-hidden">
-  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-primary/5 blur-[120px] pointer-events-none rounded-full"></div>
-  <div class="max-w-4xl mx-auto relative">
-    <h2 class="serif text-5xl md:text-7xl font-light leading-tight mb-6">
-      Wo verliert Ihr Unternehmen<br/>
-      <span class="serif-italic">gerade am meisten Zeit?</span>
-    </h2>
-    <p class="text-on-surface-dim text-lg mb-12 max-w-xl mx-auto">
-      In 20 Minuten finden wir es heraus — gemeinsam. Kostenlos, konkret, auf Augenhöhe.
-    </p>
-    <a href="/ai-ready-check" class="btn bg-primary text-black px-12 py-6 text-sm uppercase tracking-[0.2em] font-extrabold hover-amber hover:bg-amber-400">
-      Kostenlosen Check sichern
-    </a>
-    <p class="text-on-surface-faint text-xs mt-6">20 Min. Gespräch &nbsp;·&nbsp; Antwort in 48h &nbsp;·&nbsp; Direkt &amp; konkret &nbsp;·&nbsp; 5 Plätze / Monat</p>
+<!-- CLOSING CTA — left-aligned asymmetric (replaces banned centered CTA) -->
+<section class="py-32 md:py-48 px-6 md:px-16 relative overflow-hidden">
+  <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[700px] h-[400px] blur-[140px] pointer-events-none rounded-full drift-x" style="background:radial-gradient(circle,rgba(245,158,11,0.10),transparent 70%);"></div>
+  <div class="absolute inset-0 grid-bg opacity-60 pointer-events-none"></div>
+
+  <div class="max-w-[1440px] mx-auto relative grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+    <div class="lg:col-span-8 reveal">
+      <span class="eyebrow mb-8">Ihr nächster Schritt</span>
+      <h2 class="display text-5xl md:text-7xl lg:text-[6.5rem] mt-6 leading-[0.92]">
+        Wo verliert Ihr Unternehmen<br/>
+        <span class="display-italic text-primary">gerade am meisten Zeit?</span>
+      </h2>
+    </div>
+    <div class="lg:col-span-4 reveal" data-delay="2">
+      <p class="text-on-surface-dim text-base leading-relaxed mb-8">
+        In 20 Minuten finden wir es heraus — gemeinsam. Kostenlos, konkret, auf Augenhöhe.
+      </p>
+      <a href="/ai-ready-check" data-magnetic class="btn btn--primary px-10 py-5 text-sm w-full justify-center glow-pulse">
+        Kostenlosen Check sichern <span class="arrow">→</span>
+      </a>
+      <!-- Slots progress -->
+      <div class="mt-8 p-5 border border-outline rounded-2xl">
+        <div class="flex items-center justify-between mb-3">
+          <span class="text-[10px] uppercase tracking-[0.2em] text-on-surface-faint">Plätze April</span>
+          <span class="font-mono text-xs text-primary">2 / 5 vergeben</span>
+        </div>
+        <div class="flex gap-1.5">
+          <span class="flex-1 h-1 rounded-full bg-primary"></span>
+          <span class="flex-1 h-1 rounded-full bg-primary"></span>
+          <span class="flex-1 h-1 rounded-full bg-outline-med"></span>
+          <span class="flex-1 h-1 rounded-full bg-outline-med"></span>
+          <span class="flex-1 h-1 rounded-full bg-outline-med"></span>
+        </div>
+        <p class="text-on-surface-faint text-[10px] mt-3 uppercase tracking-widest">20 Min. · Antwort in 48h · Direkt &amp; konkret</p>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="border-t border-outline px-8 md:px-12 py-12 bg-surface-low">
+<footer class="border-t border-outline px-6 md:px-12 py-12 bg-surface-low">
   <div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-    <span class="serif-italic text-lg text-on-surface">Cittasana AI</span>
-    <div class="flex flex-wrap justify-center gap-8 text-[10px] uppercase tracking-[0.1em] text-on-surface-faint">
-      <a href="/loesungen" class="hover-amber hover:text-primary">Lösungen</a>
-      <a href="/hivemind" class="hover-amber hover:text-primary">HiveMind</a>
-      <a href="/ueber-uns" class="hover-amber hover:text-primary">Über uns</a>
-      <a href="/blog" class="hover-amber hover:text-primary">Blog</a>
-      <a href="/ai-ready-check" class="hover-amber hover:text-primary">AI-Check</a>
-      <a href="mailto:office@cittasana.de" class="hover-amber hover:text-primary">office@cittasana.de</a>
-      <a href="/impressum" class="hover-amber hover:text-primary">Impressum</a>
-      <a href="/datenschutz" class="hover-amber hover:text-primary">Datenschutz</a>
-      <a href="/eu-ai-act" class="hover-amber hover:text-primary">EU AI Act</a>
+    <div class="flex items-center gap-3">
+      <span class="serif-italic text-lg text-on-surface">Cittasana AI</span>
+      <span class="live-dot"></span>
     </div>
-    <span class="text-[10px] uppercase tracking-[0.1em] text-on-surface-faint">
-      © 2026 Cittasana AI
-    </span>
+    <div class="flex flex-wrap justify-center gap-6 text-[10px] uppercase tracking-[0.12em] text-on-surface-faint">
+      <a href="/loesungen" class="hover:text-primary transition-colors">Lösungen</a>
+      <a href="/hivemind" class="hover:text-primary transition-colors">HiveMind</a>
+      <a href="/ueber-uns" class="hover:text-primary transition-colors">Über uns</a>
+      <a href="/blog" class="hover:text-primary transition-colors">Blog</a>
+      <a href="/ai-ready-check" class="hover:text-primary transition-colors">AI-Check</a>
+      <a href="mailto:office@cittasana.de" class="hover:text-primary transition-colors">office@cittasana.de</a>
+      <a href="/impressum" class="hover:text-primary transition-colors">Impressum</a>
+      <a href="/datenschutz" class="hover:text-primary transition-colors">Datenschutz</a>
+      <a href="/eu-ai-act" class="hover:text-primary transition-colors">EU AI Act</a>
+    </div>
+    <span class="text-[10px] uppercase tracking-[0.12em] text-on-surface-faint">© 2026 Cittasana AI</span>
   </div>
 </footer>
+
+<script src="/motion.js" defer></script>
 
 </body>
 </html>

@@ -110,6 +110,7 @@
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link rel="stylesheet" href="/fonts/fonts.css" />
+<link rel="stylesheet" href="/styles.css" />
 <script id="tailwind-config">
   tailwind.config = {
     darkMode: "class",
@@ -122,8 +123,8 @@
           "surface-mid":      "#1d1d26",
           "surface-high":     "#24242f",
           "on-surface":       "#e8e6f0",
-          "on-surface-dim":   "rgba(232,230,240,0.55)",
-          "on-surface-faint": "rgba(232,230,240,0.28)",
+          "on-surface-dim":   "rgba(232,230,240,0.78)",
+          "on-surface-faint": "rgba(232,230,240,0.56)",
           "primary":          "#f59e0b",
           "primary-dim":      "#d97706",
           "primary-subtle":   "rgba(245,158,11,0.08)",
@@ -142,59 +143,106 @@
 <style>
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { font-family: 'Manrope', sans-serif; background-color: #0d0d12; color: #e8e6f0; -webkit-font-smoothing: antialiased; }
-  .serif { font-family: 'Newsreader', serif; }
+  body { font-family: 'Manrope', sans-serif; background-color: #0d0d12; color: #e8e6f0; overflow-x: hidden; text-rendering: optimizeLegibility; }
+  .serif        { font-family: 'Newsreader', serif; }
   .serif-italic { font-family: 'Newsreader', serif; font-style: italic; }
-  .glass-nav { background: rgba(13,13,18,0.88); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); }
-  .amber-glow { box-shadow: 0 0 80px rgba(245,158,11,0.08), inset 0 0 80px rgba(245,158,11,0.03); }
-  .hover-amber { transition: color .2s, border-color .2s, background .2s; }
-  .btn { border-radius: 9999px; display: inline-block; }
 </style>
 </head>
-<body class="bg-background">
+<body class="bg-background antialiased">
+
+<!-- NOISE TEXTURE -->
+<div class="grain-overlay" aria-hidden="true"></div>
 
 <!-- NAV -->
-<nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline">
-  <div class="flex justify-between items-center px-8 py-4 max-w-screen-2xl mx-auto">
-    <a href="/" class="serif-italic text-xl font-bold tracking-tight text-on-surface">Cittasana AI</a>
-    <div class="hidden md:flex items-center gap-10">
-      <a href="/loesungen" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Lösungen</a>
-      <a href="/hivemind"  class="text-on-surface text-xs uppercase tracking-[0.08em] font-semibold">HiveMind</a>
-      <a href="/ueber-uns" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Über uns</a>
-      <a href="/blog"      class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">Blog</a>
-      <a href="/ai-ready-check" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover-amber hover:text-on-surface">AI-Check</a>
+<nav data-nav class="fixed top-0 w-full z-50 glass-refract border-b border-outline transition-all duration-300">
+  <div class="flex justify-between items-center px-6 md:px-10 py-4 max-w-screen-2xl mx-auto">
+    <a href="/" class="flex items-center gap-3 group">
+      <span class="serif-italic text-xl font-bold tracking-tight text-on-surface group-hover:text-primary transition-colors">Cittasana AI</span>
+      <span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-outline text-[9px] uppercase tracking-[0.15em] text-on-surface-faint">
+        <span class="live-dot"></span>
+        <span>5&nbsp;/&nbsp;5&nbsp;Plätze&nbsp;frei</span>
+      </span>
+    </a>
+    <div class="hidden md:flex items-center gap-8">
+      <a href="/loesungen" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover:text-on-surface transition-colors">Lösungen</a>
+      <a href="/hivemind"  class="text-primary text-xs uppercase tracking-[0.08em] font-semibold">HiveMind</a>
+      <a href="/ueber-uns" class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover:text-on-surface transition-colors">Über uns</a>
+      <a href="/blog"      class="text-on-surface-dim text-xs uppercase tracking-[0.08em] font-semibold hover:text-on-surface transition-colors">Blog</a>
     </div>
-    <a href="/ai-ready-check" class="btn bg-primary text-black px-6 py-2.5 text-xs uppercase tracking-[0.12em] font-extrabold hover-amber hover:bg-amber-400">
-      AI-Check →
+    <a href="/ai-ready-check" data-magnetic class="btn btn--primary px-6 py-2.5 text-[11px]">
+      AI-Check <span class="arrow">→</span>
     </a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="min-h-screen flex flex-col justify-center relative overflow-hidden pt-20">
+<section class="relative overflow-hidden pt-28 md:pt-32 min-h-[100dvh] flex items-center">
+  <div class="absolute inset-0 grid-bg pointer-events-none"></div>
   <div class="absolute inset-0 pointer-events-none">
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full blur-[160px]" style="background:rgba(245,158,11,0.07);"></div>
+    <div class="absolute top-[25%] right-[10%] w-[600px] h-[480px] rounded-full blur-[150px] drift-x" style="background:radial-gradient(circle,rgba(245,158,11,0.10),transparent 65%);"></div>
   </div>
-  <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent pointer-events-none z-10"></div>
+  <div class="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent pointer-events-none z-10"></div>
 
-  <div class="max-w-7xl mx-auto px-8 md:px-24 py-32 relative z-20">
-    <div class="inline-block px-4 py-1.5 bg-primary-subtle border border-primary-border text-primary text-[9px] uppercase tracking-[0.18em] font-black mb-10">
-      Eigenes Produkt-IP — kein Make.com, kein n8n
-    </div>
-    <h1 class="serif font-light text-6xl md:text-[7rem] leading-[0.9] tracking-tight mb-8">
-      HiveMind.<br/>
-      <span class="serif-italic text-primary">Ihr Firmenwissen,<br/>intelligent durchsuchbar.</span>
-    </h1>
-    <p class="text-on-surface-dim text-xl max-w-2xl leading-relaxed mb-12">
-      Dokumente, E-Mails, Slack, Meetings — alles verbunden. Ein KI-Assistent, der den gesamten Kontext Ihres Unternehmens kennt und antwortet, wenn Sie fragen.
-    </p>
-    <div class="flex items-center gap-6 flex-wrap">
-      <a href="#pricing" class="btn bg-primary text-black px-10 py-5 text-sm uppercase tracking-[0.15em] font-extrabold hover-amber hover:bg-amber-400">
-        Pläne ansehen
-      </a>
-      <a href="/ai-ready-check" class="btn border border-outline-med text-on-surface-dim px-10 py-5 text-sm uppercase tracking-[0.15em] font-bold hover-amber hover:border-primary hover:text-primary">
-        AI-Check anfragen
-      </a>
+  <div class="max-w-[1440px] w-full mx-auto px-6 md:px-16 py-20 relative z-20">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+      <div class="lg:col-span-8 reveal">
+        <div class="flex items-center gap-4 mb-8 flex-wrap">
+          <span class="eyebrow">Eigenes Produkt · SaaS</span>
+          <span class="inline-flex items-center gap-2 px-3 py-1 bg-primary-subtle border border-primary-border text-primary text-[10px] uppercase tracking-[0.18em] font-bold rounded-full">
+            <span class="live-dot"></span> Kein Make.com, kein n8n
+          </span>
+        </div>
+        <h1 class="display text-[3.4rem] sm:text-6xl md:text-7xl lg:text-[7.5rem] mb-8 text-on-surface">
+          HiveMind.<br/>
+          <span class="display-italic text-primary">Ihr Firmenwissen,<br/>intelligent durchsuchbar.</span>
+        </h1>
+        <p class="text-on-surface-dim text-lg md:text-xl max-w-2xl leading-relaxed mb-10">
+          Dokumente, E-Mails, Slack, Meetings — alles verbunden. Ein KI-Assistent, der den gesamten Kontext Ihres Unternehmens kennt und antwortet, wenn Sie fragen.
+        </p>
+        <div class="flex items-center gap-5 flex-wrap">
+          <a href="#pricing" data-magnetic class="btn btn--primary px-10 py-5 text-xs glow-pulse">
+            Pläne ansehen <span class="arrow">→</span>
+          </a>
+          <a href="/ai-ready-check" class="btn btn--ghost px-8 py-4 text-[10px]">
+            AI-Check anfragen <span class="arrow">→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-4 reveal" data-delay="2">
+        <div data-tilt class="tilt relative p-6 rounded-3xl glass-refract">
+          <div class="flex items-center justify-between mb-5">
+            <div class="flex items-center gap-2">
+              <span class="w-2.5 h-2.5 rounded-full bg-red-400/70"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-amber-400/70"></span>
+              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400/70"></span>
+            </div>
+            <span class="font-mono text-[10px] text-on-surface-faint">hivemind · v2.4</span>
+          </div>
+          <p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-faint mb-3">Sie fragen</p>
+          <div class="p-4 rounded-2xl bg-background/40 border border-outline mb-5 min-h-[4rem]">
+            <p class="serif text-base md:text-lg text-on-surface leading-snug">
+              <span data-typewriter data-phrases='["Welche Verträge laufen Q2 aus?","Was haben wir Kunde X letztes Jahr angeboten?","Wer hat zuletzt am Onboarding gearbeitet?","Zeig mir offene Angebote über 10k€"]' class="typewriter">Welche Verträge laufen Q2 aus?</span>
+            </p>
+          </div>
+          <p class="text-[10px] uppercase tracking-[0.2em] text-on-surface-faint mb-3">HiveMind analysiert</p>
+          <div class="space-y-2 text-xs">
+            <div class="flex items-center gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary breathe"></span>
+              <span class="text-on-surface-dim">Scanning <span class="font-mono text-on-surface">1,247</span> Dokumente</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary breathe" style="animation-delay:.4s"></span>
+              <span class="text-on-surface-dim">Querverweise · Slack · Gmail · Drive</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="w-1.5 h-1.5 rounded-full bg-primary breathe" style="animation-delay:.8s"></span>
+              <span class="text-on-surface-dim">Antwort in <span class="font-mono text-primary">1.3s</span></span>
+            </div>
+          </div>
+          <div class="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -445,15 +493,26 @@
   </div>
 </section>
 
-<!-- CTA -->
-<section class="py-40 px-8 text-center relative overflow-hidden bg-surface-low border-t border-outline">
-  <div class="max-w-3xl mx-auto">
-    <h2 class="serif text-5xl font-light leading-tight mb-8">Bereit Ihr Firmenwissen<br/><span class="serif-italic">zu aktivieren?</span></h2>
-    <p class="text-on-surface-dim mb-10">Im kostenlosen AI-Ready-Check zeigen wir HiveMind live — mit echten Daten aus Ihrem Unternehmen.</p>
-    <a href="/ai-ready-check" class="btn bg-primary text-black px-12 py-6 text-sm uppercase tracking-[0.2em] font-extrabold hover-amber hover:bg-amber-400">
-      AI-Check starten
-    </a>
-    <p class="text-on-surface-faint text-xs mt-6">20 Min. Gespräch &nbsp;·&nbsp; Live-Demo &nbsp;·&nbsp; Direkt &amp; konkret</p>
+<!-- CTA — asymmetric -->
+<section class="py-32 md:py-40 px-6 md:px-16 bg-surface-low border-t border-outline relative overflow-hidden">
+  <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[360px] blur-[140px] pointer-events-none rounded-full drift-x" style="background:radial-gradient(circle,rgba(245,158,11,0.10),transparent 70%);"></div>
+  <div class="max-w-[1440px] mx-auto relative grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+    <div class="lg:col-span-8 reveal">
+      <span class="eyebrow mb-8">Ihr nächster Schritt</span>
+      <h2 class="display text-5xl md:text-7xl mt-6 leading-[0.95]">
+        Bereit Ihr Firmenwissen<br/>
+        <span class="display-italic text-primary">zu aktivieren?</span>
+      </h2>
+    </div>
+    <div class="lg:col-span-4 reveal" data-delay="2">
+      <p class="text-on-surface-dim text-base leading-relaxed mb-8">
+        Im kostenlosen AI-Ready-Check zeigen wir HiveMind live — mit echten Daten aus Ihrem Unternehmen.
+      </p>
+      <a href="/ai-ready-check" data-magnetic class="btn btn--primary px-10 py-5 text-sm w-full justify-center glow-pulse">
+        AI-Check starten <span class="arrow">→</span>
+      </a>
+      <p class="text-on-surface-faint text-xs mt-5 uppercase tracking-[0.18em]">20 Min · Live-Demo · Direkt &amp; konkret</p>
+    </div>
   </div>
 </section>
 
@@ -475,6 +534,8 @@
     <span class="text-[10px] uppercase tracking-[0.1em] text-on-surface-faint">© 2026 Cittasana AI</span>
   </div>
 </footer>
+
+<script src="/motion.js" defer></script>
 
 </body>
 </html>
